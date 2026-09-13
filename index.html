@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Academic English · Vocabulary</title><style>:root{color-scheme:light dark}body{margin:0;padding:24px;background:light-dark(#fff8f7,#171214)}@media(max-width:480px){body{padding:0}}</style></head><body><div id="target-vocab-tim">
 <style>
 #target-vocab-tim{color-scheme:light dark;--surface:light-dark(#fff8f7,#171214);--container:light-dark(#f4edef,#241e21);--ink:light-dark(#211a1d,#ece0e4);--muted:light-dark(#6f6269,#d1c2ca);--primary:light-dark(#79546c,#e8b9d4);--on-primary:light-dark(#ffffff,#45263b);--tonal:light-dark(#f5d9e9,#5d3c52);--on-tonal:light-dark(#5d3c52,#fbd7ed);--line:light-dark(#d7c2ce,#51434b);font-family:Roboto,"Segoe UI",sans-serif;font-size:15px;line-height:1.5;color:var(--ink);background:var(--surface);padding:32px;border-radius:28px;box-sizing:border-box}
@@ -50,7 +51,7 @@
 </style>
 <div class="shell">
 <header><div><div class="eyebrow">Academic English</div><h1>Vocabulary</h1></div><span class="badge">288 карточек</span></header>
-<div class="controls">
+<div class="account-row"><button class="action" id="tv-sync" type="button">Войди, чтобы сохранять прогресс</button><button class="action" id="tv-account" type="button">Войти и сохранить прогресс</button></div><div class="controls">
 <div class="choice-field"><span class="choice-label">Тема</span><div aria-label="Тема" class="segments" role="group">
 <button aria-pressed="true" class="segment" data-unit="all" type="button">Все</button><button aria-pressed="false" class="segment" data-unit="4" type="button">Values</button><button aria-pressed="false" class="segment" data-unit="5" type="button">Ecology</button><button aria-pressed="false" class="segment" data-unit="6" type="button">Intelligence</button>
 </div></div>
@@ -1797,18 +1798,19 @@
     "translation": "зрительный, визуальный"
   }
 ]</script>
-<script>
+<dialog aria-labelledby="tv-login-title" id="tv-login"><form id="tv-login-form"><h2 id="tv-login-title">Продолжить обучение</h2><label>Никнейм<input autocomplete="username" id="tv-username" maxlength="100" name="username" required="" type="text"/></label><label>Пароль<input autocomplete="current-password" id="tv-password" maxlength="100" name="password" required="" type="password"/></label><p id="tv-login-error" role="alert"></p><button class="action" id="tv-login-close" type="button">Отмена</button><button class="action filled" id="tv-login-submit" type="submit">Войти</button></form></dialog><script>
   (() => {
     const root = document.getElementById('target-vocab-tim');
     const el = id => root.querySelector('#tv-' + id);
     const cards = JSON.parse(el('data').textContent).map((c, id) => ({...c, id}));
     const hard = new Set();
     let deck = [...cards], index = 0, flipped = false;
-    function render() {
+    function render(persist = true) {
+      if (persist) save();
       root.querySelectorAll('[data-unit]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.unit === el('unit').value)));
       root.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === el('mode').value)));
       const c = deck[index];
-      el('count').textContent = (c ? `${index + 1} / ${deck.length}` : '0 карточек') + ` · Трудных: ${hard.size}`;
+      el('count').textContent = (c ? `${index + 1} / ${deck.length}` : '0 карточек') + ` · Просмотрено: ${seen.size} · Трудных: ${hard.size}`;
       ['card', 'prev', 'next', 'hard'].forEach(id => el(id).disabled = !c);
       el('translation').hidden = !flipped || !c;
       if (!c) {
@@ -1835,7 +1837,7 @@
     el('unit').onchange = filter;
     el('only').onchange = filter;
     el('mode').onchange = () => {flipped = false; render();};
-    el('card').onclick = () => {flipped = !flipped; render();};
+    el('card').onclick = () => {flipped = !flipped; if (flipped && deck[index]) seen.add(deck[index].id); render();};
     el('next').onclick = () => {index = (index + 1) % deck.length; flipped = false; render();};
     el('prev').onclick = () => {index = (index + deck.length - 1) % deck.length; flipped = false; render();};
     el('shuffle').onclick = () => {
@@ -1855,14 +1857,94 @@
     el('prev').setAttribute('aria-keyshortcuts', 'ArrowLeft');
     el('hard').setAttribute('aria-keyshortcuts', 'D');
     document.addEventListener('keydown', e => {
+      if (el('login').open) return;
       if (e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
       if (e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
       const action = {Space: 'card', ArrowRight: 'next', ArrowLeft: 'prev', KeyD: 'hard', KeyS: 'shuffle'}[e.code];
       if (action) {e.preventDefault(); el(action).click();}
       else if (e.code === 'KeyR') {e.preventDefault(); el('mode').value = el('mode').value === 'word' ? 'definition' : 'word'; flipped = false; render();}
     });
-    render();
+// Account and progress use the same origin as the application.
+// Included inline in index.html so the static edition remains a single file.
+const seen = new Set();
+let signedIn = false, saving = false, pendingState = null, unsaved = false;
+const apiBase = new URL('./api/', location.href);
+async function api(path, method = 'GET', data) {
+  const response = await fetch(new URL(path, apiBase), {
+    method, credentials: 'same-origin', headers: {'Content-Type': 'application/json', 'X-Flashcards': '1'},
+    ...(data === undefined ? {} : {body: JSON.stringify(data)})
+  });
+  if (!response.ok) throw new Error(String(response.status));
+  return response.json();
+}
+function snapshot() {
+  return {hard: [...hard], seen: [...seen], deck: deck.map(c => c.id), index,
+    unit: el('unit').value, mode: el('mode').value, only: el('only').checked};
+}
+function accountLabel(message) {
+  el('sync').textContent = message;
+  el('account').textContent = signedIn ? 'tim · Выйти' : 'Войти и сохранить прогресс';
+}
+async function save() {
+  if (!signedIn) return;
+  pendingState = snapshot(); unsaved = true;
+  if (saving) return;
+  saving = true;
+  try {
+    while (pendingState) {
+      const state = pendingState; pendingState = null;
+      accountLabel('Сохраняем…');
+      await api('progress', 'PUT', state);
+    }
+    unsaved = false; accountLabel('Сохранено');
+  } catch (error) {
+    if (error.message === '401') {
+      signedIn = false; accountLabel('Сессия истекла. Войди снова.');
+    } else accountLabel('Не сохранено · нажми для повтора');
+  } finally {saving = false;}
+}
+function restore(state) {
+  if (!state) return;
+  hard.clear(); state.hard.forEach(id => hard.add(id));
+  seen.clear(); state.seen.forEach(id => seen.add(id));
+  deck = state.deck.map(id => cards[id]); index = state.index;
+  el('unit').value = state.unit; el('mode').value = state.mode; el('only').checked = state.only;
+  flipped = false;
+}
+async function loadAccount() {
+  const result = await api('progress');
+  restore(result.progress); signedIn = true;
+  render(false); accountLabel('Сохранено');
+  if (!result.progress) save();
+}
+el('sync').onclick = () => {if (unsaved) save();};
+el('account').onclick = async () => {
+  if (location.hostname.endsWith('github.io') || location.protocol === 'file:') {
+    location.href = 'https://tryko.site/english/'; return;
+  }
+  if (signedIn) {
+    if (saving || unsaved) {accountLabel('Сначала дождись сохранения или повтори его.'); return;}
+    try {await api('logout', 'POST'); signedIn = false; accountLabel('Прогресс сохранён в аккаунте');}
+    catch {accountLabel('Не удалось выйти. Попробуй ещё раз.');}
+  } else {el('login-error').textContent = ''; el('login').showModal();}
+};
+el('login-close').onclick = () => el('login').close();
+el('login-form').onsubmit = async e => {
+  e.preventDefault(); el('login-submit').disabled = true;
+  try {
+    await api('login', 'POST', {username: el('username').value, password: el('password').value});
+    await loadAccount(); el('password').value = ''; el('login').close();
+  } catch (error) {
+    el('login-error').textContent = error.message === '401' ? 'Неверный никнейм или пароль.' : 'Сервер недоступен. Попробуй ещё раз.';
+  } finally {el('login-submit').disabled = false;}
+};
+window.addEventListener('beforeunload', e => {if (signedIn && unsaved) {e.preventDefault(); e.returnValue = '';}});
+if (!location.hostname.endsWith('github.io') && location.protocol !== 'file:') {
+  loadAccount().catch(error => accountLabel(error.message === '401' ? 'Войди, чтобы сохранять прогресс' : 'Сервер недоступен'));
+} else accountLabel('Сохранение доступно на tryko.site');
+
+    render(false);
   })();
   </script>
-</div>
+<style>#target-vocab-tim .account-row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:16px}#target-vocab-tim #tv-sync{font-size:12px}#target-vocab-tim dialog{color:var(--ink);background:var(--surface);border:0;border-radius:28px;padding:28px;width:min(380px,90vw)}#target-vocab-tim dialog::backdrop{background:#0007}#target-vocab-tim dialog input{width:100%;height:48px;border:1px solid var(--line);background:var(--container);color:var(--ink);border-radius:12px;padding:12px;font:inherit}#target-vocab-tim dialog label{display:grid;gap:6px;margin:16px 0}#target-vocab-tim dialog h2{font-size:24px;font-weight:500;margin:0}</style></div>
 </body></html>
