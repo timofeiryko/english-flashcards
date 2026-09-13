@@ -1,0 +1,3228 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Vocabulary Material</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Vocabulary Material" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Vocabulary Material&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;target-vocab-tim&quot;&gt;
+&lt;style&gt;
+#target-vocab-tim{color-scheme:light dark;--surface:light-dark(#fff8f7,#171214);--container:light-dark(#f4edef,#241e21);--ink:light-dark(#211a1d,#ece0e4);--muted:light-dark(#6f6269,#d1c2ca);--primary:light-dark(#79546c,#e8b9d4);--on-primary:light-dark(#ffffff,#45263b);--tonal:light-dark(#f5d9e9,#5d3c52);--on-tonal:light-dark(#5d3c52,#fbd7ed);--line:light-dark(#d7c2ce,#51434b);font-family:Roboto,&quot;Segoe UI&quot;,sans-serif;font-size:15px;line-height:1.5;color:var(--ink);background:var(--surface);padding:32px;border-radius:28px;box-sizing:border-box}
+#target-vocab-tim *{box-sizing:border-box}
+#target-vocab-tim [hidden]{display:none!important}
+#target-vocab-tim .shell{max-width:760px;margin:0 auto}
+#target-vocab-tim header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:32px}
+#target-vocab-tim h1{font-size:28px;font-weight:500;letter-spacing:-1px;line-height:1.2;margin:0}
+#target-vocab-tim .eyebrow{font-size:12px;font-weight:500;color:var(--muted);letter-spacing:1.2px;margin-bottom:6px;text-transform:uppercase}
+#target-vocab-tim .badge{font-size:12px;color:var(--on-tonal);background:var(--tonal);padding:7px 12px;border-radius:12px;white-space:nowrap}
+#target-vocab-tim .controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-bottom:20px}
+#target-vocab-tim label.field{flex:1;min-width:180px;display:grid;gap:6px;font-size:12px;color:var(--muted)}
+#target-vocab-tim select{font:inherit;font-size:14px;font-weight:500;color:var(--ink);background:var(--container);border:0;border-bottom:1px solid var(--line);border-radius:12px 12px 0 0;padding:14px 30px 14px 14px;width:100%;min-height:48px;cursor:pointer}
+#target-vocab-tim button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#target-vocab-tim .action{min-height:44px;padding:10px 20px;border:0;border-radius:100px;background:transparent;color:var(--primary);font-size:14px;font-weight:500;transition:background .18s,transform .18s}
+#target-vocab-tim .action:hover{background:var(--tonal)}
+#target-vocab-tim .action:active{transform:scale(.97)}
+#target-vocab-tim .filled{background:var(--primary);color:var(--on-primary);padding-inline:26px}
+#target-vocab-tim .filled:hover{background:var(--on-tonal);color:var(--tonal)}
+#target-vocab-tim .action[aria-pressed=true]{background:var(--tonal);color:var(--on-tonal)}
+#target-vocab-tim :focus-visible{outline:3px solid var(--primary);outline-offset:4px}
+#target-vocab-tim button:disabled{opacity:.4;cursor:default}
+#target-vocab-tim .meta{display:flex;gap:12px;justify-content:space-between;align-items:center;margin:22px 2px 12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+#target-vocab-tim .toggle{display:flex;gap:8px;align-items:center;min-height:32px;cursor:pointer}
+#target-vocab-tim input{accent-color:var(--primary);width:18px;height:18px;cursor:pointer}
+#target-vocab-tim .flash{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;width:100%;min-height:330px;padding:36px;background:var(--container);color:var(--ink);border:0;border-radius:28px;text-align:center;transition:background .2s;overflow-wrap:anywhere}
+#target-vocab-tim .flash:hover{background:color-mix(in srgb,var(--container) 94%,var(--primary))}
+#target-vocab-tim #tv-section{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+#target-vocab-tim #tv-main{font-size:clamp(28px,5vw,44px);line-height:1.2;font-weight:500;letter-spacing:-1.2px;max-width:620px;text-wrap:balance}
+#target-vocab-tim .flash.definition #tv-main{font-size:clamp(21px,3.5vw,28px);line-height:1.4;letter-spacing:-.4px;font-weight:400}
+#target-vocab-tim #tv-translation{font-size:16px;color:var(--muted);max-width:560px;padding-top:4px}
+#target-vocab-tim #tv-hint{font-size:12px;color:var(--muted);margin-top:10px}
+#target-vocab-tim .footer{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:20px}
+#target-vocab-tim .actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#target-vocab-tim .bottom{margin-top:26px;text-align:center;font-size:12px;color:var(--muted)}
+@media(max-width:480px){#target-vocab-tim{padding:20px 16px;border-radius:20px}#target-vocab-tim header{margin-bottom:24px}#target-vocab-tim h1{font-size:26px}#target-vocab-tim label.field{min-width:100%;flex-basis:100%}#target-vocab-tim .flash{min-height:310px;padding:28px 20px}#target-vocab-tim .footer{gap:6px}#target-vocab-tim .action{padding:10px 14px}#target-vocab-tim .actions{gap:4px}}
+@media(prefers-reduced-motion:reduce){#target-vocab-tim *{transition:none!important}}
+&lt;/style&gt;
+&lt;div class=&quot;shell&quot;&gt;
+  &lt;header&gt;&lt;div&gt;&lt;div class=&quot;eyebrow&quot;&gt;Academic English&lt;/div&gt;&lt;h1&gt;Vocabulary&lt;/h1&gt;&lt;/div&gt;&lt;span class=&quot;badge&quot;&gt;288 карточек&lt;/span&gt;&lt;/header&gt;
+  &lt;div class=&quot;controls&quot;&gt;
+    &lt;label class=&quot;field&quot;&gt;Тема&lt;select id=&quot;tv-unit&quot;&gt;&lt;option value=&quot;all&quot;&gt;Все юниты&lt;/option&gt;&lt;option value=&quot;4&quot;&gt;4 · Values&lt;/option&gt;&lt;option value=&quot;5&quot;&gt;5 · Ecology &amp;amp; Health&lt;/option&gt;&lt;option value=&quot;6&quot;&gt;6 · Intelligence&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;label class=&quot;field&quot;&gt;Режим&lt;select id=&quot;tv-mode&quot;&gt;&lt;option value=&quot;word&quot;&gt;Слово → объяснение&lt;/option&gt;&lt;option value=&quot;definition&quot;&gt;Объяснение → слово&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;button type=&quot;button&quot; class=&quot;action&quot; id=&quot;tv-shuffle&quot;&gt;Перемешать&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;meta&quot;&gt;&lt;span id=&quot;tv-count&quot; aria-live=&quot;polite&quot;&gt;&lt;/span&gt;&lt;label class=&quot;toggle&quot;&gt;&lt;input id=&quot;tv-only&quot; type=&quot;checkbox&quot;&gt;Только трудные&lt;/label&gt;&lt;/div&gt;
+  &lt;button type=&quot;button&quot; class=&quot;flash&quot; id=&quot;tv-card&quot; aria-label=&quot;Перевернуть карточку&quot;&gt;
+    &lt;span id=&quot;tv-section&quot;&gt;&lt;/span&gt;&lt;span id=&quot;tv-main&quot;&gt;&lt;/span&gt;&lt;span id=&quot;tv-translation&quot; hidden&gt;&lt;/span&gt;&lt;span id=&quot;tv-hint&quot;&gt;Нажми, чтобы проверить себя&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class=&quot;footer&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;action&quot; id=&quot;tv-prev&quot; aria-label=&quot;Предыдущая карточка&quot;&gt;← Назад&lt;/button&gt;&lt;div class=&quot;actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;action&quot; id=&quot;tv-hard&quot;&gt;Отметить трудной&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;action filled&quot; id=&quot;tv-next&quot;&gt;Дальше →&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;bottom&quot;&gt;Вспомни смысл. Переверни. Проверь себя.&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;tv-data&quot;&gt;[
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;assumption&quot;,
+    &quot;explanation&quot;: &quot;Something  that you accept as true without question or proof.&quot;,
+    &quot;translation&quot;: &quot;предположение, допущение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;indigenous&quot;,
+    &quot;explanation&quot;: &quot;Used to refer to the people who originally lived in a place, rather than people who moved there from somewhere else.&quot;,
+    &quot;translation&quot;: &quot;коренной, местный (о населении)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;inferior&quot;,
+    &quot;explanation&quot;: &quot;Not good, or not as good as someone or something else.&quot;,
+    &quot;translation&quot;: &quot;хуже по качеству; уступающий&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;superior&quot;,
+    &quot;explanation&quot;: &quot;Better than average or better than other people or things of the same type.&quot;,
+    &quot;translation&quot;: &quot;лучше по качеству; превосходящий&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;latter&quot;,
+    &quot;explanation&quot;: &quot;The second of two people, things, or groups previously mentioned.&quot;,
+    &quot;translation&quot;: &quot;последний из двух упомянутых&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;former&quot;,
+    &quot;explanation&quot;: &quot;The first of two people, things, or groups previously mentioned.&quot;,
+    &quot;translation&quot;: &quot;первый из двух упомянутых&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;law-abiding&quot;,
+    &quot;explanation&quot;: &quot;Obeying and respecting the law.&quot;,
+    &quot;translation&quot;: &quot;законопослушный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;nuclear family&quot;,
+    &quot;explanation&quot;: &quot;A family consisting of parents and their children, without other relatives.&quot;,
+    &quot;translation&quot;: &quot;семья из родителей и их детей&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;extended family&quot;,
+    &quot;explanation&quot;: &quot;A family that includes grandparents, aunts, uncles and other relatives, as well as parents and children.&quot;,
+    &quot;translation&quot;: &quot;расширенная семья, включая других родственников&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;observe&quot;,
+    &quot;explanation&quot;: &quot;To obey a law, rule, or custom.&quot;,
+    &quot;translation&quot;: &quot;соблюдать (закон, правило, обычай)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;offspring&quot;,
+    &quot;explanation&quot;: &quot;The young of an animal, or a person’s children.&quot;,
+    &quot;translation&quot;: &quot;потомство; дети (мн. число также offspring)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;perceive&quot;,
+    &quot;explanation&quot;: &quot;To think of something in a particular way.&quot;,
+    &quot;translation&quot;: &quot;воспринимать, считать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;perception&quot;,
+    &quot;explanation&quot;: &quot;A belief or opinion, often held by many people and based on how things seem.&quot;,
+    &quot;translation&quot;: &quot;восприятие, представление&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;perceptible&quot;,
+    &quot;explanation&quot;: &quot;Able to be seen, heard or noticed.&quot;,
+    &quot;translation&quot;: &quot;заметный, ощутимый&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;imperceptible&quot;,
+    &quot;explanation&quot;: &quot;So slight that it cannot be seen, heard or noticed.&quot;,
+    &quot;translation&quot;: &quot;незаметный, неощутимый&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;prioritize&quot;,
+    &quot;explanation&quot;: &quot;To arrange in order of importance so that you can deal with the most important things before the others.&quot;,
+    &quot;translation&quot;: &quot;расставлять приоритеты&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;put into action&quot;,
+    &quot;explanation&quot;: &quot;To begin working to make an idea or a plan happen or be successful.&quot;,
+    &quot;translation&quot;: &quot;привести в действие, осуществить&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;regardless of&quot;,
+    &quot;explanation&quot;: &quot;Without being influenced by any other events or conditions.&quot;,
+    &quot;translation&quot;: &quot;независимо от, невзирая на&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;savage (noun)&quot;,
+    &quot;explanation&quot;: &quot;An outdated, offensive label for a person regarded as uncivilized.&quot;,
+    &quot;translation&quot;: &quot;«дикарь» — устаревшее, оскорбительное обозначение человека&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.1&quot;,
+    &quot;word&quot;: &quot;unanimous&quot;,
+    &quot;explanation&quot;: &quot;In complete agreement or showing complete agreement.&quot;,
+    &quot;translation&quot;: &quot;единогласный, единодушный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;ambiguity&quot;,
+    &quot;explanation&quot;: &quot;The possibility of understanding something in more than one way.&quot;,
+    &quot;translation&quot;: &quot;неоднозначность, двусмысленность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;avoidance&quot;,
+    &quot;explanation&quot;: &quot;The action of keeping away from or not doing something.&quot;,
+    &quot;translation&quot;: &quot;избегание, уклонение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;counterpart&quot;,
+    &quot;explanation&quot;: &quot;A person or thing with the same role or function in another place or situation.&quot;,
+    &quot;translation&quot;: &quot;аналог; человек с такой же должностью или ролью&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;derive&quot;,
+    &quot;explanation&quot;: &quot;Base a concept on an extension or modification of (another concept).&quot;,
+    &quot;translation&quot;: &quot;получать, выводить; заимствовать (from)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;emphasize&quot;,
+    &quot;explanation&quot;: &quot;To give special importance or value to (something) in speaking or writing.&quot;,
+    &quot;translation&quot;: &quot;подчёркивать, придавать особое значение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;hierarchy&quot;,
+    &quot;explanation&quot;: &quot;A system in which members of an organization or society are ranked according to relative status or authority.&quot;,
+    &quot;translation&quot;: &quot;иерархия&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;immediate&quot;,
+    &quot;explanation&quot;: &quot;Nearest or most direct in time or relationship.&quot;,
+    &quot;translation&quot;: &quot;ближайший; непосредственный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;impose&quot;,
+    &quot;explanation&quot;: &quot;Force (an unwelcome decision or ruling) on someone.&quot;,
+    &quot;translation&quot;: &quot;навязывать, налагать (on)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;negotiation&quot;,
+    &quot;explanation&quot;: &quot;Discussion aimed at reaching an agreement.&quot;,
+    &quot;translation&quot;: &quot;переговоры, обсуждение условий&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;paradigm&quot;,
+    &quot;explanation&quot;: &quot;A typical example or pattern of something; a pattern or model.&quot;,
+    &quot;translation&quot;: &quot;модель, образец, парадигма&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.2&quot;,
+    &quot;word&quot;: &quot;status quo&quot;,
+    &quot;explanation&quot;: &quot;Latin for \&quot;existing state\&quot;.&quot;,
+    &quot;translation&quot;: &quot;существующее положение вещей&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;addiction&quot;,
+    &quot;explanation&quot;: &quot;An inability to stop doing or using something, especially something harmful.&quot;,
+    &quot;translation&quot;: &quot;зависимость (to)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;addictive&quot;,
+    &quot;explanation&quot;: &quot;Likely to make someone unable to stop using or doing something.&quot;,
+    &quot;translation&quot;: &quot;вызывающий зависимость&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;alignment&quot;,
+    &quot;explanation&quot;: &quot;Agreement or consistency between ideas, goals or actions.&quot;,
+    &quot;translation&quot;: &quot;согласованность, соответствие; выравнивание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;align&quot;,
+    &quot;explanation&quot;: &quot;To bring things into agreement, or arrange them in a straight line.&quot;,
+    &quot;translation&quot;: &quot;согласовывать; соответствовать (with); выравнивать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;articulate&quot;,
+    &quot;explanation&quot;: &quot;To express in words.&quot;,
+    &quot;translation&quot;: &quot;чётко выражать словами&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;commute&quot;,
+    &quot;explanation&quot;: &quot;To make the same journey regularly between work and home.&quot;,
+    &quot;translation&quot;: &quot;регулярно ездить между домом и работой&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;congruent&quot;,
+    &quot;explanation&quot;: &quot;Similar to or in agreement with something, so that the two things can both exist or can be combined without problems.&quot;,
+    &quot;translation&quot;: &quot;согласующийся, соответствующий&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;conscious&quot;,
+    &quot;explanation&quot;: &quot;Aware of something; also, deliberate and intentional.&quot;,
+    &quot;translation&quot;: &quot;осознающий; сознательный, намеренный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;conviction&quot;,
+    &quot;explanation&quot;: &quot;A strong opinion or belief.&quot;,
+    &quot;translation&quot;: &quot;твёрдое убеждение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;cornerstone&quot;,
+    &quot;explanation&quot;: &quot;Something of great importance that everything else depends on.&quot;,
+    &quot;translation&quot;: &quot;краеугольный камень, основа&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;diligent&quot;,
+    &quot;explanation&quot;: &quot;Careful and serious in your work, or done in a careful and determined way.&quot;,
+    &quot;translation&quot;: &quot;старательный, усердный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;fulfil&quot;,
+    &quot;explanation&quot;: &quot;To do something as promised or intended, or to satisfy your hopes or expectations.&quot;,
+    &quot;translation&quot;: &quot;выполнять; удовлетворять (требования, ожидания)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;guiding principle&quot;,
+    &quot;explanation&quot;: &quot;An idea that influences you very much when making a decision or considering a matter.&quot;,
+    &quot;translation&quot;: &quot;руководящий принцип&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;intrinsic&quot;,
+    &quot;explanation&quot;: &quot;Being an extremely important and basic characteristic of a person or thing.&quot;,
+    &quot;translation&quot;: &quot;внутренне присущий, неотъемлемый&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;invoke&quot;,
+    &quot;explanation&quot;: &quot;In this list: to bring a feeling or image to mind. It can also mean to appeal to a rule or authority.&quot;,
+    &quot;translation&quot;: &quot;вызывать (чувство, образ); в других контекстах — ссылаться на&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.3&quot;,
+    &quot;word&quot;: &quot;preserve&quot;,
+    &quot;explanation&quot;: &quot;To keep something as it is, especially in order to prevent it from decaying or being damaged or destroyed.&quot;,
+    &quot;translation&quot;: &quot;сохранять, оберегать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;assume&quot;,
+    &quot;explanation&quot;: &quot;To think that something is true, although you do not have definite proof.&quot;,
+    &quot;translation&quot;: &quot;предполагать без доказательств&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;compatible&quot;,
+    &quot;explanation&quot;: &quot;Able to work well or exist together without problems.&quot;,
+    &quot;translation&quot;: &quot;совместимый (with)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;conduct (verb)&quot;,
+    &quot;explanation&quot;: &quot;To do something in an organized way / to carry out a particular activity or process, especially in order to get information or prove facts.&quot;,
+    &quot;translation&quot;: &quot;проводить (исследование, опрос, эксперимент)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;detrimental&quot;,
+    &quot;explanation&quot;: &quot;Causing harm or damage.&quot;,
+    &quot;translation&quot;: &quot;вредный, пагубный (to)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;devise&quot;,
+    &quot;explanation&quot;: &quot;To invent a method of doing something.&quot;,
+    &quot;translation&quot;: &quot;разрабатывать, придумывать (план, метод)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;domestic&quot;,
+    &quot;explanation&quot;: &quot;Relating to family relationships and life at home.&quot;,
+    &quot;translation&quot;: &quot;домашний, семейный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;establish&quot;,
+    &quot;explanation&quot;: &quot;To begin a relationship with someone or a situation that will continue.&quot;,
+    &quot;translation&quot;: &quot;устанавливать, налаживать (связи, отношения)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;framework&quot;,
+    &quot;explanation&quot;: &quot;A set of ideas, rules, or beliefs from which something is developed, or on which decisions are based.&quot;,
+    &quot;translation&quot;: &quot;система принципов; концептуальная основа&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;hence&quot;,
+    &quot;explanation&quot;: &quot;For this reason.&quot;,
+    &quot;translation&quot;: &quot;следовательно, отсюда&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;impact (verb)&quot;,
+    &quot;explanation&quot;: &quot;To have a noticeable effect on someone or something.&quot;,
+    &quot;translation&quot;: &quot;влиять, воздействовать (on)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;impact (noun)&quot;,
+    &quot;explanation&quot;: &quot;The effect or influence of one thing on another.&quot;,
+    &quot;translation&quot;: &quot;влияние, воздействие&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;indication&quot;,
+    &quot;explanation&quot;: &quot;A sign that something exists, is true, or is likely to happen.&quot;,
+    &quot;translation&quot;: &quot;признак, свидетельство&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;interact&quot;,
+    &quot;explanation&quot;: &quot;To communicate with or react to.&quot;,
+    &quot;translation&quot;: &quot;взаимодействовать, общаться (with)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;invariably&quot;,
+    &quot;explanation&quot;: &quot;Always, without changing or being different.&quot;,
+    &quot;translation&quot;: &quot;неизменно, всегда&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;manifest&quot;,
+    &quot;explanation&quot;: &quot;To show a quality or feeling, or to become clearly visible.&quot;,
+    &quot;translation&quot;: &quot;проявлять; проявляться (manifest itself)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;neglect&quot;,
+    &quot;explanation&quot;: &quot;To fail to give someone or something enough care or attention.&quot;,
+    &quot;translation&quot;: &quot;пренебрегать, не уделять внимания&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;outcome&quot;,
+    &quot;explanation&quot;: &quot;The final result of a meeting, discussion, war etc – esp. when no one knows what it will be until it actually happens.&quot;,
+    &quot;translation&quot;: &quot;результат, исход&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.4&quot;,
+    &quot;word&quot;: &quot;point out&quot;,
+    &quot;explanation&quot;: &quot;To draw somebody’s attention to something / to indicate.&quot;,
+    &quot;translation&quot;: &quot;указывать, обращать внимание на&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;accomplish&quot;,
+    &quot;explanation&quot;: &quot;To finish something successfully or to achieve something.&quot;,
+    &quot;translation&quot;: &quot;успешно выполнить, достичь&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;accomplishment&quot;,
+    &quot;explanation&quot;: &quot;Something impressive that is done or achieved after a lot of work.&quot;,
+    &quot;translation&quot;: &quot;достижение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;be forced to do something&quot;,
+    &quot;explanation&quot;: &quot;To have to do something even though you do not want to.&quot;,
+    &quot;translation&quot;: &quot;быть вынужденным что-либо делать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;bias&quot;,
+    &quot;explanation&quot;: &quot;Any tendency or preference; the fact of allowing personal opinions to influence your judgment in an unfair way.&quot;,
+    &quot;translation&quot;: &quot;предвзятость, необъективность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;donate&quot;,
+    &quot;explanation&quot;: &quot;To give money, food, clothes, etc. to help somebody/something [an organisation].&quot;,
+    &quot;translation&quot;: &quot;жертвовать, передавать на благотворительность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;incentive&quot;,
+    &quot;explanation&quot;: &quot;Something that encourages you to do something.&quot;,
+    &quot;translation&quot;: &quot;стимул, побуждение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;industrious&quot;,
+    &quot;explanation&quot;: &quot;Hard-working and actively making an effort.&quot;,
+    &quot;translation&quot;: &quot;трудолюбивый&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;make somebody redundant&quot;,
+    &quot;explanation&quot;: &quot;To dismiss someone because their job is no longer needed.&quot;,
+    &quot;translation&quot;: &quot;уволить кого-либо по сокращению&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;perverse&quot;,
+    &quot;explanation&quot;: &quot;Wrong, unacceptable or unreasonable; of the type that most people do not expect and think is wrong.&quot;,
+    &quot;translation&quot;: &quot;неразумный, противоестественный; дающий нежелательный результат&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;pledge&quot;,
+    &quot;explanation&quot;: &quot;To formally promise to give or do something.&quot;,
+    &quot;translation&quot;: &quot;торжественно или официально обещать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;redundant&quot;,
+    &quot;explanation&quot;: &quot;(of a person) without a job because there is no more work available for you in a company; not needed or useful.&quot;,
+    &quot;translation&quot;: &quot;сокращённый (о работнике); избыточный, ненужный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;redundancy&quot;,
+    &quot;explanation&quot;: &quot;The situation when somebody has to leave their job because there is no more work available for them.&quot;,
+    &quot;translation&quot;: &quot;увольнение по сокращению; избыточность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;scale up&quot;,
+    &quot;explanation&quot;: &quot;To increase the size or number of something.&quot;,
+    &quot;translation&quot;: &quot;увеличивать масштаб&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;virtuous&quot;,
+    &quot;explanation&quot;: &quot;Having good moral qualities and behaviour; showing high moral standards.&quot;,
+    &quot;translation&quot;: &quot;добродетельный, нравственный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.5&quot;,
+    &quot;word&quot;: &quot;virtue&quot;,
+    &quot;explanation&quot;: &quot;A particular good quality or habit.&quot;,
+    &quot;translation&quot;: &quot;добродетель; положительное качество&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.P&quot;,
+    &quot;word&quot;: &quot;In today’s lecture/presentation…&quot;,
+    &quot;explanation&quot;: &quot;A phrase introducing the subject of the talk you are giving now.&quot;,
+    &quot;translation&quot;: &quot;В сегодняшней лекции / презентации…&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.P&quot;,
+    &quot;word&quot;: &quot;I’d like to look / take a look at…&quot;,
+    &quot;explanation&quot;: &quot;A phrase introducing a topic you want to examine or discuss.&quot;,
+    &quot;translation&quot;: &quot;Я хотел бы рассмотреть…&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.P&quot;,
+    &quot;word&quot;: &quot;In more detail…&quot;,
+    &quot;explanation&quot;: &quot;With more specific information and a fuller explanation.&quot;,
+    &quot;translation&quot;: &quot;Более подробно…&quot;
+  },
+  {
+    &quot;section&quot;: &quot;4.P&quot;,
+    &quot;word&quot;: &quot;To move on to…&quot;,
+    &quot;explanation&quot;: &quot;To start discussing the next topic.&quot;,
+    &quot;translation&quot;: &quot;Перейти к…&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;curve&quot;,
+    &quot;explanation&quot;: &quot;A line or surface that bends gradually; a smooth bend.&quot;,
+    &quot;translation&quot;: &quot;кривая линия; изгиб&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;dump&quot;,
+    &quot;explanation&quot;: &quot;To get rid of unwanted material, especially in an unsuitable place.&quot;,
+    &quot;translation&quot;: &quot;сбрасывать, выбрасывать (мусор, отходы)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;emit&quot;,
+    &quot;explanation&quot;: &quot;To send out something such as light, heat, sound, gas, etc.&quot;,
+    &quot;translation&quot;: &quot;выделять, испускать (газ, свет, тепло)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;emission&quot;,
+    &quot;explanation&quot;: &quot;The production or sending out of light, heat, gas, etc.&quot;,
+    &quot;translation&quot;: &quot;выброс, выделение, испускание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;exceed&quot;,
+    &quot;explanation&quot;: &quot;To be greater than a particular number or amount.&quot;,
+    &quot;translation&quot;: &quot;превышать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;expose&quot;,
+    &quot;explanation&quot;: &quot;To show something that is usually hidden (reveal).&quot;,
+    &quot;translation&quot;: &quot;обнажать, открывать то, что было скрыто&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;exposition&quot;,
+    &quot;explanation&quot;: &quot;A detailed explanation of an idea, theory or plan.&quot;,
+    &quot;translation&quot;: &quot;подробное изложение, объяснение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;face&quot;,
+    &quot;explanation&quot;: &quot;To have to deal with a problem or difficult situation.&quot;,
+    &quot;translation&quot;: &quot;сталкиваться с (проблемой)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;be faced with&quot;,
+    &quot;explanation&quot;: &quot;To have a problem or difficult situation that you must deal with.&quot;,
+    &quot;translation&quot;: &quot;столкнуться с, оказаться перед (проблемой)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;far-reaching&quot;,
+    &quot;explanation&quot;: &quot;Likely to have a lot of influence or many effects.&quot;,
+    &quot;translation&quot;: &quot;имеющий далеко идущие последствия&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;immense&quot;,
+    &quot;explanation&quot;: &quot;Extremely large or great.&quot;,
+    &quot;translation&quot;: &quot;огромный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;immensely&quot;,
+    &quot;explanation&quot;: &quot;Extremely, very much, enormously.&quot;,
+    &quot;translation&quot;: &quot;чрезвычайно, очень сильно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;moisture&quot;,
+    &quot;explanation&quot;: &quot;Very small drops of water or other liquid that are present in the air, on a surface or in a substance.&quot;,
+    &quot;translation&quot;: &quot;влага&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;overstate&quot;,
+    &quot;explanation&quot;: &quot;To say something in a way that makes it seem more important than it really is.&quot;,
+    &quot;translation&quot;: &quot;преувеличивать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;phase something out&quot;,
+    &quot;explanation&quot;: &quot;To gradually stop using or providing something.&quot;,
+    &quot;translation&quot;: &quot;постепенно прекращать использование чего-либо&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;projection&quot;,
+    &quot;explanation&quot;: &quot;A calculation or guess about the future based on information that you have.&quot;,
+    &quot;translation&quot;: &quot;прогноз, расчёт на будущее&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;prominent&quot;,
+    &quot;explanation&quot;: &quot;Important or well-known.&quot;,
+    &quot;translation&quot;: &quot;выдающийся, известный, заметный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;sufficient&quot;,
+    &quot;explanation&quot;: &quot;Enough for a particular purpose; as much as you need.&quot;,
+    &quot;translation&quot;: &quot;достаточный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;insufficient&quot;,
+    &quot;explanation&quot;: &quot;Not enough.&quot;,
+    &quot;translation&quot;: &quot;недостаточный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;sustain&quot;,
+    &quot;explanation&quot;: &quot;To provide what someone or something needs to continue existing.&quot;,
+    &quot;translation&quot;: &quot;поддерживать существование, обеспечивать необходимым&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;sustainable&quot;,
+    &quot;explanation&quot;: &quot;Able to continue over time without using up resources or seriously harming the environment.&quot;,
+    &quot;translation&quot;: &quot;устойчивый; экологически рациональный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.1&quot;,
+    &quot;word&quot;: &quot;unsustainable&quot;,
+    &quot;explanation&quot;: &quot;That cannot be continued at the same level, rate, etc.&quot;,
+    &quot;translation&quot;: &quot;неустойчивый; такой, который нельзя долго поддерживать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;abundant&quot;,
+    &quot;explanation&quot;: &quot;Existing in large quantities.&quot;,
+    &quot;translation&quot;: &quot;обильный, имеющийся в большом количестве&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;accumulate&quot;,
+    &quot;explanation&quot;: &quot;To increase gradually in quantity or number.&quot;,
+    &quot;translation&quot;: &quot;накапливать; накапливаться&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;accumulation&quot;,
+    &quot;explanation&quot;: &quot;The process of accumulating something.&quot;,
+    &quot;translation&quot;: &quot;накопление&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;anticipate&quot;,
+    &quot;explanation&quot;: &quot;To expect that something will happen.&quot;,
+    &quot;translation&quot;: &quot;ожидать, предвидеть&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;awareness&quot;,
+    &quot;explanation&quot;: &quot;Knowledge or understanding of a subject, issue, or situation.&quot;,
+    &quot;translation&quot;: &quot;осведомлённость, осознание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;bring to light&quot;,
+    &quot;explanation&quot;: &quot;To discover or reveal something that was previously unknown.&quot;,
+    &quot;translation&quot;: &quot;выявить, обнаружить, сделать известным&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;conservation&quot;,
+    &quot;explanation&quot;: &quot;The protection and saving the environment, resources, historical objects or works of art from the damaging effects of human activity.&quot;,
+    &quot;translation&quot;: &quot;охрана, сохранение (природы, ресурсов)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;conserve&quot;,
+    &quot;explanation&quot;: &quot;To keep and protect something.&quot;,
+    &quot;translation&quot;: &quot;сохранять, беречь&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;component&quot;,
+    &quot;explanation&quot;: &quot;A part that combines with other parts to form something bigger.&quot;,
+    &quot;translation&quot;: &quot;составная часть, компонент&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;discard&quot;,
+    &quot;explanation&quot;: &quot;To throw away or get rid of something useless or unwanted.&quot;,
+    &quot;translation&quot;: &quot;выбрасывать, избавляться от ненужного&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;diversity&quot;,
+    &quot;explanation&quot;: &quot;The condition or fact of being different or varied; variety.&quot;,
+    &quot;translation&quot;: &quot;разнообразие&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;diverse&quot;,
+    &quot;explanation&quot;: &quot;Very different from each other.&quot;,
+    &quot;translation&quot;: &quot;разнообразный, различный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;ingest&quot;,
+    &quot;explanation&quot;: &quot;To eat, drink or absorb something.&quot;,
+    &quot;translation&quot;: &quot;проглатывать, принимать внутрь&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;ingestion&quot;,
+    &quot;explanation&quot;: &quot;The process of taking food or another substance into the body by swallowing.&quot;,
+    &quot;translation&quot;: &quot;проглатывание, приём внутрь&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;ingestible&quot;,
+    &quot;explanation&quot;: &quot;Suitable or able to be taken into the body by swallowing.&quot;,
+    &quot;translation&quot;: &quot;пригодный для приёма внутрь&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;nonetheless&quot;,
+    &quot;explanation&quot;: &quot;Despite what has just been said; nevertheless.&quot;,
+    &quot;translation&quot;: &quot;тем не менее&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;objective (noun)&quot;,
+    &quot;explanation&quot;: &quot;Something that you plan to do or achieve.&quot;,
+    &quot;translation&quot;: &quot;цель, задача&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;perceive&quot;,
+    &quot;explanation&quot;: &quot;To have an opinion or belief about something.&quot;,
+    &quot;translation&quot;: &quot;воспринимать, считать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;recognize&quot;,
+    &quot;explanation&quot;: &quot;To accept that something is legal, true, or important.&quot;,
+    &quot;translation&quot;: &quot;признавать (важность, истинность, законность)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;recognition&quot;,
+    &quot;explanation&quot;: &quot;Agreement that something is true or legal.&quot;,
+    &quot;translation&quot;: &quot;признание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;reliability&quot;,
+    &quot;explanation&quot;: &quot;The quality of being reliable.&quot;,
+    &quot;translation&quot;: &quot;надёжность, достоверность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;rely on&quot;,
+    &quot;explanation&quot;: &quot;To trust or depend on someone or something.&quot;,
+    &quot;translation&quot;: &quot;полагаться на&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;scope&quot;,
+    &quot;explanation&quot;: &quot;The range or area which something deals with or includes.&quot;,
+    &quot;translation&quot;: &quot;масштаб, охват, границы&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.2&quot;,
+    &quot;word&quot;: &quot;vision&quot;,
+    &quot;explanation&quot;: &quot;An idea or picture of how the future could or should be.&quot;,
+    &quot;translation&quot;: &quot;видение будущего, представление о желаемом будущем&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;annually&quot;,
+    &quot;explanation&quot;: &quot;Happening once a year.&quot;,
+    &quot;translation&quot;: &quot;ежегодно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;contract (a disease)&quot;,
+    &quot;explanation&quot;: &quot;To catch or become ill with a disease.&quot;,
+    &quot;translation&quot;: &quot;заразиться, заболеть&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;deadly&quot;,
+    &quot;explanation&quot;: &quot;Causing or likely to cause death.&quot;,
+    &quot;translation&quot;: &quot;смертельный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;estimate (noun)&quot;,
+    &quot;explanation&quot;: &quot;An approximate calculation or judgement of an amount.&quot;,
+    &quot;translation&quot;: &quot;оценка, приблизительный расчёт&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;estimate (verb)&quot;,
+    &quot;explanation&quot;: &quot;To roughly calculate or judge an amount using available information.&quot;,
+    &quot;translation&quot;: &quot;оценивать, приблизительно рассчитывать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;evidence&quot;,
+    &quot;explanation&quot;: &quot;Facts or information that support a belief or show that something is true.&quot;,
+    &quot;translation&quot;: &quot;доказательства, данные (неисчисляемое)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;habitat&quot;,
+    &quot;explanation&quot;: &quot;Natural environment in which an animal or a plant normally lives or grows.&quot;,
+    &quot;translation&quot;: &quot;естественная среда обитания&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;infect&quot;,
+    &quot;explanation&quot;: &quot;To make someone get a disease that can spread from one person to another.&quot;,
+    &quot;translation&quot;: &quot;заражать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;infection&quot;,
+    &quot;explanation&quot;: &quot;An illness that is caused by bacteria or  viruses.&quot;,
+    &quot;translation&quot;: &quot;инфекция, заражение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;infectious&quot;,
+    &quot;explanation&quot;: &quot;Able to be passed from one person or organism to another.&quot;,
+    &quot;translation&quot;: &quot;заразный, инфекционный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;occur&quot;,
+    &quot;explanation&quot;: &quot;To happen or take place.&quot;,
+    &quot;translation&quot;: &quot;происходить, случаться&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;occurrence&quot;,
+    &quot;explanation&quot;: &quot;Something that happens, or the fact of happening.&quot;,
+    &quot;translation&quot;: &quot;случай, событие; возникновение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;outbreak&quot;,
+    &quot;explanation&quot;: &quot;Epidemic; when a disease suddenly starts to happen.&quot;,
+    &quot;translation&quot;: &quot;вспышка (заболевания)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;species&quot;,
+    &quot;explanation&quot;: &quot;A plant or animal group whose members have  similar features and are able to produce young animals or plants together.&quot;,
+    &quot;translation&quot;: &quot;биологический вид (мн. число также species)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;suspect (verb)&quot;,
+    &quot;explanation&quot;: &quot;To believe that something is true or is likely to happen, especially something bad.&quot;,
+    &quot;translation&quot;: &quot;подозревать, предполагать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;suspicion&quot;,
+    &quot;explanation&quot;: &quot;A feeling or belief that something is true, especially something bad.&quot;,
+    &quot;translation&quot;: &quot;подозрение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;suspicious&quot;,
+    &quot;explanation&quot;: &quot;Feeling that someone or something cannot be trusted.&quot;,
+    &quot;translation&quot;: &quot;подозрительный; недоверчивый (of)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;transmit&quot;,
+    &quot;explanation&quot;: &quot;To spread a disease from one person to another.&quot;,
+    &quot;translation&quot;: &quot;передавать (инфекцию, сигнал)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;transmission&quot;,
+    &quot;explanation&quot;: &quot;The process of passing something from one person or place to another.&quot;,
+    &quot;translation&quot;: &quot;передача&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;virus&quot;,
+    &quot;explanation&quot;: &quot;A tiny infectious agent that can reproduce only inside living cells.&quot;,
+    &quot;translation&quot;: &quot;вирус&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.3&quot;,
+    &quot;word&quot;: &quot;viral&quot;,
+    &quot;explanation&quot;: &quot;Caused by a virus.&quot;,
+    &quot;translation&quot;: &quot;вирусный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;anticipate&quot;,
+    &quot;explanation&quot;: &quot;To expect that something will happen.&quot;,
+    &quot;translation&quot;: &quot;предвидеть, ожидать; заранее готовиться&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;boundary&quot;,
+    &quot;explanation&quot;: &quot;A line that divides two areas or forms an edge around an area.&quot;,
+    &quot;translation&quot;: &quot;граница&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;the bulk of&quot;,
+    &quot;explanation&quot;: &quot;The largest or main part of something.&quot;,
+    &quot;translation&quot;: &quot;основная часть, большая часть&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;comprehend&quot;,
+    &quot;explanation&quot;: &quot;To understand the meaning or importance of something.&quot;,
+    &quot;translation&quot;: &quot;понимать, постигать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;comprehensive&quot;,
+    &quot;explanation&quot;: &quot;Including all or almost all important details or aspects.&quot;,
+    &quot;translation&quot;: &quot;всесторонний, полный, всеобъемлющий&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;expose somebody to&quot;,
+    &quot;explanation&quot;: &quot;To put someone in a situation where something can affect them.&quot;,
+    &quot;translation&quot;: &quot;подвергать кого-либо воздействию&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;exposure&quot;,
+    &quot;explanation&quot;: &quot;A situation in which someone experiences something or is affected by it because they are in a particular situation or place.&quot;,
+    &quot;translation&quot;: &quot;воздействие; нахождение под воздействием (to)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;exhaust&quot;,
+    &quot;explanation&quot;: &quot;To use something completely.&quot;,
+    &quot;translation&quot;: &quot;исчерпывать, истощать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;exhaustion&quot;,
+    &quot;explanation&quot;: &quot;Extreme tiredness, or a state in which a supply has been used up.&quot;,
+    &quot;translation&quot;: &quot;изнеможение; истощение, исчерпание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;facilitate&quot;,
+    &quot;explanation&quot;: &quot;To make something possible or easier.&quot;,
+    &quot;translation&quot;: &quot;облегчать, содействовать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;facilities&quot;,
+    &quot;explanation&quot;: &quot;Buildings, equipment or services provided for a particular purpose.&quot;,
+    &quot;translation&quot;: &quot;помещения, оборудование, инфраструктура для определённой цели&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;hazard&quot;,
+    &quot;explanation&quot;: &quot;A source of danger or possible harm.&quot;,
+    &quot;translation&quot;: &quot;источник опасности, опасность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;hazardous&quot;,
+    &quot;explanation&quot;: &quot;Dangerous or likely to cause harm.&quot;,
+    &quot;translation&quot;: &quot;опасный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;offset&quot;,
+    &quot;explanation&quot;: &quot;To use one cost, payment or situation in order to cancel or reduce the effect of another.&quot;,
+    &quot;translation&quot;: &quot;компенсировать, уравновешивать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;pose&quot;,
+    &quot;explanation&quot;: &quot;To cause a problem.&quot;,
+    &quot;translation&quot;: &quot;создавать, представлять (опасность, проблему)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;prompt (verb)&quot;,
+    &quot;explanation&quot;: &quot;To cause something; to encourage somebody to do something.&quot;,
+    &quot;translation&quot;: &quot;вызывать; побуждать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;threat&quot;,
+    &quot;explanation&quot;: &quot;Someone or something that may cause harm or danger.&quot;,
+    &quot;translation&quot;: &quot;угроза (существительное)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;threaten&quot;,
+    &quot;explanation&quot;: &quot;To be likely to cause harm or damage to something or someone.&quot;,
+    &quot;translation&quot;: &quot;угрожать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;urge&quot;,
+    &quot;explanation&quot;: &quot;To try to persuade someone to do something, to encourage somebody.&quot;,
+    &quot;translation&quot;: &quot;настоятельно призывать, убеждать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;urgent&quot;,
+    &quot;explanation&quot;: &quot;Very important and needing you to take action immediately.&quot;,
+    &quot;translation&quot;: &quot;срочный, неотложный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;witness (noun)&quot;,
+    &quot;explanation&quot;: &quot;A person who sees an event happen.&quot;,
+    &quot;translation&quot;: &quot;свидетель&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.4&quot;,
+    &quot;word&quot;: &quot;witness (verb)&quot;,
+    &quot;explanation&quot;: &quot;To see an event happen.&quot;,
+    &quot;translation&quot;: &quot;быть свидетелем, наблюдать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;to begin with&quot;,
+    &quot;explanation&quot;: &quot;Used to introduce your first point.&quot;,
+    &quot;translation&quot;: &quot;начнём с того, что; для начала&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;generally speaking&quot;,
+    &quot;explanation&quot;: &quot;Used to say what is usually true, without considering every exception.&quot;,
+    &quot;translation&quot;: &quot;вообще говоря&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;first&quot;,
+    &quot;explanation&quot;: &quot;Before other things, or as the first point in a list.&quot;,
+    &quot;translation&quot;: &quot;во-первых; сначала&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;certainly&quot;,
+    &quot;explanation&quot;: &quot;Without doubt; used to express confidence that something is true.&quot;,
+    &quot;translation&quot;: &quot;безусловно, несомненно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;undoubtedly&quot;,
+    &quot;explanation&quot;: &quot;Almost certainly; with very strong confidence.&quot;,
+    &quot;translation&quot;: &quot;несомненно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;above all&quot;,
+    &quot;explanation&quot;: &quot;More importantly than anything else.&quot;,
+    &quot;translation&quot;: &quot;прежде всего, самое главное&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;obviously&quot;,
+    &quot;explanation&quot;: &quot;In a way that is easy to see or understand.&quot;,
+    &quot;translation&quot;: &quot;очевидно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;for now&quot;,
+    &quot;explanation&quot;: &quot;At the present time, until something changes.&quot;,
+    &quot;translation&quot;: &quot;пока, на данный момент&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;later on&quot;,
+    &quot;explanation&quot;: &quot;At a time after the present moment or the event being discussed.&quot;,
+    &quot;translation&quot;: &quot;позже&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;in the meantime&quot;,
+    &quot;explanation&quot;: &quot;During the period between two events.&quot;,
+    &quot;translation&quot;: &quot;тем временем&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;last&quot;,
+    &quot;explanation&quot;: &quot;After all the other items or points.&quot;,
+    &quot;translation&quot;: &quot;наконец, последним пунктом&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;finally&quot;,
+    &quot;explanation&quot;: &quot;After everything else, or to introduce a final point.&quot;,
+    &quot;translation&quot;: &quot;наконец, в заключение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;yet another&quot;,
+    &quot;explanation&quot;: &quot;One more in addition to others that already exist.&quot;,
+    &quot;translation&quot;: &quot;ещё один&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;additionally&quot;,
+    &quot;explanation&quot;: &quot;Used to introduce extra information.&quot;,
+    &quot;translation&quot;: &quot;дополнительно, кроме того&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;also&quot;,
+    &quot;explanation&quot;: &quot;In addition; too.&quot;,
+    &quot;translation&quot;: &quot;также&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;another thing&quot;,
+    &quot;explanation&quot;: &quot;Used to introduce an additional point.&quot;,
+    &quot;translation&quot;: &quot;ещё один момент&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;furthermore&quot;,
+    &quot;explanation&quot;: &quot;Used to add another supporting point to an argument.&quot;,
+    &quot;translation&quot;: &quot;более того, кроме того&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;likewise&quot;,
+    &quot;explanation&quot;: &quot;In the same way; also.&quot;,
+    &quot;translation&quot;: &quot;аналогично, также&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;since (cause)&quot;,
+    &quot;explanation&quot;: &quot;Because; used to introduce a reason.&quot;,
+    &quot;translation&quot;: &quot;поскольку, так как&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;consequently&quot;,
+    &quot;explanation&quot;: &quot;As a result of what has just been mentioned.&quot;,
+    &quot;translation&quot;: &quot;следовательно, в результате&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;this is why&quot;,
+    &quot;explanation&quot;: &quot;Used to connect a reason to its result.&quot;,
+    &quot;translation&quot;: &quot;вот почему&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;due to&quot;,
+    &quot;explanation&quot;: &quot;Because of; followed by a noun, noun phrase or an -ing form.&quot;,
+    &quot;translation&quot;: &quot;из-за, вследствие (+ существительное / doing)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;therefore&quot;,
+    &quot;explanation&quot;: &quot;For that reason; as a result.&quot;,
+    &quot;translation&quot;: &quot;поэтому, следовательно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;under these circumstances&quot;,
+    &quot;explanation&quot;: &quot;In this particular situation.&quot;,
+    &quot;translation&quot;: &quot;при этих обстоятельствах&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;for all of these reasons&quot;,
+    &quot;explanation&quot;: &quot;Because of all the points just mentioned.&quot;,
+    &quot;translation&quot;: &quot;по всем этим причинам&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;to sum up&quot;,
+    &quot;explanation&quot;: &quot;Used to introduce a short statement of the main points.&quot;,
+    &quot;translation&quot;: &quot;подводя итог&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;on the whole&quot;,
+    &quot;explanation&quot;: &quot;Considering the situation generally, rather than each detail.&quot;,
+    &quot;translation&quot;: &quot;в целом&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;to summarize&quot;,
+    &quot;explanation&quot;: &quot;To give a short statement of the most important points.&quot;,
+    &quot;translation&quot;: &quot;подводя итог, резюмируя&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;taking everything into account&quot;,
+    &quot;explanation&quot;: &quot;Considering all the relevant facts before judging.&quot;,
+    &quot;translation&quot;: &quot;принимая всё во внимание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;all things considered&quot;,
+    &quot;explanation&quot;: &quot;After thinking about all aspects of the situation.&quot;,
+    &quot;translation&quot;: &quot;учитывая все обстоятельства&quot;
+  },
+  {
+    &quot;section&quot;: &quot;5.E&quot;,
+    &quot;word&quot;: &quot;overall&quot;,
+    &quot;explanation&quot;: &quot;Considering everything together.&quot;,
+    &quot;translation&quot;: &quot;в целом&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;adjust&quot;,
+    &quot;explanation&quot;: &quot;To change something slightly so that it works better or is more suitable.&quot;,
+    &quot;translation&quot;: &quot;регулировать, слегка изменять&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;adjust to&quot;,
+    &quot;explanation&quot;: &quot;To change the way you behave or think in order to suit a new situation.&quot;,
+    &quot;translation&quot;: &quot;приспосабливаться к&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;capacity&quot;,
+    &quot;explanation&quot;: &quot;The ability to do or understand something.&quot;,
+    &quot;translation&quot;: &quot;способность; возможности&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;chunk&quot;,
+    &quot;explanation&quot;: &quot;A piece or block of something; as a verb, to group information into manageable blocks.&quot;,
+    &quot;translation&quot;: &quot;блок, часть (информации); объединять в блоки&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;comprise&quot;,
+    &quot;explanation&quot;: &quot;To consist of particular parts.&quot;,
+    &quot;translation&quot;: &quot;состоять из, включать в себя&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;modest&quot;,
+    &quot;explanation&quot;: &quot;Tending not to talk about your own abilities and achievements.&quot;,
+    &quot;translation&quot;: &quot;скромный (about)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;modesty&quot;,
+    &quot;explanation&quot;: &quot;The quality of not talking about or not trying to make people notice your abilities and achievements.&quot;,
+    &quot;translation&quot;: &quot;скромность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;sympathize with&quot;,
+    &quot;explanation&quot;: &quot;To understand and care about another person’s difficulties.&quot;,
+    &quot;translation&quot;: &quot;сочувствовать кому-либо&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;attribute (noun)&quot;,
+    &quot;explanation&quot;: &quot;A quality or feature of a person or thing.&quot;,
+    &quot;translation&quot;: &quot;качество, характерная черта&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;attribution&quot;,
+    &quot;explanation&quot;: &quot;The act of identifying a person as the creator, or something as the cause.&quot;,
+    &quot;translation&quot;: &quot;приписывание (авторства, причины)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;attribute (verb)&quot;,
+    &quot;explanation&quot;: &quot;To believe or say that something is caused by something else.&quot;,
+    &quot;translation&quot;: &quot;приписывать, объяснять чем-либо (attribute X to Y)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.1&quot;,
+    &quot;word&quot;: &quot;diminish&quot;,
+    &quot;explanation&quot;: &quot;To become smaller, weaker or less important, or to make something do so.&quot;,
+    &quot;translation&quot;: &quot;уменьшать(ся), ослаблять(ся)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;adapt&quot;,
+    &quot;explanation&quot;: &quot;To change, or to change something, to suit different conditions or uses.&quot;,
+    &quot;translation&quot;: &quot;адаптировать, приспосабливать(ся)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;adaptation&quot;,
+    &quot;explanation&quot;: &quot;The process of changing to suit different conditions.&quot;,
+    &quot;translation&quot;: &quot;адаптация, приспособление&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;adopt&quot;,
+    &quot;explanation&quot;: &quot;To accept or start to use something new.&quot;,
+    &quot;translation&quot;: &quot;принимать, начинать использовать (подход, стратегию)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;compare&quot;,
+    &quot;explanation&quot;: &quot;To examine or look for the difference between two or more things.&quot;,
+    &quot;translation&quot;: &quot;сравнивать (with / to)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;comparable&quot;,
+    &quot;explanation&quot;: &quot;Similar in size, amount, or quality to something else.&quot;,
+    &quot;translation&quot;: &quot;сопоставимый (to / with)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;incomparable&quot;,
+    &quot;explanation&quot;: &quot;So good that nothing else can match it.&quot;,
+    &quot;translation&quot;: &quot;несравненный, непревзойдённый&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;criterion / criteria&quot;,
+    &quot;explanation&quot;: &quot;A standard used to judge or decide something. The plural form is criteria.&quot;,
+    &quot;translation&quot;: &quot;критерий / критерии&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;meet criteria&quot;,
+    &quot;explanation&quot;: &quot;Fulfill the required standards.&quot;,
+    &quot;translation&quot;: &quot;соответствовать критериям&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;critic&quot;,
+    &quot;explanation&quot;: &quot;Someone who says that they do not approve of someone or something.&quot;,
+    &quot;translation&quot;: &quot;критик&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;critical&quot;,
+    &quot;explanation&quot;: &quot;Expressing disapproval or pointing out faults.&quot;,
+    &quot;translation&quot;: &quot;критически настроенный (of)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;criticize&quot;,
+    &quot;explanation&quot;: &quot;To express disapproval of someone or something.&quot;,
+    &quot;translation&quot;: &quot;критиковать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;emphasize&quot;,
+    &quot;explanation&quot;: &quot;To show that something is very important or worth giving attention to.&quot;,
+    &quot;translation&quot;: &quot;подчёркивать, придавать особое значение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;emphasis&quot;,
+    &quot;explanation&quot;: &quot;The particular importance or attention that is given to something.&quot;,
+    &quot;translation&quot;: &quot;акцент, особое внимание (on)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;flaw&quot;,
+    &quot;explanation&quot;: &quot;A fault, mistake, or weakness, especially one that happens while something is being planned or made, or that causes something not to be perfect.&quot;,
+    &quot;translation&quot;: &quot;недостаток, изъян&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;flawless&quot;,
+    &quot;explanation&quot;: &quot;Perfect; without faults or mistakes.&quot;,
+    &quot;translation&quot;: &quot;безупречный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;foster&quot;,
+    &quot;explanation&quot;: &quot;To encourage the development or growth of ideas or feelings.&quot;,
+    &quot;translation&quot;: &quot;способствовать развитию, поощрять&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;evidence&quot;,
+    &quot;explanation&quot;: &quot;Facts or information that support a belief or show that something is true.&quot;,
+    &quot;translation&quot;: &quot;доказательства, данные (неисчисляемое)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;empirical evidence&quot;,
+    &quot;explanation&quot;: &quot;The evidence that we directly observe and get from our senses.&quot;,
+    &quot;translation&quot;: &quot;эмпирические данные, полученные наблюдением или опытом&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;research evidence&quot;,
+    &quot;explanation&quot;: &quot;Any fact, information or data provided by a research study.&quot;,
+    &quot;translation&quot;: &quot;данные исследований&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;excel&quot;,
+    &quot;explanation&quot;: &quot;To be extremely good at something.&quot;,
+    &quot;translation&quot;: &quot;преуспевать, быть очень хорошим в чём-либо (at / in)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;incorporate&quot;,
+    &quot;explanation&quot;: &quot;To include something as part of something larger.&quot;,
+    &quot;translation&quot;: &quot;включать в состав (into / in)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;isolate&quot;,
+    &quot;explanation&quot;: &quot;To separate something from other things with which it is connected or mixed.&quot;,
+    &quot;translation&quot;: &quot;изолировать, отделять (from)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;isolated&quot;,
+    &quot;explanation&quot;: &quot;Separated from other places or people; also, happening only occasionally or as a single case.&quot;,
+    &quot;translation&quot;: &quot;изолированный, отдалённый; единичный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;mindset&quot;,
+    &quot;explanation&quot;: &quot;A person’s usual way of thinking and viewing situations.&quot;,
+    &quot;translation&quot;: &quot;образ мышления&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;multiple&quot;,
+    &quot;explanation&quot;: &quot;Very many of the same type, or of different types.&quot;,
+    &quot;translation&quot;: &quot;многочисленный, множественный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;subjective&quot;,
+    &quot;explanation&quot;: &quot;Influenced by or based on personal beliefs or feelings, rather than based on facts.&quot;,
+    &quot;translation&quot;: &quot;субъективный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.2&quot;,
+    &quot;word&quot;: &quot;whereas&quot;,
+    &quot;explanation&quot;: &quot;Compared with the fact that; but.&quot;,
+    &quot;translation&quot;: &quot;тогда как, в то время как (сопоставление)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;acknowledge&quot;,
+    &quot;explanation&quot;: &quot;Admit the existence or truth of.&quot;,
+    &quot;translation&quot;: &quot;признавать существование или истинность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;authenticity&quot;,
+    &quot;explanation&quot;: &quot;The quality of being genuine or true.&quot;,
+    &quot;translation&quot;: &quot;подлинность, искренность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;burnout&quot;,
+    &quot;explanation&quot;: &quot;Severe physical or mental exhaustion after prolonged stress or overwork.&quot;,
+    &quot;translation&quot;: &quot;выгорание&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;compile&quot;,
+    &quot;explanation&quot;: &quot;To assemble or gather together information or resources in a systematic way.&quot;,
+    &quot;translation&quot;: &quot;собирать и систематизировать, составлять&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;comprehend&quot;,
+    &quot;explanation&quot;: &quot;To understand the meaning or importance of something.&quot;,
+    &quot;translation&quot;: &quot;понимать, постигать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;connotation&quot;,
+    &quot;explanation&quot;: &quot;An idea or feeling that a word invokes in addition to its literal or primary meaning.&quot;,
+    &quot;translation&quot;: &quot;смысловой или эмоциональный оттенок слова&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;drop out of&quot;,
+    &quot;explanation&quot;: &quot;Withdraw or stop participating in something.&quot;,
+    &quot;translation&quot;: &quot;бросить, прекратить участие в&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;harness&quot;,
+    &quot;explanation&quot;: &quot;To control and use a source of energy or an ability for a useful purpose.&quot;,
+    &quot;translation&quot;: &quot;направлять и использовать (силу, эмоции, ресурсы)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;impose upon&quot;,
+    &quot;explanation&quot;: &quot;Force someone to accept or put up with something.&quot;,
+    &quot;translation&quot;: &quot;навязывать кому-либо&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;implement&quot;,
+    &quot;explanation&quot;: &quot;Put (a decision, plan, agreement, etc.) into effect.&quot;,
+    &quot;translation&quot;: &quot;осуществлять, внедрять (план, решение)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;misconception&quot;,
+    &quot;explanation&quot;: &quot;An incorrect belief or understanding of something.&quot;,
+    &quot;translation&quot;: &quot;ошибочное представление, заблуждение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;pose (a question)&quot;,
+    &quot;explanation&quot;: &quot;To put forward a question for someone to consider or answer.&quot;,
+    &quot;translation&quot;: &quot;ставить, задавать (вопрос)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;rationale&quot;,
+    &quot;explanation&quot;: &quot;The reasons or logic behind a decision, action or belief.&quot;,
+    &quot;translation&quot;: &quot;обоснование, система доводов&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;solely&quot;,
+    &quot;explanation&quot;: &quot;Only; without involving anything or anyone else.&quot;,
+    &quot;translation&quot;: &quot;исключительно, только&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.3&quot;,
+    &quot;word&quot;: &quot;steer the wheel&quot;,
+    &quot;explanation&quot;: &quot;Control the direction of a vehicle or vessel.&quot;,
+    &quot;translation&quot;: &quot;управлять рулём, направлять движение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;bear (results)&quot;,
+    &quot;explanation&quot;: &quot;To produce or bring results.&quot;,
+    &quot;translation&quot;: &quot;приносить, давать (результаты)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;capable&quot;,
+    &quot;explanation&quot;: &quot;Able to do something.&quot;,
+    &quot;translation&quot;: &quot;способный (of doing)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;capably&quot;,
+    &quot;explanation&quot;: &quot;In a way that shows the ability to do something.&quot;,
+    &quot;translation&quot;: &quot;умело, компетентно&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;capability&quot;,
+    &quot;explanation&quot;: &quot;The ability to do something.&quot;,
+    &quot;translation&quot;: &quot;способность, возможности&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;consistent&quot;,
+    &quot;explanation&quot;: &quot;Happening in the same way and continuing for a period of time.&quot;,
+    &quot;translation&quot;: &quot;постоянный, стабильный, последовательный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;deprive&quot;,
+    &quot;explanation&quot;: &quot;To take something necessary away from someone.&quot;,
+    &quot;translation&quot;: &quot;лишать (deprive somebody of something)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;deprived&quot;,
+    &quot;explanation&quot;: &quot;Not having the things that are essential for a comfortable life.&quot;,
+    &quot;translation&quot;: &quot;обездоленный; лишённый необходимого&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;deprivation&quot;,
+    &quot;explanation&quot;: &quot;A situation when people don’t have basic things they need to live a comfortable life.&quot;,
+    &quot;translation&quot;: &quot;лишение, нехватка (sleep deprivation — недосыпание)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;distinguish&quot;,
+    &quot;explanation&quot;: &quot;To recognize the difference between two people or things.&quot;,
+    &quot;translation&quot;: &quot;различать, отличать (X from Y; between X and Y)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;indicate&quot;,
+    &quot;explanation&quot;: &quot;To show that something is true or exists.&quot;,
+    &quot;translation&quot;: &quot;указывать, свидетельствовать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;indication&quot;,
+    &quot;explanation&quot;: &quot;A sign that shows that something is happening.&quot;,
+    &quot;translation&quot;: &quot;признак, свидетельство&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;induce&quot;,
+    &quot;explanation&quot;: &quot;To cause something to happen.&quot;,
+    &quot;translation&quot;: &quot;вызывать, приводить к&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;sleep-inducing&quot;,
+    &quot;explanation&quot;: &quot;Causing someone to feel sleepy or fall asleep.&quot;,
+    &quot;translation&quot;: &quot;вызывающий сон&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;prior&quot;,
+    &quot;explanation&quot;: &quot;Existing or happening before something else.&quot;,
+    &quot;translation&quot;: &quot;предшествующий, предварительный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;prior to&quot;,
+    &quot;explanation&quot;: &quot;Before a particular time or event.&quot;,
+    &quot;translation&quot;: &quot;до, перед&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;replenish&quot;,
+    &quot;explanation&quot;: &quot;To refill or restore something to its original state.&quot;,
+    &quot;translation&quot;: &quot;пополнять, восстанавливать (запасы, силы)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.4&quot;,
+    &quot;word&quot;: &quot;reveal&quot;,
+    &quot;explanation&quot;: &quot;To make something known to somebody.&quot;,
+    &quot;translation&quot;: &quot;раскрывать, обнаруживать, показывать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;boost&quot;,
+    &quot;explanation&quot;: &quot;To increase, improve or strengthen something.&quot;,
+    &quot;translation&quot;: &quot;повышать, улучшать, усиливать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;encode&quot;,
+    &quot;explanation&quot;: &quot;To put information into a form in which it can be stored.&quot;,
+    &quot;translation&quot;: &quot;кодировать (информацию)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;memorize&quot;,
+    &quot;explanation&quot;: &quot;To learn something carefully so that you can remember it exactly.&quot;,
+    &quot;translation&quot;: &quot;заучивать, запоминать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;memorable&quot;,
+    &quot;explanation&quot;: &quot;Worth remembering or easy to remember, especially because of being special or unusual.&quot;,
+    &quot;translation&quot;: &quot;запоминающийся, памятный&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;recall&quot;,
+    &quot;explanation&quot;: &quot;To bring the memory of a past event into your mind.&quot;,
+    &quot;translation&quot;: &quot;вспоминать (recall doing)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;rehearsal&quot;,
+    &quot;explanation&quot;: &quot;A performance or practice session preparatory to a public appearance.&quot;,
+    &quot;translation&quot;: &quot;репетиция, тренировочное повторение&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;remind somebody of something&quot;,
+    &quot;explanation&quot;: &quot;To make someone think of another person, thing or experience.&quot;,
+    &quot;translation&quot;: &quot;напоминать кому-либо о чём-либо&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;retain&quot;,
+    &quot;explanation&quot;: &quot;To keep or continue to have something.&quot;,
+    &quot;translation&quot;: &quot;сохранять, удерживать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;retrieve&quot;,
+    &quot;explanation&quot;: &quot;To find and get back data or information that has been stored in the long-term memory.&quot;,
+    &quot;translation&quot;: &quot;извлекать (данные, информацию из памяти)&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;trigger&quot;,
+    &quot;explanation&quot;: &quot;To initiate, actuate or set off.&quot;,
+    &quot;translation&quot;: &quot;запускать, вызывать&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;sequence&quot;,
+    &quot;explanation&quot;: &quot;A continuous or connected series.&quot;,
+    &quot;translation&quot;: &quot;последовательность&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;visualize&quot;,
+    &quot;explanation&quot;: &quot;To form a picture of somebody/something in your mind in order to imagine or remember them.&quot;,
+    &quot;translation&quot;: &quot;мысленно представлять&quot;
+  },
+  {
+    &quot;section&quot;: &quot;6.5&quot;,
+    &quot;word&quot;: &quot;visual&quot;,
+    &quot;explanation&quot;: &quot;Relating to things that you can see.&quot;,
+    &quot;translation&quot;: &quot;зрительный, визуальный&quot;
+  }
+]&lt;/script&gt;
+&lt;script&gt;
+  (() =&gt; {
+    const root = document.getElementById(&#x27;target-vocab-tim&#x27;);
+    const el = id =&gt; root.querySelector(&#x27;#tv-&#x27; + id);
+    const cards = JSON.parse(el(&#x27;data&#x27;).textContent).map((c, id) =&gt; ({...c, id}));
+    const hard = new Set();
+    let deck = [...cards], index = 0, flipped = false;
+    function render() {
+      const c = deck[index];
+      el(&#x27;count&#x27;).textContent = (c ? `${index + 1} / ${deck.length}` : &#x27;0 карточек&#x27;) + ` · Трудных: ${hard.size}`;
+      [&#x27;card&#x27;, &#x27;prev&#x27;, &#x27;next&#x27;, &#x27;hard&#x27;].forEach(id =&gt; el(id).disabled = !c);
+      el(&#x27;translation&#x27;).hidden = !flipped || !c;
+      if (!c) {
+        el(&#x27;section&#x27;).textContent = &#x27;&#x27;;
+        el(&#x27;main&#x27;).textContent = &#x27;В этом наборе пока нет трудных карточек.&#x27;;
+        el(&#x27;hint&#x27;).textContent = &#x27;Сними отметку «Только трудные», чтобы продолжить.&#x27;;
+        return;
+      }
+      const reverse = el(&#x27;mode&#x27;).value === &#x27;definition&#x27;;
+      el(&#x27;card&#x27;).classList.toggle(&#x27;definition&#x27;, flipped ? !reverse : reverse);
+      el(&#x27;section&#x27;).textContent = `Unit ${c.section}`;
+      el(&#x27;main&#x27;).textContent = flipped ? (reverse ? c.word : c.explanation) : (reverse ? c.explanation : c.word);
+      el(&#x27;translation&#x27;).textContent = c.translation;
+      el(&#x27;hint&#x27;).textContent = flipped ? &#x27;Нажми, чтобы скрыть ответ&#x27; : &#x27;Нажми, чтобы проверить себя&#x27;;
+      el(&#x27;hard&#x27;).textContent = hard.has(c.id) ? &#x27;✓ Трудная · убрать&#x27; : &#x27;Отметить трудной&#x27;;
+      el(&#x27;hard&#x27;).setAttribute(&#x27;aria-pressed&#x27;, String(hard.has(c.id)));
+      el(&#x27;card&#x27;).setAttribute(&#x27;aria-label&#x27;, (flipped ? &#x27;Скрыть ответ: &#x27; : &#x27;Показать ответ: &#x27;) + el(&#x27;main&#x27;).textContent);
+    }
+    function filter() {
+      const unit = el(&#x27;unit&#x27;).value;
+      deck = cards.filter(c =&gt; (unit === &#x27;all&#x27; || c.section.startsWith(unit)) &amp;&amp; (!el(&#x27;only&#x27;).checked || hard.has(c.id)));
+      index = 0; flipped = false; render();
+    }
+    el(&#x27;unit&#x27;).onchange = filter;
+    el(&#x27;only&#x27;).onchange = filter;
+    el(&#x27;mode&#x27;).onchange = () =&gt; {flipped = false; render();};
+    el(&#x27;card&#x27;).onclick = () =&gt; {flipped = !flipped; render();};
+    el(&#x27;next&#x27;).onclick = () =&gt; {index = (index + 1) % deck.length; flipped = false; render();};
+    el(&#x27;prev&#x27;).onclick = () =&gt; {index = (index + deck.length - 1) % deck.length; flipped = false; render();};
+    el(&#x27;shuffle&#x27;).onclick = () =&gt; {
+      for (let i = deck.length - 1; i &gt; 0; i--) {const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]];}
+      index = 0; flipped = false; render();
+    };
+    el(&#x27;hard&#x27;).onclick = () =&gt; {
+      const id = deck[index].id;
+      hard.has(id) ? hard.delete(id) : hard.add(id);
+      if (el(&#x27;only&#x27;).checked) {deck = deck.filter(c =&gt; hard.has(c.id)); index = Math.min(index, Math.max(0, deck.length - 1)); flipped = false;}
+      render();
+    };
+    render();
+  })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
