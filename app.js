@@ -459,20 +459,411 @@ readings.splice(3,0,
   }
 );
 
+// Each section is also an answer checklist for closed-book retelling.
+const materialSummaries = {
+  'work-family': {
+    lead: 'Work and family influence each other. The article compares theories explaining this relationship and shows how competing demands can create conflict and reduce job satisfaction.',
+    note: 'Учебный текст Work-family dynamic (Complete IELTS, 2020). Compensation theory объясняем именно в трактовке этой статьи. Лучший заголовок из задания: “Theories on family and work”.',
+    sections: [
+      {title:'Why both parents work', cue:'Why do both parents work, and how do work and home affect each other?', points:[
+        'Background: political and family values have changed family structures. Traditionally, the male breadwinner earned money for food and shelter.',
+        'Main reason: both parents work to strengthen the family’s financial base. A secondary reason is stimulating interaction with other adults at work.',
+        'Two-way influence: the effects of both parents working appear at home and can feed back into their performance as employees.'
+      ], ru:'Breadwinner — кормилец. Две причины из текста: деньги и общение со взрослыми в стимулирующей рабочей среде. Самореализацию можно добавить как собственную идею, но не как факт статьи.'},
+      {title:'Spillover: feelings cross the boundary', cue:'Explain positive and negative spillover. What does the research emphasis actually show?', points:[
+        'Positive spillover: satisfaction and stimulation at work carry over into energy and satisfaction at home.',
+        'Negative spillover: work problems and conflict drain energy, so a person cannot fully participate in family life.',
+        'Research emphasis: most studies discussed focus on negative spillover and incompatible demands. The author infers that positive spillover is less dominant; the article gives no direct frequency measurement.'
+      ], ru:'Spillover — перенос состояния из одной сферы в другую. Не только стресс: перенос может быть положительным. Больше исследований о негативе ≠ доказательство, что позитив встречается редко.'},
+      {title:'Compensation theory: competing involvement', cue:'What does compensation theory mean here? Which circumstances intensify the conflict?', points:[
+        'The article’s definition: high involvement in one sphere, usually work, is associated with low involvement in the other, usually family.',
+        'Career advancement: increased work demands consume time that could be spent with family, especially when there are young children.',
+        'Escalation: reduced family time creates conflict; the text also links a larger number of family members to greater conflict.'
+      ], ru:'В этой статье compensation — конкуренция за вовлечённость и время: больше работы → меньше семьи. Запомни карьерный рост, маленьких детей и рост числа членов семьи.'},
+      {title:'Developmental approach: demands change over time', cue:'What changes over a worker’s lifespan, according to the developmental approach?', points:[
+        'Focus: a psychological framework connects the development of the individual, the family and the career across the worker’s lifespan.',
+        'Changing roles: demands fluctuate, and people connect their work and family roles differently at different life stages.',
+        'Sex differences: the article says men and women have different patterns of adult development. It does not give specific ages or a fixed list of stages.'
+      ], ru:'Developmental — развитие во времени: отношения работы и семьи не одинаковы на всех этапах жизни. Не придумывай возрастные границы, которых в тексте нет.'},
+      {title:'Self-determination: support for autonomy', cue:'What helps self-determination at home and at work? What follows from it?', points:[
+        'Meaning: self-determination is the ability or power to make decisions for yourself.',
+        'At home: feeling valued by a partner supports self-determination in family activities.',
+        'At work: an employer who supports autonomy strengthens self-determined motivation.',
+        'Outcome: higher self-determination tends to be associated with desirable outcomes in the relevant activities.'
+      ], ru:'Две пары для запоминания: партнёр → чувство собственной ценности; работодатель → самостоятельность. Поддерживающая среда помогает мотивации и результатам.'},
+      {title:'Segmentation and Winthrope’s qualification', cue:'Explain segmentation. What domestic duties and stereotypes does Winthrope discuss?', points:[
+        'Segmentation theory: work and family are separate domains with a clear boundary. Emotions, attitudes and behaviour in one need not influence the other.',
+        'Qualification: this separation may describe some people’s lives, but it does not fit everyone.',
+        'Winthrope’s example: even after entering paid work, women may remain responsible for husbands, children and living quarters.',
+        'Social expectations: the text refers to the stereotype that a woman’s place is at home, while a man is the breadwinner.',
+        'Evidence limit: despite these expectations, the article says no positive link establishes that one sex has greater difficulty managing work-family conflict than the other.'
+      ], ru:'Segmentation — разделение сфер. Winthrope показывает, почему оно бывает трудным, но не опровергает теорию для всех. Стереотипы о ролях не доказывают различия в способности справляться с конфликтом.'},
+      {title:'Conflict and job satisfaction', cue:'Name all three schedule examples, explain the role of position, and state the conclusion.', points:[
+        'Schedules: weekend work, working more than nine hours a day, and working during vacations intensify conflict.',
+        'Position: rank and job position can bring greater expectations and time demands, worsening work-family relations.',
+        'Consistent conclusion: empirical results differ, but the text reports broad agreement that job satisfaction decreases when work-family conflict arises.',
+        'Overall map: spillover describes transfer; compensation describes competing involvement; development describes change over time; self-determination describes supportive motivation; segmentation describes separation.'
+      ], ru:'Точное число — больше девяти часов. Для финала ответа: больше конфликта между работой и семьёй → ниже удовлетворённость работой.'}
+    ]
+  },
+  'environment': {
+    lead: 'Our surroundings shape both health and the choices we can make. The article explains six areas of environmental health, using concrete examples to show why coordinated public action and individual choices both matter.',
+    note: 'По статье Robyn Correll “How Environmental Health Impacts Our Quality of Life and Health” (2019). Числа и Healthy People 2020 относятся к источнику. В ответе: “According to the article…” — это не сегодняшняя статистика.',
+    sections: [
+      {title:'The central idea: surroundings shape health', cue:'Define environmental health and give examples of the environment limiting personal choices.', points:[
+        'Definition: environmental health monitors and addresses physical, chemical and biological factors that affect physical and mental well-being, including factors beyond individual control.',
+        'Choices depend on surroundings: unsafe sidewalks, polluted air or neighbourhood violence can discourage outdoor exercise. Building materials, nearby insects and food access also matter.',
+        'The six areas: air quality; water and sanitation; toxic substances and hazardous wastes; homes and communities; infrastructure and surveillance; global environmental health.'
+      ], ru:'Не только «экология»: это то, как внешняя среда влияет на тело, психику и доступные человеку решения. Следующие шесть блоков — каркас всего текста.'},
+      {title:'1 · Air quality', cue:'Which essential substance is discussed here, and which four health outcomes are named?', points:[
+        'Air is essential for survival, but people do not always ensure that it is safe to breathe.',
+        'Four outcomes linked to polluted air in the text: sudden infant death syndrome (SIDS), lung cancer, chronic obstructive pulmonary disease (COPD), and low birth weight.'
+      ], ru:'Четыре пункта: внезапная младенческая смерть, рак лёгкого, ХОБЛ и низкая масса при рождении. Air и water — ответ на вопрос о веществах, необходимых для выживания.'},
+      {title:'2 · Water and sanitation', cue:'Recall the three population figures, the two treatments, the disease example and the investment estimate.', points:[
+        'Access figures: 780 million people lack safe drinking water; 2.5 billion, roughly one third of the world’s population in the article, lack adequate sanitation.',
+        'Daily consequences: an estimated 2,200 children die each day from diarrhoeal diseases linked to poor water and sanitation.',
+        'Prevention: filtering and chlorinating water helped reduce diseases such as typhoid in the United States.',
+        'Historical impact: the article attributes the bulk of the historical decline in US childhood mortality to clean water.',
+        'Investment example: one cited estimate gives $23 in medical and societal cost savings per $1 invested in clean-water technologies in the US. These are cost savings, not business profit or a guaranteed return everywhere.'
+      ], ru:'Связки чисел: 780 млн — вода; 2,5 млрд — санитария; 2200 детей в день — диарейные заболевания. Filtering + chlorinating; болезнь — typhoid. $1 → $23 сэкономленных расходов.'},
+      {title:'3 · Toxic substances and hazardous wastes', cue:'What is toxicology? Retell the Flint example with its location, date, substance and affected group.', points:[
+        'Toxicology studies how chemicals and substances affect people and their surroundings. Heavy metals and some plastics can pose risks.',
+        'Flint, Michigan: news emerged in 2015 that drinking water contained lead.',
+        'Consequences: lead exposure could cause lasting complications, including brain damage in children.',
+        'Inequality: economically disadvantaged children were especially affected. Environmental risks and their consequences are not distributed equally.'
+      ], ru:'Flint → Michigan → 2015 → lead (свинец) в воде → риск повреждения мозга у детей, особенно из экономически уязвимых семей.'},
+      {title:'4 · Homes, communities and food deserts', cue:'Explain food deserts, who is affected and all three proposed responses.', points:[
+        'Everyday safety: people spend the bulk of their time at home, work or school. Violence can keep families indoors, and poor road maintenance can increase car crashes.',
+        'Food deserts: areas without nearby full-service grocery stores. Residents may depend on convenience stores, including gas-station shops.',
+        'Why this matters: fresh produce may be scarce, poor in quality or expensive. Limited access worsens inequalities, especially for low-income and minority populations.',
+        'Response 1: public gardens can improve local access to fresh food.',
+        'Response 2: better public transport can connect residents to grocery stores and farmers markets.',
+        'Response 3: zoning changes can encourage retailers to offer healthier food options.'
+      ], ru:'Food desert — не отсутствие вообще любой еды, а нехватка доступных полноценных магазинов и свежих продуктов. Решения: общественные огороды → транспорт → правила использования городской территории.'},
+      {title:'5 · Infrastructure and surveillance', cue:'What does surveillance involve? Explain the mosquito example and who uses the findings.', points:[
+        'Activities: investigate and respond to disease through epidemiology; screen populations for hazards; monitor risks through surveillance programmes.',
+        'Purpose: information helps allocate limited resources, prevent harm and evaluate whether control measures work.',
+        'Mosquito example: test mosquitoes for infections such as Zika and monitor their populations.',
+        'Users of the findings: doctors learn what to watch for; governments decide where and how to spray; the public receives warnings.'
+      ], ru:'Surveillance здесь — систематический мониторинг рисков. Выучи цепочку: проверка комаров и численности → оценка мер → инструкции врачам, властям и жителям.'},
+      {title:'6 · Global environmental health', cue:'Explain the climate and displacement mechanisms. Name the storms and conflict locations.', points:[
+        'Climate and vectors: warmer, wetter conditions allow disease-carrying mosquitoes into places previously too cold, exposing more people to dengue and malaria.',
+        'Rising seas: coastal cities and island nations may flood, potentially displacing millions into crowded areas where infections spread more easily.',
+        'Extreme-weather examples: successive storms in 2017 affected Houston, Florida and Puerto Rico; floods destroyed homes, helped diseases spread and left millions without electricity.',
+        'Political conflicts: the text names Syria, Afghanistan and South Sudan as places people have fled.',
+        'Cross-border consequences: travel and displacement connect populations and health risks, so protecting one country alone is insufficient.'
+      ], ru:'Два механизма: тепло и влажность → комары; наводнения и конфликты → переселение, скученность и инфекции. Не путай примеры штормов с тремя странами конфликтов.'},
+      {title:'What should society and individuals do?', cue:'Separate coordinated public measures from the three groups of individual actions.', points:[
+        'Why a system is necessary: one person cannot inspect every restaurant kitchen or test every water source for heavy metals.',
+        'Public measures: coordinated laws, policies and programmes at local, federal and international levels, supported by trained food safety inspectors and toxicologists using standardised checks.',
+        'Individual transport choices: cycle, use mass transportation or telecommute.',
+        'Individual home checks: look for radon, lead paint and lead pipes.',
+        'Community involvement: encourage local governments and businesses to invest in safer places to live, work and play.'
+      ], ru:'Итог — совместная работа профессиональной системы и людей. Три личных направления: транспорт, проверка дома, участие в улучшении района.'}
+    ]
+  },
+  'sleep': {
+    lead: 'The sleeping brain can learn some unfamiliar word meanings without conscious awareness. A Japanese-word experiment shows this is possible, but awake learning is much more efficient and the long-term value remains uncertain.',
+    note: 'В разделе 6.4 читаем “Can you learn a language in your sleep?” — Matthieu Koroma, The Conversation, 8 March 2023. Это статья об обучении во сне, а не общий список преимуществ сна.',
+    sections: [
+      {title:'The question and earlier evidence', cue:'What is the main research question? Describe the separate smoking example precisely.', points:[
+        'Question: can the brain take in new information during sleep and retain it after waking? Neuroimaging shows that the sleeping brain remains active and reacts to the outside world.',
+        'Earlier evidence: experiments involving tones and odours had already shown some capacity to learn new associations during sleep.',
+        'Smoking example: people who wanted to quit were exposed during sleep to tobacco odour together with the unpleasant odour of rotten fish. Their consumption fell by 35%.',
+        'Important distinction: the smoking example is earlier research. The 35% is not a score from the Japanese-word experiment.'
+      ], ru:'Стартовая логика: мозг во сне не выключен → простые ассоциации возможны → проверяем более сложное обучение значениям слов. 35% относится только к потреблению сигарет в отдельном примере.'},
+      {title:'Why Japanese, and who took part?', cue:'Give the choice-of-language rationale, the two word examples, the sample and the researchers.', points:[
+        'Japanese: the article describes relatively simple syllable units and no complex tone system of the kind discussed for other East Asian languages. Its sounds were distinguishable to French or English speakers, while word meanings were unfamiliar.',
+        'Word examples: neko means cat and consists of ne + ko; inu means dog.',
+        'Participants: 22 healthy adults with no prior knowledge of Japanese or related East Asian languages.',
+        'Research team named: author Matthieu Koroma; Sid Kouider at ENS–PSL; Maxime Elbaz and Damien Léger at AP-HP Hôtel-Dieu.'
+      ], ru:'Удобный экспериментальный язык: звуки различимы, значения неизвестны. Число участников — 22; neko — кошка, inu — собака.'},
+      {title:'The protocol: before, during and after sleep', cue:'Retell the three stages in order, using the dog example. What was and was not taught while awake?', points:[
+        '1 · Awake preparation: participants associated pictures with familiar sounds, for example a dog picture with barking. This stage did not teach the Japanese word meanings.',
+        '2 · Sleep exposure: researchers played the familiar sound together with the corresponding Japanese word, for example barking + inu.',
+        '3 · Morning test: participants saw a Japanese word and chose the matching image from two pictures. For inu, the options could be a dog and a bell.',
+        'Distractor: the unrelated picture could correspond to another word played during sleep. Participants also reported whether they were guessing or felt confident.'
+      ], ru:'Картинка + звук наяву → звук + японское слово во сне → слово и выбор из двух картинок утром. Это центральная последовательность, которую нужно уметь рассказать без подсказки.'},
+      {title:'What the behavioural results mean', cue:'Explain performance above chance, confidence and the term implicit learning.', points:[
+        'Performance: participants matched words and images better than chance. This does not mean that every person remembered every word.',
+        'Chance baseline: with two options, random guessing would itself produce about 50% correct answers on average; the relevant result was performance above that baseline.',
+        'Confidence: it remained low for both correct and incorrect answers.',
+        'Interpretation: the authors describe the learning as implicit. Participants retained some associations without clearly knowing that they knew them.'
+      ], ru:'Угадать часть ответов можно случайно. Важны результат выше случайного и низкая уверенность даже при верных ответах. Implicit — неосознанное знание; точный процент успеха статья не приводит.'},
+      {title:'EEG and slow waves', cue:'What did EEG measure, which pattern predicted memory, and what other study is mentioned?', points:[
+        'EEG means electroencephalography: it records electrical brain activity.',
+        'Slow waves occur during deep sleep. Words later remembered generated more slow waves than words later forgotten.',
+        'Prediction: researchers could use activity during sleep to predict which words would be remembered after waking.',
+        'Related finding: another publication linked slow waves to later memory for the relative size of objects.'
+      ], ru:'Не «во сне мозг работал сильнее» вообще: конкретный показатель — slow waves. Больше таких волн при предъявлении слова было связано с последующим запоминанием.'},
+      {title:'Awake versus asleep: do not mix up the numbers', cue:'Contrast repetition count, efficiency and confidence in the awake comparison.', points:[
+        'Repetitions: the same protocol was carried out while awake with ten times fewer repetitions.',
+        'Efficiency: participants learned five times more efficiently while awake than while asleep.',
+        'Confidence while awake: they were more confident about learned words than forgotten words.',
+        'Overall contrast: awake learning was quick and explicit; sleep-learning was slower and implicit.'
+      ], ru:'10 — во столько раз меньше повторений наяву. 5 — во столько раз выше эффективность наяву. Не меняй числа местами.'},
+      {title:'Limitations and the conclusion', cue:'Name the two open questions, what the experiment does not demonstrate, and the practical conclusion.', points:[
+        'Unanswered questions: whether sleep-learning has long-term effects and whether it depends on individual differences in memory capacity.',
+        'Scope: the experiment tested word–meaning associations. It did not demonstrate fluency, grammar mastery or learning a whole language while asleep.',
+        'Conclusion: waking and sleeping states should be considered complementary. The author especially emphasises sleep as a way to consolidate information learned while awake.'
+      ], ru:'Финальный ответ с оговоркой: некоторые слова усвоить можно, но наяву эффективнее, а долгосрочный эффект неясен. Сон дополняет обучение и закрепляет уже выученное.'}
+    ]
+  },
+  'ted-work': {
+    note: 'Опорный пересказ официального транскрипта Azim Shariff. В выступлении Jeff имеет ещё три года гарантированного контракта; в учебной адаптации Geoff начинает второй год трёхлетнего контракта. Для вопроса о TED используй первую версию.',
+    sections: [
+      {title:'Jeff: work with no added value', cue:'Retell the opening scenario, including the contract, the two choices and people’s evaluation.', points:[
+        'Speaker: Azim Shariff is a psychology professor at the University of British Columbia who studies morality.',
+        'Scenario: a medical scribe called Jeff can be replaced by software that produces equally good work for free. He still has three years on a guaranteed contract.',
+        'Choice: stay home and keep receiving the contracted pay, or continue doing the unnecessary work for exactly the same money.',
+        'Experiment: half the participants heard that Jeff went home; half heard that he continued working.',
+        'Judgment: the working Jeff was seen as less competent, but warmer, more moral and more trustworthy, even though he added no value.'
+      ], ru:'Смысл не в том, что Jeff бросил обязанности или потерял зарплату: программа делает работу, оплата одинакова. Люди морально одобряют усилие само по себе.'},
+      {title:'Effort moralization: the experimental pattern', cue:'Explain effort moralization using the widget study, the three countries and the Hadza.', points:[
+        'Effort moralization: people assign moral worth to hard work regardless of what it produces.',
+        'Widget makers: two workers make the same number of items, in the same time, at the same quality. One must exert more effort.',
+        'Result: the person who struggles is judged less competent but more moral, and is preferred as a cooperation partner.',
+        'Cross-cultural evidence: the American result was replicated in South Korea and France, despite different work norms.',
+        'Hadza hunter-gatherers in Tanzania: when asked about good character, they agreed on generosity and hard work. Shariff suggests the link is broader than a single culture or the Protestant work ethic.'
+      ], ru:'Контролируются количество, время и качество результата — меняются усилия. Страны: US, South Korea, France. Hadza: Tanzania; два качества — generosity и hard work.'},
+      {title:'Why the bias can make sense for an individual', cue:'Describe Paul, partner choice and the marathon comparison.', points:[
+        'Paul: Shariff’s stylish, charismatic colleague runs every morning. He even buys $60 soap, which contributes to Shariff’s initial image of him as effortlessly perfect.',
+        'Turning observation: Shariff sees Paul visibly struggling on a run. Persisting despite discomfort makes him look like someone dependable.',
+        'Research connection: Paul is both an inspiration for these studies and a collaborator on them.',
+        'Partner choice: people seek reliable collaborators who help in difficulties, do not slack off and share fairly. They also try to signal these qualities themselves.',
+        'Donation example: people are more willing to support a friend running a marathon for cancer research than a friend watching a television marathon for the same cause.'
+      ], ru:'Усилие служит сигналом: «этот человек не сдастся, на него можно положиться». Поэтому generosity, self-control и hard work получают моральную ценность.'},
+      {title:'When the signal becomes the goal', cue:'Explain the human cost, Graeber’s question and Thompson’s concept of workism.', points:[
+        'Societal problem: rewarding activity instead of productivity creates perverse incentives. People spend time signalling effort that could have gone to love or leisure.',
+        'David Graeber: he asks why capitalism sustains jobs that even their workers see as pointless and without social value.',
+        'Derek Thompson’s workism: employment becomes not only a source of income, but also a source of identity and self-actualisation.',
+        'Competition: being a good partner is not enough; people try to look better and harder-working than others.',
+        'Office example: two workers compete to be the first car in the parking lot, arriving earlier and earlier. Everyone else appears lazier, and the culture pressures them to keep up.'
+      ], ru:'Workism — работа как основа идентичности. Arms race — гонка демонстративного трудолюбия: видимые затраты растут, полезный результат может не расти.'},
+      {title:'The graduate student and the lab culture', cue:'What did the student do, why was it counterproductive, and how did Shariff respond?', points:[
+        'Trigger: Shariff sent emails at 1, 2 or 3 a.m. because his flexible academic schedule let him stay up late.',
+        'Student’s response: he used an app to schedule replies for 1 or 2 a.m., making himself appear to work all night.',
+        'Perverse result: the student actually delayed work to signal industriousness.',
+        'Response: Shariff needed to change his lab’s culture to value what people produced rather than the performance of working.',
+        'Handling bias: deeply ingrained biases may be difficult to eliminate, but people can notice them and account for them in important decisions.'
+      ], ru:'Пример особенно важен: демонстрация трудолюбия не просто бесполезна — она задержала результат. Решение начинается с изменения того, что руководитель поощряет.'},
+      {title:'The cobra story: a bad proxy backfires', cue:'Retell the incentive → reaction → cancellation → outcome sequence. Is the story verified history?', points:[
+        'Story setting: colonial Delhi under British rule. Authorities wanted fewer cobras and offered a bounty for cobra skins.',
+        'Reaction: people started breeding cobras to kill them and claim the reward.',
+        'Cancellation: after the bounty ended, breeders released the snakes, making the problem worse.',
+        'Lesson: rewarding an imperfect signal of the desired outcome can undermine the outcome itself.',
+        'Source status: Shariff explicitly calls the story almost certainly apocryphal. He uses it as an illustration, not verified historical evidence.'
+      ], ru:'Цель — меньше кобр; метрика — сданные шкуры. Люди оптимизировали метрику. Аналогия: обществу нужен смысл и результат, а награда выдаётся за заметные усилия.'},
+      {title:'The conclusion: meaningful work', cue:'Is Shariff arguing against hard work? State his recommendation and connect it to the opening example.', points:[
+        'Not a rejection of effort: hard work can be deeply meaningful when it serves a purpose; Shariff points out that it built civilisation.',
+        'Question to ask: does this effort produce something useful, or mainly build a moral reputation?',
+        'Recommendation: reward meaningful outcomes rather than visible exertion alone.',
+        'Return to Jeff: effort without additional value should not automatically make someone a better person or a better worker.'
+      ], ru:'Сильный финал ответа: hard work matters when it serves a purpose. Спикер не призывает лениться; он предлагает перестать путать полезность и демонстрацию занятости.'}
+    ]
+  },
+  'ted-ocean': {
+    note: 'Все числа ниже — утверждения Emily de Sousa в выступлении, а не обновлённые оценки. На экзамене формулируй “The speaker says / estimates / warns…”. Её прогнозы также передаём как предупреждения спикера.',
+    sections: [
+      {title:'Her first dive and her reason for speaking', cue:'Describe her childhood connection with the ocean, the first dive and what she found.', points:[
+        'Background: her parents could not swim, and the family travelled little. She learned about the sea through books and documentaries, first entering the ocean in her early teens.',
+        'First scuba dive: at 19, off the southern coast of Oahu, Hawaii.',
+        'Expectation versus reality: she expected colourful coral and diverse marine life, but saw damaged, lifeless-looking coral and hardly any wildlife.',
+        'Purpose: this experience motivates her appeal to protect the oceans. She opens and closes with the image of one person as an ocean in a drop.'
+      ], ru:'Ключевой личный пример: 19 лет → Oahu, Hawaii → ожидала яркий риф → увидела почти безжизненное дно. Не превращай этот эпизод в доказательство единственной причины повреждения конкретного рифа.'},
+      {title:'Life before plastics and their rise', cue:'What did people use before modern plastics, why did plastics appeal to them, and when did the shift begin?', points:[
+        'Earlier habits: refillable and washable glass milk containers; bags reused for shopping; local, seasonal fruit and vegetables without extra packaging.',
+        'Time frame in the talk: modern plastic products became widespread from about the 1940s; their proliferation over roughly 70 years was extraordinary.',
+        'Appeal: plastic was cheap, durable, mouldable and associated with safe, sanitary, abundant material goods.',
+        'Lifestyle connection: nonstop workdays, fast food and disposable products made convenience attractive.',
+        'Her distinction: plastic’s properties are useful; irresponsible use and disposal make it destructive.'
+      ], ru:'Не «пластик плохой по определению». Долговечность удобна для повторного использования и опасна в сочетании с одноразовым потреблением.'},
+      {title:'Production and waste: the numerical picture', cue:'Recall annual and cumulative production, the three weight comparisons, recycling and ocean entry.', points:[
+        'Annual production claimed: more than 300 million tonnes. Total production to that point claimed: 9.1 billion tonnes.',
+        'Weight comparisons: 25,000 Empire State Buildings; 80 million blue whales; one billion elephants.',
+        'Recycling figure claimed: 25% of the annual plastic production is properly recycled.',
+        'Ocean entry figure claimed: 8 million tonnes per year, of which 50% is single-use plastic.',
+        'Interpret carefully: she does not establish that every tonne not recycled ends up in the ocean; annual production and annual ocean entry are different totals.'
+      ], ru:'Раздели числа по смыслу: 300 млн — в год; 9,1 млрд — накопленный объём; 25% — переработка; 8 млн — в океан за год; 50% этого потока — одноразовый пластик.'},
+      {title:'Animals and everyday disposable items', cue:'Name the animal groups, the bag and straw examples, and the three related figures.', points:[
+        'Bags and turtles: the speaker links discarded bags to turtle deaths and gives a bag an average working life of only 15 minutes.',
+        'Seabirds: she cites an estimate that 99% have ingested plastic during their lifetime and refers to a viral photograph.',
+        'Straws: she cites 57 million used every day in Canada and describes a viral video of a crew removing a straw from a turtle’s nostril.',
+        'Coral: reefs are living, environmentally sensitive organisms. She discusses plastic-related reef damage, including the Great Barrier Reef.',
+        'Larger predators: whales, sharks and dolphins can consume contaminated smaller animals; she describes toxin bioaccumulation and problems such as liver failure.'
+      ], ru:'Группы для ответа: turtles, seabirds, corals, whales, sharks, dolphins. Числа: 15 минут; 99%; 57 млн соломинок в Канаде ежедневно — всё по словам спикера.'},
+      {title:'Plastic returns through the food chain', cue:'Explain microplastics, the route back to humans and the human-exposure figures in the talk.', points:[
+        'Persistence: the speaker explains that discarded plastic breaks into progressively smaller pieces rather than simply disappearing.',
+        'Microplastics: small fish and even plankton can mistake tiny pieces for food; the material then moves through the food chain.',
+        'Human exposure claims: 67% of seafood consumed by people contains plastic; regular seafood eaters may ingest up to 11,000 pieces a year.',
+        'Meaning of her central image: humans take resources from the ocean, dump unwanted waste into it, and then receive some of that waste back through food.'
+      ], ru:'Цепочка: выбросили → мелкие частицы → планктон и рыба → пищевая цепь → человек. Здесь нужно объяснить смысл цитаты, а не только перечислить проценты.'},
+      {title:'Her work, the global scale and technofossils', cue:'What does her conservation work involve? Why these media? Which two places and long-term traces are mentioned?', points:[
+        'Occupation and mission: she describes about three years of ocean conservation work, focusing on digital storytelling.',
+        'Methods: photographs, YouTube videos and short blog posts translate environmental issues for ordinary people. Long academic papers often do not reach a mass audience.',
+        'Desired effect: bridge the knowledge gap, educate, raise awareness and inspire action.',
+        'Places: beaches in the Maldives, which she imagined as a pristine honeymoon destination, were littered with bottles. Her hometown Toronto also suffers from plastic pollution.',
+        'Technofossils: persistent human-made plastic leaves traces in the fossil record. She says almost every plastic product ever made still exists in some form.',
+        'Scale: she reports that the UN calls ocean plastic pollution a planetary crisis.'
+      ], ru:'Digital storytelling — донести проблему через доступные медиа. Maldives + Toronto показывают, что загрязнение есть и в «райских» местах, и дома. Technofossils — долговечные следы человеческих изделий.'},
+      {title:'Why oceans matter and the 2050 warning', cue:'List the ocean’s roles, the oxygen figures as speaker claims, and the consequences of her warning.', points:[
+        'Ocean roles: oxygen production, carbon storage and biodiversity. She calls the oceans the planet’s lungs and its largest carbon sink.',
+        'Oxygen figures she gives: 70% from oceans versus 28% from trees. Attribute these numbers to the talk rather than presenting them as a current scientific reference.',
+        '2050 warning: she cites an estimate of more plastic than fish in the ocean.',
+        'Livelihood consequences in her scenario: seafood becomes a scarce luxury; fishing communities lose income and may be forced to migrate.',
+        'Everyday consequences in her scenario: polluted holiday beaches, lost opportunities for swimming and fewer chances to experience healthy coral and marine wildlife.'
+      ], ru:'Переход для ответа: океан важен не только рыбой и отдыхом — он участвует в поддержании жизни. Затем перечисли последствия для еды, занятости, миграции и отдыха.'},
+      {title:'Solutions: circular use and personal actions', cue:'Explain the economic direction, list all personal actions, and recall the audience example.', points:[
+        'Direction: plastics will remain part of the future, so use them responsibly, maximise recycling and minimise new production.',
+        'Circular economy: old products become new products; reuse and repurpose existing materials instead of continuing the single-use cycle.',
+        'Personal actions: replace disposable water bottles and coffee cups with reusable ones; bring reusable shopping bags; avoid plastic-wrapped produce; request drinks without straws.',
+        'Audience illustration: if all 400 people in the room refuse one straw, that is 400 straws avoided.',
+        'Closing argument: individual action can contribute to change alongside broader measures. Many small daily decisions combine into a larger effect.'
+      ], ru:'Выучи пять действий: бутылка, кофейная кружка, сумка, овощи без упаковки, напиток без соломинки. Финал связывает одного человека с коллективным результатом.'}
+    ]
+  },
+  'ted-emotions': {
+    note: 'Структура официального выступления Ramona Hacker: личный опыт → определение → обучение навыку → шесть шагов → школа и общество. Её широкие объяснения социальных проблем передаём как позицию спикера.',
+    sections: [
+      {title:'The opening and her personal turning point', cue:'What did she ask the audience? What changed her own attitude to emotions?', points:[
+        'Opening survey: with eyes closed, the audience considers whether they recently thought about emotional intelligence, consider themselves emotionally intelligent, and have consciously practised emotional skills.',
+        'Earlier attitude: Hacker relied on rational thinking and regarded emotions as illogical and unimportant.',
+        'Turning point: five years before the talk, burnout led her to leave a job. She began crying uncontrollably and hid in the restroom, realising she needed to work on her emotions.',
+        'Childhood example: loneliness and fear sometimes became aggression. Dismissive reactions at home did not teach her how to understand emotions, making friendship losses and breakups harder.'
+      ], ru:'Burnout — момент осознания проблемы. Пример подмены чувства появляется уже в её биографии: страх или одиночество превращались в агрессию.'},
+      {title:'What emotional intelligence actually means', cue:'Distinguish being emotional from emotional intelligence and name the three abilities.', points:[
+        'Definition in the talk: the ability to identify and manage one’s own emotions and those of others.',
+        'Ability 1: emotional awareness, including empathy for other people and for oneself.',
+        'Ability 2: harnessing emotions and applying them to tasks such as problem solving.',
+        'Ability 3: managing emotions, including regulating oneself and calming down or cheering up others.',
+        'Key distinction: showing strong feelings does not automatically mean understanding their origin, regulating them or recognising whether their expression fits a situation.'
+      ], ru:'Emotional ≠ emotionally intelligent. Три опоры: замечать → использовать → регулировать. Эмоциональный интеллект — навык обращения с чувствами, а не их сила.'},
+      {title:'Why society needs the skill, and how it is learned', cue:'Why does she discuss children and role models? Retell the four learning stages and the driving analogy.', points:[
+        'Social argument: Hacker connects poor understanding of oneself and others with insecurity, harmful relationships and conflict. These are her broad explanations, not a demonstration of one universal cause.',
+        'Children’s schedules: school, sport, an instrument and languages may leave little space for understanding themselves and their feelings. Adults must learn too, to become useful role models.',
+        'Learning sequence: unconscious incompetence → conscious incompetence → conscious competence → unconscious competence.',
+        'Meaning: first you do not recognise a missing skill; then you recognise it; then you practise deliberately; eventually parts become automatic.',
+        'Driving analogy: learning the basics and practising steering while changing gear initially takes effort; later, changing gear no longer requires conscious thought. Her burnout made her recognise her own lack of skill.'
+      ], ru:'Самый трудный переход — от «вижу, что не умею» к «могу сделать осознанно». Не путай четыре стадии освоения навыка с шестью шагами её практического гайда.'},
+      {title:'Steps 1–3: recognise, distinguish, accept', cue:'Name and explain the first three steps. Include the work example, emotion substitution and sadness.', points:[
+        '1 · Acknowledge emotions as valuable. Ask how people feel with genuine interest; answer honestly instead of automatically saying you are fine.',
+        'Communication example: use an I-message about not feeling appreciated at work rather than simply complaining about colleagues. Let people know it is acceptable to have and discuss feelings.',
+        'Why valuable: Hacker refers to António Damásio’s research on people with damage to emotion-related brain regions having difficulty making rational decisions.',
+        '2 · Differentiate and analyse emotions. Identify the feeling underneath rather than replacing it with a more familiar or easier-to-handle one; different feelings have different functions.',
+        '3 · Accept and appreciate emotions. She argues that feelings are not inherently good or bad; society adds these labels.',
+        'Sadness example: grief can reflect how much a person or something lost matters to us, instead of being merely an unwanted feeling to erase.'
+      ], ru:'1 — признать ценность; 2 — точно назвать; 3 — принять. I-message начинается с собственного переживания. Принять эмоцию не означает одобрить любое действие под её влиянием.'},
+      {title:'Steps 4–6: reflect, handle, support', cue:'Name the last three steps, distinguish reflection from analysis, and explain the two ways of supporting someone.', points:[
+        '4 · Reflect on emotions and their origin. Ask why you feel this way; understanding the cause may already help.',
+        '5 · Handle your emotions. Reflection may be enough, or you may need another approach. Find an individual strategy through trial and error.',
+        'Examples: write feelings down, read about them, talk to friends, do sport or meditate. No single method is presented as the right one for everyone.',
+        '6 · Handle other people’s emotions. Understanding your own feelings can make it easier to understand theirs, even while you are still learning.',
+        'Two helpful questions: ask how you can support the person now, and how they can support themselves. The second also helps them develop their own emotional skills.'
+      ], ru:'4 — откуда чувство; 5 — как с ним справиться; 6 — как помочь другому. Не «управлять человеком», а понимать и поддерживать его.'},
+      {title:'Her practical tools and the names mentioned', cue:'How often does she journal, why does writing help, and which authors or books does she mention?', points:[
+        'Journal: she writes emotions down when needed, not necessarily daily; entries may be weeks or months apart. Friends use apps for similar purposes.',
+        'Functions of writing: recognise and distinguish feelings, accept them, reflect on origins, and create some distance from the emotion.',
+        'Writing reference: Pennebaker and Smyth, Opening Up by Writing It Down, mentioned for work on written emotional expression.',
+        'Other reading: The Language of Emotions by Karla McLaren, and books by Brené Brown.',
+        'Social learning: ask friends how they approach similar feelings or situations, then try what works for you.'
+      ], ru:'Не нужно говорить, что она ведёт дневник каждый день. Имена распределяй по смыслу: Damásio — эмоции и решения; Pennebaker/Smyth — письмо; McLaren и Brown — книги.'},
+      {title:'Emotional education in school', cue:'What should children learn, and how could schools implement it in existing activities?', points:[
+        'Content: teach different emotions and their functions; provide space to talk openly, acknowledge feelings, and learn to accept and appreciate them.',
+        'Books: include reading about emotional intelligence in schoolwork.',
+        'Case studies: let children work together and exchange ideas about responding to emotional situations.',
+        'Reason: emotional intelligence is a fundamental life skill; academic performance and extracurricular achievements alone do not teach it.'
+      ], ru:'Конкретные предложения — подходящие книги, совместные case studies, открытое обсуждение чувств и их функций. Не приписывай ей подробную программу отдельного предмета.'},
+      {title:'The world she invites the audience to imagine', cue:'What benefits does she expect for decisions, relationships and society? Give the boss or parent example.', points:[
+        'Personal decisions: understanding oneself can improve choices and help people recognise and handle emotional suffering.',
+        'Relationships: people may connect more deeply and be less likely to pass their distress on to others.',
+        'Everyday examples: an emotionally intelligent boss or parent could approach people’s differences, mental health and conflict with more understanding.',
+        'Final vision: greater mutual understanding, acceptance, tolerance, connection and inclusion.',
+        'Six-step recap: acknowledge value → differentiate and analyse → accept and appreciate → reflect on origins → handle your emotions → support others.'
+      ], ru:'Финал — ожидаемые преимущества навыка, а не обещание исчезновения всех проблем. Для ответа свяжи личное понимание себя с отношениями и общественной терпимостью.'}
+    ]
+  }
+};
+readings.forEach(r => Object.assign(r, materialSummaries[r.id]));
+
 
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const readingList = document.getElementById('reading-list');
+const materialCards = Object.fromEntries(readings.map(r => [r.id, {index:0, revealed:false}]));
+const summaryPoints = section => `<ul lang="en">${section.points.map(p=>{const colon=p.indexOf(':');return `<li>${colon>0?`<strong>${escapeHTML(p.slice(0,colon+1))}</strong>${escapeHTML(p.slice(colon+1))}`:escapeHTML(p)}</li>`;}).join('')}</ul>`;
 function renderReadings() {
+  document.querySelector('#panel-reading .section-intro h2').textContent = 'Понять. Запомнить. Рассказать.';
+  document.querySelector('#panel-reading .section-intro p').textContent = 'Шесть материалов к пересдаче. Сначала разбери полный саммари, затем вспомни детали по карточкам и восстанови весь материал без подсказок.';
   document.getElementById('reading-select').innerHTML = readings.map(r=>`<option value="${r.id}">${escapeHTML(r.label)} — ${escapeHTML(r.title)}</option>`).join('');
   document.getElementById('material-choices').innerHTML = [['Reading',false],['Listening · TED Talks',true]].map(([label,ted])=>`<div role="group" aria-label="${label}"><h3>${label}</h3>${readings.filter(r=>r.id.startsWith('ted-')===ted).map(r=>`<button type="button" class="material-choice" data-material="${r.id}" aria-pressed="false"><span class="material-number">${escapeHTML(r.label.split(' · ')[0])}</span><span>${escapeHTML(r.title)}${ted?`<small>${escapeHTML(r.label.split(' · ').at(-1))}</small>`:''}</span><span class="material-check" aria-hidden="true">✓</span></button>`).join('')}</div>`).join('');
-  readingList.innerHTML = readings.map(r => `<article class="study-block" id="reading-${r.id}">
+  readingList.innerHTML = readings.map(r => `<article class="study-block material-lesson" id="reading-${r.id}" data-stage="summary">
     <div class="reading-label">${escapeHTML(r.label)}</div><div class="reading-title"><h3>${escapeHTML(r.title)}</h3><span class="badge" data-reading-count="${r.id}"></span></div>
-    <details class="reading-summary"><summary>Главная мысль и опорные факты</summary><div class="detail-body"><p class="english" lang="en">${escapeHTML(r.summary)}</p><p class="muted">${escapeHTML(r.ru)}</p>${r.facts.length?`<ul>${r.facts.map(f=>`<li>${escapeHTML(f)}</li>`).join('')}</ul>`:''}</div></details>
+    <nav class="learning-path" aria-label="Этапы изучения материала">${[['summary','Саммари'],['cards','Карточки'],['retell','Пересказ']].map(([stage,label])=>`<button type="button" data-stage-button="${stage}" aria-pressed="${stage==='summary'}" aria-controls="${r.id}-${stage}">${label}</button>`).join('')}</nav>
+    <section id="${r.id}-summary" data-stage-view="summary" aria-label="Саммари">
+      <div class="lesson-heading"><span class="eyebrow">01 · Understand</span><h4>Весь материал по смысловым блокам</h4><p class="muted">Читай сверху вниз. В каждом блоке — детали для устного ответа, ниже — пояснение на русском.</p></div>
+      <div class="summary-lead"><p lang="en">${escapeHTML(r.lead || r.summary)}</p></div>
+      <p class="source-context">${escapeHTML(r.note)}</p>
+      ${r.sections.map(s=>`<section class="summary-section"><h5 lang="en">${escapeHTML(s.title)}</h5>${summaryPoints(s)}<p class="summary-ru" lang="ru">${escapeHTML(s.ru)}</p></section>`).join('')}
+      <div class="lesson-next"><p>Теперь закрой саммари и проверь, какие детали ты можешь вспомнить.</p><button type="button" class="action" data-stage-button="cards">Перейти к карточкам →</button></div>
+    </section>
+    <section id="${r.id}-cards" data-stage-view="cards" aria-label="Карточки по материалу" hidden>
+    <div class="lesson-heading"><span class="eyebrow">02 · Recall</span><h4>Вспомни ответ до подсказки</h4><p class="muted">Ответь по-английски вслух, открой ответ и оцени себя. «Помню» означает, что ты вспомнил главное самостоятельно.</p></div>
     <label class="toggle"><input type="checkbox" data-reading-filter="${r.id}"> Только то, что нужно повторить</label>
-    <p class="muted">${r.id.startsWith('ted-')?'Вопросы по транскрипту выступления.':'Вопросы по тексту.'} Сначала ответь вслух, потом проверь. Отметка «Помню» — твоя самооценка.</p>
-    ${r.questions.map((q,i)=>`<div class="question" data-question="${r.id}-${i}" data-reading="${r.id}"><p lang="en">${escapeHTML(q[0])}</p><details><summary>Проверить ответ</summary><div class="answer"><p lang="en">${escapeHTML(q[1])}</p>${q[2]?`<p class="muted">${escapeHTML(q[2])}</p>`:''}</div></details><div class="rating" role="group" aria-label="Самооценка ответа"><button type="button" class="action" data-rate="1" data-key="${r.id}-${i}" aria-pressed="false">Повторить</button><button type="button" class="action" data-rate="2" data-key="${r.id}-${i}" aria-pressed="false">Помню</button></div></div>`).join('')}
-    ${r.vocab.length?`<details class="reading-summary"><summary>Target vocabulary в контексте</summary><div class="detail-body">${r.vocab.map(v=>`<div class="cloze question"><p lang="en">${escapeHTML(v[1])}</p><label class="write-label">Какое слово из target vocabulary подходит?<input type="text" class="cloze-input" autocomplete="off" data-answer="${escapeHTML(v[2])}" aria-label="Пропущенное слово"></label><button type="button" class="action check-cloze">Проверить</button><p class="cloze-result" role="status"></p><details><summary>Подсказка: значение</summary><p lang="en">${escapeHTML(cards[v[0]].explanation)}</p><p class="muted">${escapeHTML(cards[v[0]].translation)}</p></details><button type="button" class="action vocab-jump" data-card-id="${v[0]}">Карточка «${escapeHTML(cards[v[0]].word)}» ↗</button></div>`).join('')}</div></details>`:''}
+    <div class="material-trainer" tabindex="-1" aria-label="Тренажёр вопросов">
+      <p class="material-card-position" role="status"></p>
+      ${r.questions.map((q,i)=>`<div class="material-question" data-question="${r.id}-${i}" data-reading="${r.id}" hidden><p class="material-prompt" lang="en">${escapeHTML(q[0])}</p><div class="answer" id="answer-${r.id}-${i}" hidden><span class="eyebrow">Опорный ответ</span><p lang="en">${escapeHTML(q[1])}</p>${q[2]?`<p class="muted">${escapeHTML(q[2])}</p>`:''}</div><div class="rating" role="group" aria-label="Самооценка ответа" hidden><button type="button" class="action" data-rate="1" data-key="${r.id}-${i}" aria-pressed="false">Повторить</button><button type="button" class="action" data-rate="2" data-key="${r.id}-${i}" aria-pressed="false">Помню</button></div></div>`).join('')}
+      <div class="material-empty" hidden><h5>Все ответы отмечены «Помню»</h5><p>Сними фильтр для нового круга или попробуй связный пересказ.</p></div>
+      <button type="button" class="action material-flip" aria-expanded="false" aria-keyshortcuts="Space">Показать ответ</button>
+      <div class="material-card-controls"><button type="button" class="action" data-material-move="-1" aria-keyshortcuts="ArrowLeft">← Назад</button><span class="material-card-mark"></span><button type="button" class="action" data-material-move="1" aria-keyshortcuts="ArrowRight">Далее →</button></div>
+    </div>
+    <p class="material-shortcuts muted">Когда карточка в фокусе: пробел — ответ; ← → — листать; 1 — повторить, 2 — помню.</p>
+    ${r.vocab.length?`<details class="reading-summary"><summary>Применить target vocabulary · ${r.vocab.length} заданий</summary><div class="detail-body"><p class="muted">Вспомни точное слово из списка курса по контексту.</p>${r.vocab.map(v=>`<div class="cloze question"><p lang="en">${escapeHTML(v[1])}</p><label class="write-label">Какое слово из target vocabulary подходит?<input type="text" class="cloze-input" autocomplete="off" data-answer="${escapeHTML(v[2])}" aria-label="Пропущенное слово"></label><button type="button" class="action check-cloze">Проверить</button><p class="cloze-result" role="status"></p><details><summary>Подсказка: значение</summary><p lang="en">${escapeHTML(cards[v[0]].explanation)}</p><p class="muted">${escapeHTML(cards[v[0]].translation)}</p></details><button type="button" class="action vocab-jump" data-card-id="${v[0]}">Карточка «${escapeHTML(cards[v[0]].word)}» ↗</button></div>`).join('')}</div></details>`:''}
+    <div class="lesson-next"><p>Отдельные ответы уже получаются? Собери их в связный рассказ.</p><button type="button" class="action" data-stage-button="retell">Пересказать без подсказок →</button></div>
+    </section>
+    <section id="${r.id}-retell" data-stage-view="retell" aria-label="Пересказ по памяти" hidden>
+      <div class="lesson-heading"><span class="eyebrow">03 · Explain</span><h4>Восстанови материал по памяти</h4><p>Расскажи по-английски: о чём материал, как автор объясняет идею, какие приводит примеры и цифры, к чему приходит. Саммари сейчас скрыт.</p></div>
+      <p class="muted">Можно говорить вслух или записать ответ. Сначала попробуй без плана; затем открой вопросы, если потерял нить. Это самопроверка, автоматической оценки текста здесь нет.</p>
+      <details class="reading-summary"><summary>Нужна опора: вопросы для пересказа</summary><div class="detail-body"><ol class="retell-cues" lang="en">${r.sections.map(s=>`<li>${escapeHTML(s.cue)}</li>`).join('')}</ol></div></details>
+      <label class="write-label" for="retell-${r.id}">Мой пересказ · черновик сохраняется после входа</label><textarea id="retell-${r.id}" lang="en" maxlength="12000" rows="7" placeholder="The material focuses on…" data-study-field="retell-${r.id}"></textarea>
+      <details class="retell-check reading-summary"><summary>Проверить полноту своего ответа</summary><div class="detail-body"><p class="muted">Сравни с тем, что сказал до открытия подсказки. Отметь блоки, которые смог объяснить с деталями. Пропущенные пункты повтори в карточках.</p>${r.sections.map((s,i)=>`<section class="retell-section"><label class="retell-check-label"><input type="checkbox" data-study-field="retell-${r.id}-${i}"><span lang="en">${escapeHTML(s.title)}</span></label>${summaryPoints(s)}</section>`).join('')}</div></details>
+      <div class="lesson-next"><p>Позже вернись и попробуй ещё раз, начиная с карточек. Ориентир — самостоятельный ответ, а не узнавание подсказки.</p><button type="button" class="action" data-stage-button="cards">Вернуться к карточкам</button></div>
+    </section>
     <p class="source-note"><a href="${escapeHTML(r.source)}" target="_blank" rel="noopener">${r.id.startsWith('ted-')?'Оригинал и транскрипт на TED ↗':'Материал курса ↗'}</a> · ${r.id.startsWith('ted-')?'Опорные ответы по транскрипту.':'Подсказки и упражнения по сохранённому тексту.'}</p></article>`).join('');
+}
+function materialPool(r) {
+  const only = document.querySelector(`[data-reading-filter="${r.id}"]`).checked;
+  return r.questions.map((_,i)=>i).filter(i=>!only || study[`${r.id}-${i}`] !== 2);
+}
+function paintMaterialCard(r) {
+  const box = document.getElementById('reading-'+r.id), state = materialCards[r.id], pool = materialPool(r);
+  if (!pool.includes(state.index)) {state.index = pool.find(i=>i>=state.index) ?? pool[0]; state.revealed = false;}
+  const current = pool.length ? `${r.id}-${state.index}` : null;
+  box.querySelectorAll('.material-question').forEach(q=>{
+    q.hidden = q.dataset.question !== current;
+    q.querySelector('.answer').hidden = !state.revealed || q.hidden;
+    q.querySelector('.rating').hidden = !state.revealed || q.hidden;
+  });
+  box.querySelector('.material-card-position').textContent = pool.length ? `Карточка ${pool.indexOf(state.index)+1} из ${pool.length}` : 'Повторение завершено';
+  box.querySelector('.material-empty').hidden = !!pool.length;
+  const flip = box.querySelector('.material-flip');
+  flip.hidden = !pool.length; flip.textContent = state.revealed ? 'Скрыть ответ' : 'Показать ответ';
+  flip.setAttribute('aria-expanded', String(state.revealed));
+  if (current) flip.setAttribute('aria-controls','answer-'+current); else flip.removeAttribute('aria-controls');
+  box.querySelectorAll('[data-material-move]').forEach(b=>b.disabled = pool.length<2);
+  box.querySelector('.material-card-mark').textContent = current ? ({1:'Повторить',2:'Помню'}[study[current]] || 'Без отметки') : '';
+}
+function moveMaterialCard(r, step) {
+  const pool = materialPool(r), state = materialCards[r.id];
+  if (!pool.length) return;
+  state.index = pool[(pool.indexOf(state.index)+step+pool.length)%pool.length]; state.revealed = false;
+  paintMaterialCard(r);
+}
+function openMaterialStage(article, stage) {
+  article.dataset.stage = stage;
+  article.querySelectorAll('[data-stage-view]').forEach(s=>s.hidden=s.dataset.stageView!==stage);
+  article.querySelectorAll('.learning-path [data-stage-button]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.stageButton===stage)));
+  const target = stage==='cards' ? article.querySelector('.material-trainer') : article.querySelector('.learning-path');
+  target.focus({preventScroll:true});
+  article.scrollIntoView({block:'start'});
 }
 function paintStudy(fields = false) {
   const picker = document.getElementById('reading-select');
@@ -490,11 +881,12 @@ function paintStudy(fields = false) {
   root.querySelectorAll('[data-rate]').forEach(b => b.setAttribute('aria-pressed', String(study[b.dataset.key] === Number(b.dataset.rate))));
   root.querySelectorAll('[data-reading-count]').forEach(el => {
     const r = readings.find(r => r.id === el.dataset.readingCount);
-    el.textContent = `${r.questions.filter((_,i)=>study[`${r.id}-${i}`] === 2).length} / ${r.questions.length}`;
+    const known = r.questions.filter((_,i)=>study[`${r.id}-${i}`] === 2).length;
+    el.textContent = `${known} / ${r.questions.length}`;
+    el.setAttribute('aria-label',`Помню ${known} из ${r.questions.length} ответов`);
+    el.title = 'Ответы с твоей отметкой «Помню»';
   });
-  root.querySelectorAll('[data-reading-filter]').forEach(filter => {
-    root.querySelectorAll(`[data-reading="${filter.dataset.readingFilter}"]`).forEach(q => q.hidden = filter.checked && study[q.dataset.question] === 2);
-  });
+  readings.forEach(paintMaterialCard);
   if (fields) root.querySelectorAll('[data-study-field]').forEach(input => {
     if (input.type === 'checkbox') input.checked = study[input.dataset.studyField] === true;
     else input.value = study[input.dataset.studyField] || '';
@@ -520,8 +912,31 @@ root.querySelectorAll('[data-material]').forEach(b=>b.onclick=()=>{
 document.getElementById('material-picker').addEventListener('keydown',e=>{if(e.key==='Escape'){e.currentTarget.open=false;e.currentTarget.querySelector('summary').focus();}});
 root.querySelectorAll('[data-panel]').forEach(b=>b.onclick=()=>openPanel(b.dataset.panel));
 openPanel(location.hash.slice(1));
-root.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>setStudy(b.dataset.key, Number(b.dataset.rate)));
-root.querySelectorAll('[data-reading-filter]').forEach(f=>f.onchange=()=>paintStudy());
+root.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>{
+  const article=b.closest('article'), r=readings.find(r=>'reading-'+r.id===article.id), previous=materialCards[r.id].index;
+  setStudy(b.dataset.key, Number(b.dataset.rate));
+  if (materialCards[r.id].index!==previous) article.querySelector('.material-trainer').focus();
+});
+root.querySelectorAll('[data-reading-filter]').forEach(f=>f.onchange=()=>{
+  materialCards[f.dataset.readingFilter].revealed=false; paintStudy();
+});
+readingList.querySelectorAll('[data-stage-button]').forEach(b=>b.onclick=()=>openMaterialStage(b.closest('article'),b.dataset.stageButton));
+readings.forEach(r=>{
+  const article=document.getElementById('reading-'+r.id);
+  article.querySelector('.learning-path').tabIndex=-1;
+  article.querySelector('.material-flip').onclick=()=>{materialCards[r.id].revealed=!materialCards[r.id].revealed;paintMaterialCard(r);};
+  article.querySelectorAll('[data-material-move]').forEach(b=>b.onclick=()=>moveMaterialCard(r,Number(b.dataset.materialMove)));
+  article.querySelector('.material-trainer').addEventListener('keydown',e=>{
+    if (el('login').open || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
+    if (e.code==='Space' && e.target.tagName==='BUTTON') return;
+    let button;
+    if (e.code==='Space') button=article.querySelector('.material-flip');
+    if (e.code==='ArrowLeft') button=article.querySelector('[data-material-move="-1"]');
+    if (e.code==='ArrowRight') button=article.querySelector('[data-material-move="1"]');
+    if (materialCards[r.id].revealed && ['Digit1','Digit2'].includes(e.code)) button=article.querySelector(`[data-question="${r.id}-${materialCards[r.id].index}"] [data-rate="${e.code==='Digit1'?1:2}"]`);
+    if (button && !button.hidden) {e.preventDefault();button.click();}
+  });
+});
 root.querySelectorAll('[data-study-field]').forEach(input=>input.addEventListener('input',()=>setStudy(input.dataset.studyField,input.type === 'checkbox' ? input.checked : input.value)));
 root.querySelectorAll('.check-cloze').forEach(b=>b.onclick=()=>{
   const box=b.closest('.cloze'), input=box.querySelector('input');
