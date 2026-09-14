@@ -787,6 +787,139 @@ readings.forEach(r => Object.assign(r, materialSummaries[r.id]));
 
 
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Exercise IDs are persistent study keys. Keep their meaning when editing the bank.
+const grammarTopics = [
+  {id:'conditionals',title:'Conditionals',subtitle:'Zero, first, second, third',rules:`
+    <h3>Сначала выбери время и реальность ситуации</h3>
+    <ul class="grammar-rules">
+      <li><strong>Zero: закономерность или привычный результат.</strong><p lang="en">If + present simple, present simple.<br>If I do not sleep enough, I find it harder to concentrate.</p><p class="muted">Если это происходит, обычно получается такой результат. Часто можно заменить if на when.</p></li>
+      <li><strong>First: реальная возможность в будущем.</strong><p lang="en">If + present simple, will + verb.<br>If I go to bed earlier tonight, I will feel better tomorrow.</p><p class="muted">Будущее, но в обычном условии после if — настоящее, без will. В результате также возможны can, may или повелительное наклонение.</p></li>
+      <li><strong>Second: воображаемое или маловероятное сейчас / в будущем.</strong><p lang="en">If + past simple, would + verb.<br>If I had more time, I would sleep more.</p><p class="muted">Past simple здесь показывает нереальность, а не прошлое. В формальном ответе: If I were you…; If she were here…</p></li>
+      <li><strong>Third: воображаемое изменение прошлого.</strong><p lang="en">If + past perfect, would have + V3.<br>If I had gone to bed earlier, I would not have been so tired.</p><p class="muted">Событие уже произошло иначе. V3 — третья форма: gone, seen, done; у правильных глаголов форма на -ed.</p></li>
+    </ul><h3>Не перепутай</h3><ul><li><span lang="en">If I knew…</span> — сейчас не знаю. <span lang="en">If I had known…</span> — тогда не знал.</li><li><span lang="en">Unless = if … not:</span> Unless you hurry, you will miss the train. Не добавляй второе отрицание без причины.</li><li><span lang="en">I’d go = I would go.</span> <span lang="en">I’d gone = I had gone.</span> Смотри на форму следующего глагола.</li><li>Если if-часть первая, после неё обычно ставим запятую. Если вторая — обычно нет.</li></ul>`},
+  {id:'deduction',title:'Modal deduction',subtitle:'Выводы о настоящем и прошлом',rules:`
+    <h3>Степень уверенности</h3><ul class="grammar-rules">
+      <li><strong>Must — почти уверен, что да.</strong><p lang="en">He must be tired. He has worked all night.</p><p class="muted">Здесь must — логический вывод, а не обязанность.</p></li>
+      <li><strong>May / might / could — возможно.</strong><p lang="en">He might be at home. He could be resting.</p><p class="muted">В контексте предположения все три выражают возможность; may not / might not — возможно, что нет.</p></li>
+      <li><strong>Can’t / couldn’t — уверен, что это невозможно.</strong><p lang="en">He cannot be hungry. He has just eaten a huge lunch.</p><p class="muted">Mustn’t означает запрет. Для отрицательного вывода в этих заданиях используй can’t / couldn’t.</p></li>
+    </ul><h3>Форма показывает время</h3><ul class="grammar-rules">
+      <li><strong>Сейчас, состояние: modal + verb.</strong><p lang="en">She must know the answer.</p></li>
+      <li><strong>Прямо сейчас, процесс: modal + be + -ing.</strong><p lang="en">She might be sleeping now. Do not call her.</p><p class="muted">Might sleep — возможно, поспит. Might be sleeping — возможно, сейчас спит.</p></li>
+      <li><strong>Прошлое: modal + have + V3.</strong><p lang="en">He must have forgotten about the meeting.<br>She cannot have read 200 pages in five minutes.<br>He might have missed the train.</p><p class="muted">Не must had и не might have went. Нужны have и третья форма.</p></li>
+    </ul><p class="muted">Отдельно: should have done — обычно «следовало сделать», а не тот же вывод, что must have done. Не подменяй им уверенность о прошлом.</p>`},
+  {id:'verb-patterns',title:'Gerund & infinitive',subtitle:'Формы и изменения смысла',rules:`
+    <h3>Основные конструкции</h3><ul class="grammar-rules">
+      <li><strong>Verb + -ing.</strong><p lang="en">enjoy, avoid, finish, mind, suggest, consider, admit, deny, risk, keep, give up, put off + doing</p><p lang="en">She suggested taking a break. He admitted making a mistake.</p></li>
+      <li><strong>Verb + to + verb.</strong><p lang="en">decide, hope, plan, promise, agree, refuse, afford, offer, manage, fail, want, learn + to do</p><p lang="en">We decided to leave. She promised to help.</p></li>
+      <li><strong>После предлога — -ing.</strong><p lang="en">before leaving · interested in learning · look forward to meeting</p><p class="muted">В look forward to слово to — предлог. Поэтому не to meet.</p></li>
+      <li><strong>Цель: to + verb. Подлежащее: часто -ing.</strong><p lang="en">I came here to study. Learning takes time.<br>It is difficult to concentrate.</p></li>
+    </ul><h3>Один глагол, два смысла</h3><ul class="grammar-rules">
+      <li><strong>Remember / forget.</strong><p lang="en">I remember locking the door. → Помню, как запер.<br>I remembered to lock the door. → Не забыл и запер.<br>I forgot to lock the door. → Не запер, потому что забыл.<br>I will never forget meeting her. → Не забуду уже случившуюся встречу.</p></li>
+      <li><strong>Stop.</strong><p lang="en">I stopped drinking coffee. → Перестал пить кофе.<br>I stopped to drink coffee. → Прервал другое дело, чтобы выпить кофе.</p></li>
+      <li><strong>Try.</strong><p lang="en">Try restarting it. → Испытай способ: перезапусти.<br>I tried to restart it. → Пытался перезапустить.</p></li>
+      <li><strong>Regret.</strong><p lang="en">I regret saying that. → Жалею, что сказал.<br>We regret to inform you… → С сожалением сообщаем…</p></li>
+      <li><strong>Go on.</strong><p lang="en">She went on talking. → Продолжила то же действие.<br>She went on to discuss sleep. → Перешла к следующей теме.</p></li>
+      <li><strong>Like / love / hate / prefer.</strong><p class="muted">Обычно возможны обе формы. -ing часто подчёркивает сам процесс, to-infinitive — привычку или предпочтение; разница не всегда строгая. После would like / love / prefer — to-infinitive.</p><p lang="en">I like swimming. I like to swim before work. I would like to swim today.</p></li>
+    </ul>`}
+];
+const grammarExercises = [
+  ['c01','conditionals','I do not have enough time now, so I cannot sleep more. Start with “If”.','had',['If I had more time, I would sleep more.','If I had enough time, I could sleep more.','If I had enough time, I would be able to sleep more.'],'Second conditional: нереальная ситуация сейчас. Had + would/could + verb.'],
+  ['c02','conditionals','I went to bed late last night. As a result, I was tired this morning. Imagine the opposite.','earlier',['If I had gone to bed earlier last night, I would not have been so tired this morning.'],'Third conditional: обе ситуации относятся к завершённому прошлому.'],
+  ['c03','conditionals','Maybe I will go to bed earlier tonight. In that case, I will feel better tomorrow. Combine into one sentence.','if',['If I go to bed earlier tonight, I will feel better tomorrow.'],'First conditional: после if — present simple, результат — will feel.'],
+  ['c04','conditionals','Whenever I do not get enough sleep, I find it harder to concentrate. Use a conditional sentence.','if',['If I do not get enough sleep, I find it harder to concentrate.'],'Zero conditional: повторяющаяся закономерность, present simple в обеих частях.'],
+  ['c05','conditionals','I do not know the answer, so I cannot tell you. Imagine that I know it.','knew',['If I knew the answer, I would tell you.','If I knew the answer, I could tell you.'],'Не знаю сейчас → if + past simple, would/could + tell.'],
+  ['c06','conditionals','I did not know about the test yesterday, so I did not prepare for it. Imagine the opposite.','known',['If I had known about the test yesterday, I would have prepared for it.'],'Не знал тогда → had known; не подготовился → would have prepared.'],
+  ['c07','conditionals','Hurry, or you will miss the train. Begin with “Unless”.','unless',['Unless you hurry, you will miss the train.'],'Unless you hurry = if you do not hurry.'],
+  ['c08','conditionals','I am not you. My advice is to take a break. Begin with “If”.','were',['If I were you, I would take a break.'],'If I were you — стандартная конструкция для совета.'],
+  ['c09','conditionals','She did not set an alarm, so she overslept. Imagine the opposite.','set',['If she had set an alarm, she would not have overslept.'],'Third conditional. Set–set–set; oversleep–overslept–overslept.'],
+  ['c10','conditionals','You may finish the report today. Then we will discuss it tomorrow. Make one conditional sentence.','if',['If you finish the report today, we will discuss it tomorrow.'],'Реальное будущее: finish после if, will discuss в результате.'],
+  ['d01','deduction','I am almost certain he forgot the meeting: he did not turn up. Express a deduction.','must',['He must have forgotten about the meeting.','He must have forgotten the meeting.'],'Вывод о прошлом: must have + forgotten.'],
+  ['d02','deduction','It is impossible that she read the whole 200-page report in five minutes.','cannot',['She cannot have read the whole report in five minutes.','She cannot have read the whole 200-page report in five minutes.'],'Отрицательный вывод о прошлом: cannot have + read.'],
+  ['d03','deduction','Perhaps he missed the train. Express this possibility.','might',['He might have missed the train.'],'Прошлое и неуверенность: might have missed.'],
+  ['d04','deduction','It is impossible that he is hungry: he has just eaten a huge lunch.','cannot',['He cannot be hungry.'],'Состояние сейчас: cannot be. Must not — не нужное здесь отрицание.'],
+  ['d05','deduction','Perhaps she is sleeping right now. Express this possibility.','might',['She might be sleeping right now.','She might be sleeping now.'],'Процесс прямо сейчас: might be sleeping.'],
+  ['d06','deduction','I am almost certain he is preparing for the exam now: his books are open and he is taking notes.','must',['He must be preparing for the exam now.','He must be preparing for the exam.'],'Вывод о текущем процессе: must be preparing.'],
+  ['d07','deduction','It is possible that they are at home.','may',['They may be at home.'],'Возможное состояние в настоящем: may be.'],
+  ['d08','deduction','I am almost certain she was exhausted after the exam.','must',['She must have been exhausted after the exam.'],'Вывод о прошлом состоянии: must have been.'],
+  ['d09','deduction','It is impossible that he sent the email: he had no internet access.','could not',['He could not have sent the email.'],'Could not have sent — невозможность того, что письмо отправлено.'],
+  ['d10','deduction','Perhaps she did not see my message.','might not',['She might not have seen my message.'],'Might not have seen — возможно, не увидела. Cannot have seen — уверен, что не могла увидеть.'],
+  ['g01','verb-patterns','“Let us take a break,” she said. Report her suggestion.','suggested',['She suggested taking a break.'],'Suggest + -ing. Не suggested to take.'],
+  ['g02','verb-patterns','“Yes, I made a mistake,” he said. Report his admission.','admitted',['He admitted making a mistake.','He admitted having made a mistake.'],'Admit + -ing. Having made дополнительно подчёркивает предшествование.'],
+  ['g03','verb-patterns','We made the decision that we would leave early.','decided',['We decided to leave early.'],'Decide + to-infinitive.'],
+  ['g04','verb-patterns','“I will help you,” she promised.','promised',['She promised to help me.','She promised to help you.'],'Promise + to-infinitive. Me/you зависит от того, кто пересказывает обещание.'],
+  ['g05','verb-patterns','I am excited about our meeting next week. Begin with “I look forward”.','meeting',['I look forward to meeting you next week.','I look forward to our meeting next week.'],'В look forward to слово to — предлог: далее -ing или существительное.'],
+  ['g06','verb-patterns','I locked the door, and I clearly remember the action.','locking',['I remember locking the door.','I clearly remember locking the door.'],'Remember doing — помнить уже совершённое действие.'],
+  ['g07','verb-patterns','I needed to lock the door. I did not forget, and I did it.','remembered',['I remembered to lock the door.'],'Remember to do — не забыть выполнить действие.'],
+  ['g08','verb-patterns','I did not submit the essay because I forgot.','forgot',['I forgot to submit the essay.'],'Forget to do — забыть выполнить, поэтому не сделать.'],
+  ['g09','verb-patterns','I used to drink coffee, but I no longer do.','stopped',['I stopped drinking coffee.'],'Stop doing — прекратить именно это действие.'],
+  ['g10','verb-patterns','I was walking. I paused because I wanted to buy a coffee.','stopped',['I stopped to buy a coffee.','I stopped walking to buy a coffee.'],'Stop to do — прервать другое занятие ради нового действия.'],
+  ['g11','verb-patterns','The computer is frozen. Restart it as an experiment to see whether that helps.','try',['Try restarting the computer.','Try restarting it.'],'Try doing — испытать способ решения.'],
+  ['g12','verb-patterns','I made an effort to open the window, but it was stuck.','tried',['I tried to open the window, but it was stuck.','I tried to open the window.'],'Try to do — приложить усилие; успех из этой формы не следует.'],
+  ['g13','verb-patterns','I said something rude, and now I am sorry about it.','regret',['I regret saying something rude.','I regret having said something rude.'],'Regret doing — сожалеть о совершённом действии.'],
+  ['g14','verb-patterns','We are sorry to tell you that your application was unsuccessful.','regret',['We regret to inform you that your application was unsuccessful.','We regret to tell you that your application was unsuccessful.'],'Regret to inform/tell — формальное сообщение неприятной новости.'],
+  ['g15','verb-patterns','She continued talking about the same topic.','went on',['She went on talking about the same topic.'],'Go on doing — продолжать то же действие.'],
+  ['g16','verb-patterns','After discussing IQ, she moved to a new topic: emotional intelligence.','went on',['After discussing IQ, she went on to discuss emotional intelligence.','She went on to discuss emotional intelligence.'],'Go on to do — перейти к следующему действию или теме.']
+].map(([id,topic,prompt,keyword,answers,why])=>({id,topic,prompt,keyword,answers,why}));
+const grammarState={topic:'conditionals',id:'c01',stage:'rules'};
+const grammarDrafts={};
+const grammarPanel=document.getElementById('panel-grammar');
+// Exact variants confirm known answers; unmatched free text always gets self-review.
+function normalizeGrammar(value){return value.toLowerCase().replace(/[’‘]/g,"'").replace(/\bcan't\b/g,'cannot').replace(/\bcannot\b/g,'can not').replace(/\bwon't\b/g,'will not').replace(/n't\b/g,' not').replace(/\bi'm\b/g,'i am').replace(/\b(\w+)'re\b/g,'$1 are').replace(/\b(\w+)'ll\b/g,'$1 will').replace(/\b(\w+)'ve\b/g,'$1 have').replace(/[.,!?;:]/g,'').replace(/\s+/g,' ').trim();}
+function grammarPool(){
+  const only=document.getElementById('grammar-only').checked;
+  const groups=grammarTopics.map(t=>grammarExercises.filter(q=>q.topic===t.id));
+  const all=Array.from({length:Math.max(...groups.map(g=>g.length))},(_,i)=>groups.map(g=>g[i]).filter(Boolean)).flat();
+  return (grammarState.topic==='all'?all:grammarExercises.filter(q=>q.topic===grammarState.topic)).filter(q=>!only||study['grammar-'+q.id]!==2);
+}
+function paintGrammar(fields=false){
+  if(fields){
+    if(['all',...grammarTopics.map(t=>t.id)].includes(study['grammar-topic']))grammarState.topic=study['grammar-topic'];
+    if(grammarExercises.some(q=>q.id===study['grammar-current']))grammarState.id=study['grammar-current'];
+    renderGrammar();
+  }
+  const known=grammarExercises.filter(q=>study['grammar-'+q.id]===2).length;
+  document.getElementById('grammar-count').textContent=`Получилось: ${known} из ${grammarExercises.length}`;
+  const mark=grammarPanel.querySelector('.grammar-mark');
+  if(mark)mark.textContent=({1:'Отмечено: повторить',2:'Отмечено: получилось'}[study['grammar-'+grammarState.id]]||'Без отметки');
+  grammarPanel.querySelectorAll('[data-grammar-rate]').forEach(b=>b.setAttribute('aria-pressed',String(study['grammar-'+grammarState.id]===Number(b.dataset.grammarRate))));
+}
+function renderGrammarCard(){
+  const pool=grammarPool(),box=document.getElementById('grammar-card');
+  if(!pool.some(q=>q.id===grammarState.id))grammarState.id=pool[0]?.id;
+  const q=pool.find(q=>q.id===grammarState.id);
+  if(!q){box.innerHTML='<h3>Всё отмечено «Получилось»</h3><p>Сними фильтр, чтобы пройти задания ещё раз.</p>';return;}
+  const draft=grammarDrafts[q.id]??study['grammar-draft-'+q.id]??'';
+  box.innerHTML=`<p class="material-card-position">Задание ${pool.indexOf(q)+1} из ${pool.length}</p><p class="material-prompt" lang="en">${escapeHTML(q.prompt)}</p><p>Используй: <strong lang="en">${escapeHTML(q.keyword)}</strong></p><label class="write-label" for="grammar-answer">Твоя переформулировка</label><textarea id="grammar-answer" lang="en" rows="3" maxlength="2000" placeholder="Напиши полное предложение…">${escapeHTML(draft)}</textarea><div class="actions"><button type="button" class="action filled" data-grammar-check>Проверить</button><button type="button" class="action" data-grammar-show>Показать разбор</button></div><div id="grammar-feedback" hidden><p role="status" id="grammar-result"></p><p class="eyebrow">Один из верных вариантов</p><p lang="en">${escapeHTML(q.answers[0])}</p><p class="muted">${escapeHTML(q.why)}</p><div class="rating" role="group" aria-label="Самооценка"><button type="button" class="action" data-grammar-rate="1" aria-pressed="false">Повторить</button><button type="button" class="action" data-grammar-rate="2" aria-pressed="false">Получилось</button></div></div><div class="material-card-controls"><button type="button" class="action" data-grammar-move="-1" ${pool.length<2?'disabled':''}>← Назад</button><span class="grammar-mark material-card-mark"></span><button type="button" class="action" data-grammar-move="1" ${pool.length<2?'disabled':''}>Далее →</button></div>`;
+  paintGrammar();
+}
+function renderGrammar(){
+  const topic=grammarTopics.find(t=>t.id===grammarState.topic);
+  document.getElementById('grammar-current').textContent=topic?.title||'Всё вперемешку';
+  grammarPanel.querySelectorAll('[data-grammar-topic]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.grammarTopic===grammarState.topic)));
+  document.getElementById('grammar-rules').innerHTML=(topic?[topic]:grammarTopics).map(t=>`<article class="study-block"><h2>${t.title}</h2>${t.rules}</article>`).join('');
+  renderGrammarCard();
+}
+function showGrammarAnswer(check){
+  const q=grammarExercises.find(q=>q.id===grammarState.id),input=document.getElementById('grammar-answer');
+  if(check&&!input.value.trim()){input.focus();input.setCustomValidity('Сначала напиши свой ответ.');input.reportValidity();return;}
+  document.getElementById('grammar-feedback').hidden=false;
+  document.getElementById('grammar-result').textContent=!check?'Сравни с тем, что вспомнил сам.':q.answers.some(a=>normalizeGrammar(a)===normalizeGrammar(input.value))?'Верно ✓ Теперь отметь, получилось ли без подсказки.':'Формулировка отличается от сохранённых вариантов. Сравни смысл, время и конструкцию с разбором: другой правильный ответ тоже возможен.';
+}
+document.getElementById('grammar-choices').innerHTML=[...grammarTopics,{id:'all',title:'Всё вперемешку',subtitle:'36 переформулировок по всем темам'}].map(t=>`<button type="button" class="material-choice" data-grammar-topic="${t.id}" aria-pressed="false"><span>${t.title}<small>${t.subtitle}</small></span><span class="material-check" aria-hidden="true">✓</span></button>`).join('');
+grammarPanel.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.grammarTopic){grammarState.topic=b.dataset.grammarTopic;grammarState.id=null;renderGrammar();document.getElementById('grammar-picker').open=false;document.querySelector('#grammar-picker>summary').focus();if(signedIn){setStudy('grammar-topic',grammarState.topic);setStudy('grammar-current',grammarState.id||'');}}
+  if(b.dataset.grammarStage){grammarState.stage=b.dataset.grammarStage;grammarPanel.querySelectorAll('[data-grammar-view]').forEach(v=>v.hidden=v.dataset.grammarView!==grammarState.stage);grammarPanel.querySelectorAll('[data-grammar-stage]').forEach(v=>v.setAttribute('aria-pressed',String(v.dataset.grammarStage===grammarState.stage)));}
+  if(b.hasAttribute('data-grammar-check'))showGrammarAnswer(true);
+  if(b.hasAttribute('data-grammar-show'))showGrammarAnswer(false);
+  if(b.dataset.grammarRate){setStudy('grammar-'+grammarState.id,Number(b.dataset.grammarRate));if(signedIn&&document.getElementById('grammar-only').checked&&b.dataset.grammarRate==='2'){renderGrammarCard();document.getElementById('grammar-answer')?.focus();}}
+  if(b.dataset.grammarMove){const pool=grammarPool();if(!pool.length){renderGrammarCard();return;}const pos=pool.findIndex(q=>q.id===grammarState.id);grammarState.id=pool[(pos+Number(b.dataset.grammarMove)+pool.length)%pool.length].id;renderGrammarCard();document.getElementById('grammar-answer').focus();if(signedIn)setStudy('grammar-current',grammarState.id);}
+});
+grammarPanel.addEventListener('input',e=>{if(e.target.id==='grammar-answer'){e.target.setCustomValidity('');grammarDrafts[grammarState.id]=e.target.value;if(signedIn)setStudy('grammar-draft-'+grammarState.id,e.target.value);}});
+grammarPanel.addEventListener('keydown',e=>{if(e.isComposing)return;if(e.target.id==='grammar-answer'&&e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();showGrammarAnswer(true);}if(e.key==='Escape'&&e.target.closest('#grammar-picker')){document.getElementById('grammar-picker').open=false;document.querySelector('#grammar-picker>summary').focus();}});
+document.getElementById('grammar-only').onchange=()=>renderGrammarCard();
+renderGrammar();
+
 const readingList = document.getElementById('reading-list');
 const materialCards = Object.fromEntries(readings.map(r => [r.id, {index:0, revealed:false}]));
 const summaryPoints = section => `<ul lang="en">${section.points.map(p=>{const colon=p.indexOf(':');return `<li>${colon>0?`<strong>${escapeHTML(p.slice(0,colon+1))}</strong>${escapeHTML(p.slice(colon+1))}`:escapeHTML(p)}</li>`;}).join('')}</ul>`;
@@ -866,6 +999,7 @@ function openMaterialStage(article, stage) {
   article.scrollIntoView({block:'start'});
 }
 function paintStudy(fields = false) {
+  paintGrammar(fields);
   const picker = document.getElementById('reading-select');
   if (fields && readings.some(r=>r.id === study['reading-choice'])) picker.value=study['reading-choice'];
   const selected = readings.find(r=>r.id===picker.value);
@@ -895,7 +1029,7 @@ function paintStudy(fields = false) {
   document.getElementById('essay-count').textContent = `${draft ? draft.split(/\s+/u).length : 0} слов`;
 }
 function openPanel(name) {
-  const allowed = ['vocabulary', 'reading', 'essay', 'talk'];
+  const allowed = ['vocabulary', 'grammar', 'reading', 'essay', 'talk'];
   if (!allowed.includes(name)) name = 'vocabulary';
   allowed.forEach(id=>document.getElementById('panel-'+id).hidden = id !== name);
   root.querySelectorAll('[data-panel]').forEach(b=>name === b.dataset.panel ? b.setAttribute('aria-current','page') : b.removeAttribute('aria-current'));
