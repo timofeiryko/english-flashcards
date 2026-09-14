@@ -206,99 +206,7 @@ window.addEventListener('beforeunload', e => {
   if (pendingState || saving || studySaving || Object.keys(studyPending).length) {e.preventDefault(); e.returnValue = '';}
 });
 
-const readings = [
-  {
-    id:'kerch', label:'Unit 5 · дополнительный текст', title:'The Kerch Strait oil spill', source:'https://lms.mipt.ru/mod/page/view.php?id=233060',
-    summary:'On 15 December 2024, a powerful storm damaged two oil tankers in the Kerch Strait. One broke in half and sank, while the other ran aground. They released heavy fuel oil called mazut. It polluted the water, beaches and seabed, harmed wildlife and threatened fishing and tourism. Authorities declared a state of emergency, and volunteers and emergency workers cleaned the beaches. However, oil trapped in sediments could delay recovery for many years.',
-    ru:'Логика текста: шторм и авария двух танкеров → разлив тяжёлого мазута → загрязнение воды, берегов и донных осадков → ущерб животным и экономике → очистка, которая не устраняет весь долгосрочный вред. Цифры ниже — именно оценки из учебного текста.',
-    facts:[
-      '15 December 2024. The Kerch Strait connects the Black Sea and the Sea of Azov.',
-      'Two tankers: one broke in half and sank, the other ran aground.',
-      'Estimated oil release: between 2,400 and 8,500 tonnes. The text gives a range, not one exact measurement.',
-      'Satellite images showed slicks across hundreds of square kilometres. Within days, polluted water reached beaches and nature reserves.',
-      'Up to 200,000 tonnes of sand were estimated to be contaminated.',
-      'Mazut is heavy and highly viscous. It does not evaporate easily and can sink to the seabed, remaining in sediments for years.',
-      'Fuel accumulates in mollusks and crustaceans. Toxins can move up the food chain, increasing risks for larger fish, birds and marine mammals.',
-      'Birds lose feather waterproofing after contact with oil, potentially leading to hypothermia and drowning. More than 15,000 birds were estimated to have died.',
-      'Dozens of dolphins and porpoises were found dead in the following weeks. More deaths may have gone unnoticed offshore.',
-      'Fishing stopped temporarily in several areas. Coastal communities dependent on tourism and marine resources faced possible losses for years.',
-      'Regional authorities declared a state of emergency. Thousands of volunteers and emergency workers joined the cleanup.',
-      'By early 2026, workers had removed large amounts of polluted sand and debris. Full ecological recovery could still take many years.',
-      'The concluding issues are maritime safety, aging vessels and stronger prevention. The text does not establish that vessel age alone caused the accident.'
-    ],
-    questions:[
-      ['When and where did the accident happen?','On 15 December 2024 in the Kerch Strait, which connects the Black Sea and the Sea of Azov.','Дата + пролив + два моря.'],
-      ['What caused the accident, and what happened to each tanker?','A powerful storm severely damaged two oil tankers. One broke in half and sank. The other ran aground.','Не перепутай судьбу двух судов.'],
-      ['What is mazut?','It is a heavy and highly viscous fuel oil. Viscous means thick and slow-moving.'],
-      ['How much oil entered the sea, according to the text?','The estimated amount was between 2,400 and 8,500 tonnes.','Нужен диапазон и слово estimated.'],
-      ['What did satellite images show?','They showed oil slicks spreading across hundreds of square kilometres.'],
-      ['How quickly did pollution reach the coast, and what places did it affect?','Within days, polluted water reached nearby beaches and nature reserves.'],
-      ['How much sand was contaminated?','Up to 200,000 tonnes of sand were estimated to be contaminated.','Up to = до, это верхняя оценка.'],
-      ['Why can mazut remain a problem for years?','It does not evaporate easily and can sink to the seabed, where it may remain trapped in marine sediments for years.'],
-      ['Explain the food-chain risk step by step.','Fuel accumulates in small organisms such as mollusks and crustaceans. Toxins then move up the food chain and may pose a greater risk to larger fish, birds and marine mammals.'],
-      ['What does biomagnification mean?','It is an increase in a pollutant’s concentration in organisms at higher levels of the food chain.','Не просто накопление в одном организме: концентрация увеличивается вверх по пищевой цепи.'],
-      ['How did oil harm seabirds?','Oil damaged the waterproofing of their feathers. This likely caused hypothermia and drowning.'],
-      ['What figures does the text give for wildlife losses?','It estimates that more than 15,000 birds died. Dozens of dolphins and porpoises were found dead in the weeks after the spill.'],
-      ['Why might the recorded wildlife deaths underestimate the damage?','Many animals may have died unnoticed offshore.'],
-      ['Which economic activities were threatened?','Fishing and tourism. Fishing was temporarily suspended in several areas, and coastal communities relying on beaches and marine resources could face losses for years.'],
-      ['What did the authorities do? Who helped?','Regional authorities declared a state of emergency. Thousands of volunteers and emergency workers took part in cleanup operations.'],
-      ['What had changed by early 2026, and what remained unresolved?','Large amounts of contaminated sand and debris had been removed. However, oil could remain trapped in sediments, so full ecological recovery might take many years.'],
-      ['Does the article establish that the ships’ age caused the accident?','No. It identifies a powerful storm as the immediate cause and raises questions about aging vessels and maritime safety. It does not prove that age alone caused the accident.'],
-      ['Give a 45-second account of the event with at least four specific details.','On 15 December 2024, a storm damaged two tankers in the Kerch Strait. One sank and the other ran aground. The text estimates that they released between 2,400 and 8,500 tonnes of mazut. The oil harmed wildlife and contaminated up to 200,000 tonnes of sand. Authorities declared an emergency, and thousands of people helped clean the coast. Yet oil in seabed sediments may delay recovery for years.','Это модель пересказа. Сохрани факты, но формулировки можешь менять.']
-    ],
-    vocab:[
-      [107,'Toxins can ___ in small marine organisms.','accumulate'],
-      [163,'Mazut is ___ to marine wildlife.','hazardous'],
-      [136,'Pollution can damage a species’ natural ___.','habitat'],
-      [135,'Satellite images provided ___ of the spread of oil.','evidence'],
-      [167,'The oil spill posed a ___ to fisheries and tourism.','threat']
-    ]
-  },
-  {
-    id:'intelligence', label:'Unit 6 · дополнительный текст', title:'Multiple intelligences: the debate', source:'https://lms.mipt.ru/mod/page/view.php?id=233088',
-    summary:'The text presents both criticism of Howard Gardner’s theory of multiple intelligences and reasons for its popularity in education. Critics question its research evidence, subjective judgements and distinction between intelligence and talent. Gardner used eight criteria to identify an intelligence, but academics still dispute those criteria. Many educators value the theory because it encourages them to recognise strengths beyond maths and language and to vary their teaching. Educational popularity, however, does not by itself establish that a scientific theory is correct.',
-    ru:'Запомни две линии: научные возражения и практическая привлекательность для учителей. Не превращай текст в утверждение, что теория доказана или что каждому ученику обязательно подходит только один «стиль обучения».',
-    facts:[
-      'Howard Gardner is the theorist discussed in the extract.',
-      'An intelligence had to satisfy eight criteria. If even one criterion was not met, Gardner discarded the candidate characteristic.',
-      'Critics say he may be describing talents or skills and question the empirical or research evidence for the list.',
-      'Academic critics dispute the adequacy of the criteria. Gardner acknowledges that some judgements were subjective.',
-      'The extract names musical and visual-spatial abilities as examples critics may classify as talents.',
-      'In the extract’s distinction, intelligence must adapt to demands of everyday life, while a talent need not.',
-      'Educators recognise that students approach learning differently. Weakness in one area does not mean a student cannot excel elsewhere.',
-      'Some schools incorporate the theory into curricula and vary teaching approaches, going beyond the traditional emphasis on maths and language.',
-      'The text describes success for previously isolated students through different teaching approaches or greater appreciation of their strengths.',
-      'Gardner admits the theory is not flawless. The extract nevertheless credits it with substantial influence on developmental psychology and education.',
-      'The final argument is that developing an individual’s blend of abilities may benefit the person, family and society.',
-      'The saved extract attributes its adaptation to Shearer (2018), Multiple intelligences in teaching and education: Lessons learned from neuroscience. The video’s list of intelligences is outside this reading exercise.'
-    ],
-    questions:[
-      ['What is the central debate in the extract?','Whether Gardner’s categories are scientifically justified intelligences or mainly talents and skills, and why educators still find the theory useful.'],
-      ['How many criteria did Gardner use, and what happened if one was not met?','He used eight criteria. If any one was not met, the proposed characteristic was discarded.'],
-      ['What criticisms concern the scientific evidence?','Critics question the empirical or research evidence supporting the list and the adequacy of the criteria used to define intelligence.'],
-      ['What does Gardner acknowledge about his own judgements?','He acknowledges that some of his judgements were subjective.'],
-      ['Which two abilities are mentioned as possible talents rather than intelligences?','Musical and visual-spatial abilities.'],
-      ['How does the extract distinguish intelligence from talent?','It says intelligence needs to adapt to the demands of everyday life, whereas a talent does not necessarily need to do so.','Это различие из конкретного учебного текста, а не универсальное определение.'],
-      ['Why does the theory appeal to educators?','It recognises different student strengths and approaches to learning. A student who struggles in one area may excel in another.'],
-      ['How are some schools responding to the theory?','They incorporate it into their curricula and vary teaching approaches instead of relying only on a traditional emphasis on maths and language.'],
-      ['How does the text explain success among previously isolated students?','Some benefit from a different teaching approach. Others benefit from a new appreciation of their strengths and abilities.'],
-      ['Does the text describe the theory as flawless?','No. Gardner himself admits that it is not flawless, although the text stresses its influence on developmental psychology and education.'],
-      ['Who might benefit from developing a person’s blend of abilities, according to the conclusion?','The individual, their family, their society and the wider world.'],
-      ['Give one argument for and one argument against the theory.','For: it encourages schools to recognise strengths beyond maths and language. Against: its criteria and research evidence are disputed.','Можно поддерживать разнообразие заданий и одновременно критиковать научное обоснование теории.'],
-      ['Does popularity among teachers prove that the theory is scientifically correct?','No. Practical appeal and scientific validity are different questions. The text reports educational enthusiasm alongside academic criticism.'],
-      ['What is your view? Support it with a point from the text.','I think the theory offers a useful reminder that students have different strengths. However, I would be cautious about treating each ability as a separate intelligence because the criteria and empirical evidence are disputed.','Модель личного ответа. Можешь занять другую позицию, но обоснуй её.']
-    ],
-    vocab:[
-      [223,'A characteristic had to ___ before Gardner classified it as an intelligence.','meet criteria'],
-      [241,'Some of Gardner’s judgements were ___ rather than fully objective.','subjective'],
-      [233,'Critics question whether there is enough ___ to support the theory.','empirical evidence'],
-      [235,'A student who struggles in maths may ___ in music.','excel'],
-      [236,'Some schools ___ different teaching approaches into their curricula.','incorporate'],
-      [230,'Gardner admits that his theory is not ___.','flawless']
-    ]
-  }
-];
-
+const readings = [];
 readings.unshift(
   {
     id:'work-family',label:'4.4 · текст к пересдаче',title:'Work-family dynamic',source:'https://lms.mipt.ru/mod/page/view.php?id=233135',
@@ -423,7 +331,7 @@ readings.unshift(
     ]
   },
   {
-    id:'sleep',label:'6.4 · текст к пересдаче',title:'Can you learn a language in your sleep?',source:'https://lms.mipt.ru/mod/page/view.php?id=233176',
+    id:'sleep',label:'6.4 · текст к пересдаче',title:'Benefits of sleep',source:'https://lms.mipt.ru/mod/page/view.php?id=233176',
     summary:'The article asks whether a sleeping brain can learn new information. Earlier work linked sounds and smells during sleep, and the authors tested a more complex task: learning Japanese word meanings. Twenty-two healthy adults first associated familiar sounds with pictures while awake. During sleep, they heard those sounds paired with Japanese words. The next morning, they matched words to pictures above chance, despite low confidence. EEG slow waves predicted which words they remembered. However, awake learning was much more efficient, and long-term benefits and individual differences remained uncertain.',
     ru:'Главное: возможно слабое неосознанное обучение новым словам, но это не свободное владение языком во сне. Выучи протокол, числа, примеры слов, связь slow waves с памятью и ограничения. Сон и бодрствование автор предлагает считать взаимодополняющими.',
     facts:[
@@ -483,7 +391,7 @@ readings.unshift(
 
 readings.splice(3,0,
   {
-    id:'ted-work',label:'4.5 · TED · Azim Shariff',title:'Does working hard make you good?',source:'https://www.ted.com/talks/azim_shariff_does_working_hard_really_make_you_a_good_person?view=transcript',
+    id:'ted-work',label:'4.5 · TED · Azim Shariff',title:'Does working hard really make you a good person?',source:'https://www.ted.com/talks/azim_shariff_does_working_hard_really_make_you_a_good_person?view=transcript',
     summary:'Shariff examines why effort signals moral character, even without useful output.',
     ru:'Короткие опорные ответы по официальному транскрипту. Разворачивай их в предложения вслух. В учебной ситуации Geoff начинает второй год трёхлетнего контракта; в самом выступлении у Jeff остаётся три года. Это разные версии примера.',
     facts:[],
@@ -528,7 +436,7 @@ readings.splice(3,0,
     ],vocab:[]
   },
   {
-    id:'ted-emotions',label:'6.3 · TEDx · Ramona Hacker',title:'Six steps to emotional intelligence',source:'https://www.ted.com/talks/ramona_hacker_6_steps_to_improve_your_emotional_intelligence?view=transcript',
+    id:'ted-emotions',label:'6.3 · TEDx · Ramona Hacker',title:'6 steps to improve your emotional intelligence',source:'https://www.ted.com/talks/ramona_hacker_6_steps_to_improve_your_emotional_intelligence?view=transcript',
     summary:'Hacker presents emotional intelligence as a skill developed through reflection and practice.',
     ru:'Здесь — опорные ответы по транскрипту. Сначала восстанови шесть шагов по порядку, затем объясни каждый на своём примере. Личные объяснения спикера не следует превращать в универсальные научные причины поведения.',
     facts:[],
@@ -556,18 +464,23 @@ const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;'
 const readingList = document.getElementById('reading-list');
 function renderReadings() {
   document.getElementById('reading-select').innerHTML = readings.map(r=>`<option value="${r.id}">${escapeHTML(r.label)} — ${escapeHTML(r.title)}</option>`).join('');
+  document.getElementById('material-choices').innerHTML = [['Reading',false],['Listening · TED Talks',true]].map(([label,ted])=>`<div role="group" aria-label="${label}"><h3>${label}</h3>${readings.filter(r=>r.id.startsWith('ted-')===ted).map(r=>`<button type="button" class="material-choice" data-material="${r.id}" aria-pressed="false"><span class="material-number">${escapeHTML(r.label.split(' · ')[0])}</span><span>${escapeHTML(r.title)}${ted?`<small>${escapeHTML(r.label.split(' · ').at(-1))}</small>`:''}</span><span class="material-check" aria-hidden="true">✓</span></button>`).join('')}</div>`).join('');
   readingList.innerHTML = readings.map(r => `<article class="study-block" id="reading-${r.id}">
     <div class="reading-label">${escapeHTML(r.label)}</div><div class="reading-title"><h3>${escapeHTML(r.title)}</h3><span class="badge" data-reading-count="${r.id}"></span></div>
     <details class="reading-summary"><summary>Главная мысль и опорные факты</summary><div class="detail-body"><p class="english" lang="en">${escapeHTML(r.summary)}</p><p class="muted">${escapeHTML(r.ru)}</p>${r.facts.length?`<ul>${r.facts.map(f=>`<li>${escapeHTML(f)}</li>`).join('')}</ul>`:''}</div></details>
     <label class="toggle"><input type="checkbox" data-reading-filter="${r.id}"> Только то, что нужно повторить</label>
-    <p class="muted">Вопросы для тренировки по тексту. Сначала ответь вслух, потом проверь. Отметка «Помню» — твоя самооценка.</p>
+    <p class="muted">${r.id.startsWith('ted-')?'Вопросы по транскрипту выступления.':'Вопросы по тексту.'} Сначала ответь вслух, потом проверь. Отметка «Помню» — твоя самооценка.</p>
     ${r.questions.map((q,i)=>`<div class="question" data-question="${r.id}-${i}" data-reading="${r.id}"><p lang="en">${escapeHTML(q[0])}</p><details><summary>Проверить ответ</summary><div class="answer"><p lang="en">${escapeHTML(q[1])}</p>${q[2]?`<p class="muted">${escapeHTML(q[2])}</p>`:''}</div></details><div class="rating" role="group" aria-label="Самооценка ответа"><button type="button" class="action" data-rate="1" data-key="${r.id}-${i}" aria-pressed="false">Повторить</button><button type="button" class="action" data-rate="2" data-key="${r.id}-${i}" aria-pressed="false">Помню</button></div></div>`).join('')}
     ${r.vocab.length?`<details class="reading-summary"><summary>Target vocabulary в контексте</summary><div class="detail-body">${r.vocab.map(v=>`<div class="cloze question"><p lang="en">${escapeHTML(v[1])}</p><label class="write-label">Какое слово из target vocabulary подходит?<input type="text" class="cloze-input" autocomplete="off" data-answer="${escapeHTML(v[2])}" aria-label="Пропущенное слово"></label><button type="button" class="action check-cloze">Проверить</button><p class="cloze-result" role="status"></p><details><summary>Подсказка: значение</summary><p lang="en">${escapeHTML(cards[v[0]].explanation)}</p><p class="muted">${escapeHTML(cards[v[0]].translation)}</p></details><button type="button" class="action vocab-jump" data-card-id="${v[0]}">Карточка «${escapeHTML(cards[v[0]].word)}» ↗</button></div>`).join('')}</div></details>`:''}
-    <p class="source-note"><a href="${escapeHTML(r.source)}" target="_blank" rel="noopener">Материал курса ↗</a> · Подсказки и упражнения составлены по сохранённому тексту.</p></article>`).join('');
+    <p class="source-note"><a href="${escapeHTML(r.source)}" target="_blank" rel="noopener">${r.id.startsWith('ted-')?'Оригинал и транскрипт на TED ↗':'Материал курса ↗'}</a> · ${r.id.startsWith('ted-')?'Опорные ответы по транскрипту.':'Подсказки и упражнения по сохранённому тексту.'}</p></article>`).join('');
 }
 function paintStudy(fields = false) {
   const picker = document.getElementById('reading-select');
   if (fields && readings.some(r=>r.id === study['reading-choice'])) picker.value=study['reading-choice'];
+  const selected = readings.find(r=>r.id===picker.value);
+  document.getElementById('material-current').textContent = selected.title;
+  document.getElementById('material-current-label').textContent = `${selected.id.startsWith('ted-')?'Listening':'Reading'} · ${selected.label.split(' · ')[0]}`;
+  root.querySelectorAll('[data-material]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.material===picker.value)));
   readings.forEach(r=>document.getElementById('reading-'+r.id).hidden=r.id !== picker.value);
   root.querySelectorAll('.cloze').forEach(box=>{
     const key='cloze-'+box.closest('article').id.replace('reading-','')+'-'+box.querySelector('[data-card-id]').dataset.cardId;
@@ -598,6 +511,13 @@ function openPanel(name) {
 }
 renderReadings(); paintStudy();
 document.getElementById('reading-select').onchange = e => {paintStudy(); if(signedIn) setStudy('reading-choice',e.target.value);};
+root.querySelectorAll('[data-material]').forEach(b=>b.onclick=()=>{
+  const picker=document.getElementById('reading-select');
+  picker.value=b.dataset.material;picker.dispatchEvent(new Event('change'));
+  document.getElementById('material-picker').open=false;
+  document.querySelector('#material-picker>summary').focus();
+});
+document.getElementById('material-picker').addEventListener('keydown',e=>{if(e.key==='Escape'){e.currentTarget.open=false;e.currentTarget.querySelector('summary').focus();}});
 root.querySelectorAll('[data-panel]').forEach(b=>b.onclick=()=>openPanel(b.dataset.panel));
 openPanel(location.hash.slice(1));
 root.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>setStudy(b.dataset.key, Number(b.dataset.rate)));

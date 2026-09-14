@@ -8,7 +8,7 @@ Open `index.html` in a browser alongside `app.js` and `study.css`. The HTML cont
 - Word → explanation and explanation → word modes.
 - Unit selection, shuffle, and difficult-card review.
 - Material Design 3 inspired interface with light and dark themes.
-- Reading summaries, detailed recall questions, self-assessment and vocabulary exercises.
+- Six exam materials grouped into Reading and Listening: 4.4, 5.4, 6.4 and TED Talks 4.5, 5.2, 6.3. Summaries, 130 recall questions, self-assessment and vocabulary exercises; TED answers refer to the transcripts.
 - Essay structure, examples, saved outline/draft and checklist.
 - Presentation practice guide.
 - Guest marks last for the current session. Sign in on https://tryko.site/flashcards/ to save progress in SQLite.
