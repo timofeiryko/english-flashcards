@@ -1,0 +1,49 @@
+#target-vocab-tim .study-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:5px;background:var(--container);border-radius:20px;margin:8px 0 30px}
+#target-vocab-tim{font-size:17px}
+#target-vocab-tim #reading-select{font-size:16px}
+#target-vocab-tim .rubric{display:grid;grid-template-columns:1fr auto;gap:12px 20px;margin:18px 0 28px;font-size:16px}
+#target-vocab-tim .study-nav button{min-height:48px;padding:10px 4px;border:0;border-radius:15px;background:transparent;color:var(--muted);font-size:14px;font-weight:500}
+#target-vocab-tim .study-nav [aria-current=page]{background:var(--tonal);color:var(--on-tonal)}
+#target-vocab-tim .study-panel{padding-bottom:28px;overflow-wrap:anywhere}
+#target-vocab-tim .section-intro{margin:8px 0 24px}
+#target-vocab-tim h2{font-size:clamp(25px,4vw,32px);line-height:1.2;letter-spacing:-.8px;font-weight:500;margin:8px 0 12px}
+#target-vocab-tim h3{font-size:19px;font-weight:500;line-height:1.35;margin:0 0 12px}
+#target-vocab-tim .study-panel p{margin:10px 0;line-height:1.65}
+#target-vocab-tim .section-intro p,#target-vocab-tim .muted,#target-vocab-tim .source-note{color:var(--muted);font-size:14px}
+#target-vocab-tim .study-block{background:var(--container);border-radius:24px;padding:24px;margin:14px 0}
+#target-vocab-tim details.study-block{padding:0}
+#target-vocab-tim .study-block summary{cursor:pointer;min-height:56px;padding:20px 24px;font-weight:500;border-radius:24px}
+#target-vocab-tim .detail-body{padding:0 24px 24px}
+#target-vocab-tim .notice{border-left:3px solid var(--primary);padding:6px 0 6px 18px;margin:20px 0 28px;font-size:14px}
+#target-vocab-tim .notice p{color:var(--muted);margin-bottom:0}
+#target-vocab-tim .step-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#target-vocab-tim .step-grid .study-block{margin:0}
+#target-vocab-tim .step-number{display:block;color:var(--primary);font-size:12px;letter-spacing:2px;margin-bottom:14px}
+#target-vocab-tim .english{font-size:16px;line-height:1.7!important}
+#target-vocab-tim .phrase-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+#target-vocab-tim a{color:var(--primary);text-underline-offset:4px}
+#target-vocab-tim textarea{resize:vertical;width:100%;min-height:100px;max-height:900px;font:inherit;line-height:1.65;border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--ink);background:var(--surface)}
+#target-vocab-tim .write-label{display:block;font-size:13px;color:var(--muted);margin:22px 0 8px}
+#target-vocab-tim .writing-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted);margin-top:8px}
+#target-vocab-tim .checklist{display:grid;gap:4px}
+#target-vocab-tim .checklist label{display:flex;align-items:start;gap:12px;padding:10px 0;cursor:pointer}
+#target-vocab-tim .checklist input{flex-shrink:0;margin:3px 0}
+#target-vocab-tim .source-note{font-size:12px;margin:22px 4px!important}
+#target-vocab-tim .reading-title{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+#target-vocab-tim .reading-title h3{margin:0}
+#target-vocab-tim .reading-label{font-size:12px;color:var(--muted);margin:0 0 6px}
+#target-vocab-tim .reading-summary{margin:20px 0!important;padding:0!important;background:transparent!important}
+#target-vocab-tim .reading-summary summary{padding:12px 0;border-radius:6px}
+#target-vocab-tim .reading-summary .detail-body{padding:0 0 12px}
+#target-vocab-tim .question{border-top:1px solid var(--line);padding:18px 0}
+#target-vocab-tim .question>p{margin-top:0;font-weight:500}
+#target-vocab-tim .question summary{min-height:44px;padding:10px 0;font-size:14px;color:var(--primary)}
+#target-vocab-tim .question .answer{padding:4px 0 12px}
+#target-vocab-tim .rating{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#target-vocab-tim .rating .action{font-size:12px;padding:8px 14px}
+#target-vocab-tim input.cloze-input{display:block;width:100%;height:48px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:12px;margin:8px 0;font:inherit;font-size:16px;cursor:text}
+#target-vocab-tim .talk-steps{padding-left:22px}
+#target-vocab-tim .talk-steps li{padding-left:5px;margin:20px 0}
+#target-vocab-tim #tv-sync{flex:1;min-width:140px;color:var(--muted);line-height:1.5;padding-left:4px}
+#target-vocab-tim dialog{max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:auto}
+@media(max-width:520px){#target-vocab-tim .step-grid{grid-template-columns:1fr}#target-vocab-tim .study-block{padding:20px}#target-vocab-tim .detail-body{padding:0 20px 20px}#target-vocab-tim .study-block summary{padding:18px 20px}#target-vocab-tim .reading-summary summary,#target-vocab-tim .question summary{padding:12px 0}#target-vocab-tim .reading-summary .detail-body{padding:0 0 12px}#target-vocab-tim .phrase-grid{grid-template-columns:1fr}#target-vocab-tim .study-nav button{font-size:12px}#target-vocab-tim .study-nav{margin-bottom:24px}#target-vocab-tim .reading-title{align-items:start}#target-vocab-tim .account-row{flex-wrap:nowrap}#target-vocab-tim .account-row .actions{flex-wrap:nowrap}}

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
-<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Academic English · Vocabulary</title><style>:root{color-scheme:light dark}body{margin:0;padding:24px;background:light-dark(#fff8f7,#171214)}@media(max-width:480px){body{padding:0}}</style></head><body><div id="target-vocab-tim">
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Academic English · Practice</title><style>:root{color-scheme:light dark}body{margin:0;padding:24px;background:light-dark(#fff8f7,#171214)}@media(max-width:480px){body{padding:0}}</style><link rel="stylesheet" href="study.css"></head><body><div id="target-vocab-tim">
 <style>
-#target-vocab-tim{color-scheme:light dark;--surface:light-dark(#fff8f7,#171214);--container:light-dark(#f4edef,#241e21);--ink:light-dark(#211a1d,#ece0e4);--muted:light-dark(#6f6269,#d1c2ca);--primary:light-dark(#79546c,#e8b9d4);--on-primary:light-dark(#ffffff,#45263b);--tonal:light-dark(#f5d9e9,#5d3c52);--on-tonal:light-dark(#5d3c52,#fbd7ed);--line:light-dark(#d7c2ce,#51434b);font-family:Roboto,"Segoe UI",sans-serif;font-size:15px;line-height:1.5;color:var(--ink);background:var(--surface);padding:32px;border-radius:28px;box-sizing:border-box}
+#target-vocab-tim{color-scheme:light dark;--surface:light-dark(#fff8f7,#171214);--container:light-dark(#f4edef,#241e21);--ink:light-dark(#211a1d,#ece0e4);--muted:light-dark(#6f6269,#d1c2ca);--primary:light-dark(#79546c,#e8b9d4);--on-primary:light-dark(#ffffff,#45263b);--tonal:light-dark(#f5d9e9,#5d3c52);--on-tonal:light-dark(#5d3c52,#fbd7ed);--line:light-dark(#d7c2ce,#51434b);font-family:Roboto,"Segoe UI",sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:var(--surface);padding:32px;border-radius:28px;box-sizing:border-box}
 #target-vocab-tim *{box-sizing:border-box}
 #target-vocab-tim [hidden]{display:none!important}
 #target-vocab-tim .shell{max-width:760px;margin:0 auto}
@@ -50,8 +50,10 @@
 @media(prefers-reduced-motion:reduce){#target-vocab-tim *{transition:none!important}}
 </style>
 <div class="shell">
-<header><div><div class="eyebrow">Academic English</div><h1>Vocabulary</h1></div><span class="badge">288 карточек</span></header>
-<div class="account-row"><button class="action" id="tv-sync" type="button">Войди, чтобы сохранять прогресс</button><button class="action" id="tv-account" type="button">Войти и сохранить прогресс</button></div><div class="controls">
+<header><div><div class="eyebrow">Academic English</div><h1>English practice</h1></div><span class="badge">Units 4–6</span></header>
+<div class="account-row"><span id="tv-sync" role="status">Загружаем прогресс…</span><div class="actions"><button class="action" id="tv-retry" type="button" hidden>Повторить</button><button class="action" id="tv-account" type="button">Войти</button></div></div>
+<nav class="study-nav" aria-label="Разделы подготовки"><button type="button" data-panel="vocabulary" aria-current="page">Лексика</button><button type="button" data-panel="reading">Тексты</button><button type="button" data-panel="essay">Эссе</button><button type="button" data-panel="talk" aria-label="Выступление">Речь</button></nav>
+<section id="panel-vocabulary" aria-label="Лексика"><div class="controls">
 <div class="choice-field"><span class="choice-label">Тема</span><div aria-label="Тема" class="segments" role="group">
 <button aria-pressed="true" class="segment" data-unit="all" type="button">Все</button><button aria-pressed="false" class="segment" data-unit="4" type="button">Values</button><button aria-pressed="false" class="segment" data-unit="5" type="button">Ecology</button><button aria-pressed="false" class="segment" data-unit="6" type="button">Intelligence</button>
 </div></div>
@@ -67,6 +69,42 @@
 </button>
 <div class="footer"><button aria-label="Предыдущая карточка" class="action" id="tv-prev" type="button">← Назад</button><div class="actions"><button class="action" id="tv-hard" type="button">Отметить трудной</button><button class="action filled" id="tv-next" type="button">Дальше →</button></div></div>
 <div aria-label="Горячие клавиши" class="shortcuts"><span><kbd>Space</kbd> переворот</span><span><kbd>←</kbd><kbd>→</kbd> листать</span><span><kbd>D</kbd> трудная</span><span><kbd>S</kbd> перемешать</span><span><kbd>R</kbd> режим</span></div>
+</section>
+<section id="panel-reading" class="study-panel" aria-label="Тексты" hidden>
+<div class="section-intro"><span class="eyebrow">Read · Recall · Explain</span><h2>Ответить своими словами</h2><p>Прочитай короткий пересказ. Закрой его, ответь вслух и только потом открой подсказку.</p></div>
+<label class="write-label" for="reading-select">Материал</label><select id="reading-select" aria-label="Материал для повторения"></select>
+<div id="reading-list"></div>
+<details class="study-block"><summary>Если забыл ответ</summary><div class="detail-body"><p class="english">The text mainly discusses… The main point is that… One example is… This matters because…</p><p>Назови тему, объясни одну мысль и приведи пример. Если вопрос просит твоё мнение, отдели его от позиции автора: <span lang="en">“In my view…”</span></p><p class="english">Could you rephrase the question, please?<br>I don’t remember the exact figure, but the main trend is…</p></div></details>
+</section>
+<section id="panel-essay" class="study-panel" aria-label="Эссе" hidden>
+<div class="section-intro"><span class="eyebrow">Plan · Write · Check</span><h2>Сначала логика, потом текст</h2><p>Разбери формулировку задания и составь план из четырёх абзацев. Не заучивай одно эссе для любой темы.</p></div>
+<div class="study-block"><h3>Какой тип эссе нужен</h3><p><strong>Problem–solution:</strong> что пошло не так, почему это важно и как конкретно это исправить.</p><p><strong>Problem essay:</strong> объясни проблему через причины и последствия. Решения добавляй, если их просит задание.</p><p class="muted">В материалах пересдачи названы оба типа. На сохранённых страницах есть смешение названий: ориентируйся на точный вопрос в задании. 250–300 слов — объём учебного задания в Unit 6, а не подтверждённый общий лимит пересдачи.</p></div>
+<div class="step-grid">
+<article class="study-block"><span class="step-number">01</span><h3>Introduction</h3><p>Общая тема → конкретная проблема → цель эссе. 2–3 предложения.</p><p class="english">Many schools prioritise exam results. This can leave students with limited opportunities to develop emotional skills. This essay examines the consequences and suggests ways to address them.</p></article>
+<article class="study-block"><span class="step-number">02</span><h3>Problem</h3><p>Что за проблема? Почему возникла? Пример? К чему приводит?</p><p class="english">One problem is… This happens because… For example… As a result…</p></article>
+<article class="study-block"><span class="step-number">03</span><h3>Solution</h3><p>Кто что делает → как это поможет → пример → ограничение или ожидаемый эффект.</p><p class="english">Schools could address this by… This would help because… Although this requires…, it could…</p><p class="muted">Для problem essay этот абзац можно посвятить другой причине или последствию.</p></article>
+<article class="study-block"><span class="step-number">04</span><h3>Conclusion</h3><p>Вернись к основной проблеме, обобщи выводы и дай рекомендацию, если уместно. Новых аргументов здесь нет.</p><p class="english">In conclusion,… Addressing this issue requires…</p></article>
+</div>
+<details class="study-block"><summary>Разобранный абзац: проблема</summary><div class="detail-body"><p class="english"><strong>Problem:</strong> One consequence of an excessive focus on exam results is that students may struggle to manage academic stress.</p><p class="english"><strong>Cause:</strong> This happens because schools reward performance without always teaching students how to recognise and regulate their emotions.</p><p class="english"><strong>Example:</strong> For example, a student who receives a disappointing mark may interpret it as a personal failure.</p><p class="english"><strong>Effect:</strong> As a result, the student may avoid challenging tasks, which can limit future learning.</p><p class="muted">Это учебный пример, а не результат исследования. Здесь не нужны выдуманные проценты или ссылки.</p></div></details>
+<details class="study-block"><summary>Как сделать решение убедительным</summary><div class="detail-body"><p>«Повысить осведомлённость» слишком расплывчато. Назови действие и объясни механизм.</p><p class="english">Schools could introduce short weekly sessions in which students practise recognising stress and discussing setbacks. Teachers could use realistic classroom situations to demonstrate coping strategies. This would give students specific tools to use when they receive disappointing results. However, staff would need training to run these sessions effectively.</p><p>В экологическом эссе различай <strong>prevention</strong> (например, проверка состояния судов) и <strong>mitigation</strong> (ограничение ущерба после аварии).</p></div></details>
+<details class="study-block"><summary>Связки, которые действительно нужны</summary><div class="detail-body phrase-grid"><p><strong>Причина</strong><br><span lang="en">because · due to · a contributing factor is</span></p><p><strong>Следствие</strong><br><span lang="en">as a result · consequently · this can lead to</span></p><p><strong>Пример</strong><br><span lang="en">for example · for instance</span></p><p><strong>Ограничение</strong><br><span lang="en">however · although · despite</span></p><p><strong>Решение</strong><br><span lang="en">one possible solution is · this could be addressed by</span></p><p><strong>Вывод</strong><br><span lang="en">in conclusion · overall</span></p></div></details>
+<details class="study-block"><summary>Ссылки на источники без путаницы</summary><div class="detail-body"><p>Чужую мысль нужно атрибутировать даже после перефразирования. Общеизвестные факты обычно не требуют ссылки.</p><p class="english">Schwartz (1992) argues that…<br>… (Schwartz, 1992).</p><p>Первый вариант встраивает автора в предложение, второй помещает ссылку в скобки. В конце работы нужен список использованных источников в требуемом формате.</p><p>Используй автора и год из выданного текста. Если их нет, не выдумывай. <span lang="en">“The text suggests…”</span> безопаснее, чем несуществующая научная ссылка.</p><p>Для результатов исследования: <span lang="en">finds, reports, shows</span>. Для позиции автора: <span lang="en">argues, suggests, states</span>. Слово <span lang="en">proves</span> обычно слишком сильное.</p><a href="https://lms.mipt.ru/mod/page/view.php?id=233024" target="_blank" rel="noopener">Материал курса: paragraph structure and referencing ↗</a></div></details>
+<div class="study-block practice"><h3>Твой черновик</h3><p class="muted">Учебная тема: системы образования уделяют много внимания IQ и меньше — эмоциональному и духовному интеллекту. Какие проблемы это создаёт и как их можно решить?</p><label class="write-label" for="essay-plan">План: проблема, причина, последствие, решение</label><textarea id="essay-plan" data-study-field="essay-plan" maxlength="12000" rows="4" placeholder="Problem: …&#10;Cause: …&#10;Effect: …&#10;Solution + how it works: …"></textarea><label class="write-label" for="essay-draft">Эссе на английском</label><textarea id="essay-draft" data-study-field="essay-draft" maxlength="12000" rows="12" lang="en" placeholder="Write your first draft here…"></textarea><div class="writing-meta"><span id="essay-count" role="status">0 слов</span><span>Учебный ориентир: 250–300</span></div><p class="muted" id="study-save-status" role="status">Войди, чтобы сохранить черновик и отметки.</p></div>
+<div class="study-block"><h3>Проверка перед сдачей</h3><div class="checklist"><label><input type="checkbox" data-study-field="check-task">Я ответил на все части задания.</label><label><input type="checkbox" data-study-field="check-logic">В каждом основном абзаце есть объяснение и пример.</label><label><input type="checkbox" data-study-field="check-solutions">Решения связаны с причинами, если задание просит решения.</label><label><input type="checkbox" data-study-field="check-sources">Я не придумал статистику и указал источники чужих идей.</label><label><input type="checkbox" data-study-field="check-final">Я проверил объём, повторы и заключение.</label></div></div>
+<p class="source-note">По материалам курса: <a href="https://lms.mipt.ru/mod/page/view.php?id=233060">5.5</a>, <a href="https://lms.mipt.ru/mod/page/view.php?id=233063">5.6</a>, <a href="https://lms.mipt.ru/mod/page/view.php?id=233088">6.2</a>, <a href="https://lms.mipt.ru/mod/page/view.php?id=233091">6.3</a>. Формулировки объяснений и учебные примеры подготовлены для практики.</p>
+</section>
+<section id="panel-talk" class="study-panel" aria-label="Выступление" hidden>
+<div class="section-intro"><span class="eyebrow">Look · Compare · Explain</span><h2>Как рассказать об инфографике</h2><p>Веди слушателя от главного наблюдения к конкретным данным и выводу.</p></div>
+<div class="notice"><strong>Готовый вариант: Ten everyday ways to protect our planet</strong><p>Шесть слайдов и собственная инфографика по тексту 5.7. Учебный ориентир — около четырёх минут. В требованиях не указано, дают ли инфографику заранее, нужен ли PPTX и какой лимит времени: это стоит уточнить у преподавателя.</p></div>
+<h3>Что говорить на каждом слайде</h3><p class="muted">Один раз прочитай сценарий, затем репетируй по опорным словам. Текст также находится в заметках докладчика в PPTX.</p><details class="study-block"><summary>1. Opening · 0:00–0:35</summary><div class="detail-body"><p class="eyebrow">question · everyday habits · roadmap</p><p class="english" lang="en">Before I begin, think of one thing you used today that you will throw away tonight. A cup, a bag, or some packaging? My presentation is about ten everyday ways to protect our planet. I have organised the ideas from our course material into one infographic. I will focus on waste, resource use and community action. The talk takes about four minutes, and I will take questions at the end.</p><p class="muted">Задай вопрос, выдержи паузу 2 секунды и посмотри на аудиторию. Не читай заголовок вместо вступления.</p></div></details><details class="study-block"><summary>2. Infographic overview · 0:35–1:10</summary><div class="detail-body"><p class="eyebrow">ten actions · visual groups · selected examples</p><p class="english" lang="en">This infographic brings together ten actions from the course text. They range from reducing waste and saving water to volunteering and choosing sustainable transport. The main message is that environmental protection can become part of an ordinary routine. I will not explain every symbol separately. Instead, I will show how a few of these actions work and how individual choices can connect with wider community efforts.</p><p class="muted">Покажи всю инфографику, затем жестом выдели несколько пунктов. Не зачитывай десять подписей подряд.</p></div></details><details class="study-block"><summary>3. Waste · 1:10–1:50</summary><div class="detail-body"><p class="eyebrow">reduce · reuse · recycle · bag</p><p class="english" lang="en">Let us start with waste. The three actions are reduce, reuse and recycle. Reducing means avoiding unnecessary consumption in the first place. Reusing means giving an existing item another use, for example taking the same bag on several shopping trips. Recycling helps recover materials when it is time to dispose of an item. The useful question is not simply where to put the rubbish. It is whether we needed to create it in the first place.</p><p class="muted">Проведи взглядом и жестом слева направо. Объясни разницу между тремя действиями, не представляй схему как количественный график.</p></div></details><details class="study-block"><summary>4. Resources · 1:50–2:30</summary><div class="detail-body"><p class="eyebrow">water · energy · transport · feasibility</p><p class="english" lang="en">The next group concerns resources we use every day. Fixing a leak can reduce unnecessary water use. Switching off unused lights and choosing efficient bulbs can reduce energy consumption. For a short journey, walking or cycling may replace a car trip. Of course, these choices depend on the situation. Public transport may be more realistic for a longer journey, and some people have fewer options. The aim is to identify a change that is practical enough to repeat.</p><p class="muted">Для каждого ряда — одно действие и один смысл. Последняя оговорка показывает, что ты оцениваешь реалистичность совета.</p></div></details><details class="study-block"><summary>5. Community · 2:30–3:10</summary><div class="detail-body"><p class="eyebrow">learn · share · participate · local example</p><p class="english" lang="en">Individual action can also reach a wider community. Learning about an environmental issue makes it easier to explain it to someone else. Volunteering in a local cleanup turns that knowledge into a shared activity. Planting trees and supporting greener spaces can benefit a whole neighbourhood. For example, students could organise a small cleanup and explain how to prevent the same waste from returning. This example combines the course recommendations on education and volunteering.</p><p class="muted">Отдели свой пример от текста источника: “For example, students could…”. Не заявляй, что такое мероприятие уже происходило.</p></div></details><details class="study-block"><summary>6. Conclusion and questions · 3:10–3:50</summary><div class="detail-body"><p class="eyebrow">summary · return to opening · first step · questions</p><p class="english" lang="en">To conclude, the infographic shows that protecting the environment involves everyday choices as well as community action. I have focused on reducing waste, using resources carefully and sharing knowledge through participation. Let us return to the item you thought of at the beginning. Could you avoid it, reuse it, or choose an alternative next time? A reasonable starting point is one habit you can actually maintain. Thank you for listening. I would be happy to answer your questions.</p><p class="muted">Подай сигнал завершения, кратко обобщи, вернись к начальному вопросу и пригласи вопросы. После последней фразы остановись.</p></div></details><details class="study-block"><summary>Если на месте дадут другую инфографику</summary><div class="detail-body"><ol><li>Определи тему, источник, дату и тип изображения. Если данных об источнике нет, не придумывай их.</li><li>Найди главную мысль и 2–3 детали, которые её поддерживают.</li><li>Если есть числа, проверь единицы и различие между процентами и процентными пунктами. Если это схема советов, объясняй связи и примеры, не изображай из неё статистику.</li><li>Составь начало, основные пункты и финал. В начале скажи, о чём рассказ, в конце вернись к главной мысли.</li><li>Возьми из готового сценария переходы и структуру, а факты и примеры замени содержанием выданной инфографики.</li></ol><p class="english">This infographic focuses on…<br>The main message is…<br>To illustrate this, let us look at…<br>Moving on to the next point,…<br>To conclude,…</p></div></details>
+<details class="study-block"><summary>Возможные вопросы после готовой презентации</summary><div class="detail-body"><p><strong lang="en">Which action would you personally choose first?</strong></p><p lang="en">I would start with a reusable bag because it is inexpensive and easy to include in my routine.</p><p><strong lang="en">Can individual action solve environmental problems?</strong></p><p lang="en">It can contribute, but broader problems also require infrastructure, regulation and cooperation. My presentation focuses on actions individuals can take.</p><p><strong lang="en">Why not just recycle everything?</strong></p><p lang="en">Avoiding unnecessary consumption and reusing items can reduce the amount of waste that needs processing. Recycling is one part of the approach.</p><p><strong lang="en">What is the source of your infographic?</strong></p><p lang="en">I created it using the ten recommendations in our course text, “Ten Simple Ways to Help Protect Our Planet”. It is a visual summary of recommendations, not a statistical survey.</p><p><strong lang="en">Are all the recommendations equally easy to follow?</strong></p><p lang="en">No. Cost, transport options and local facilities can affect what people can do. A useful first step should be realistic for that person.</p></div></details>
+<details class="study-block"><summary>За что дают баллы</summary><div class="detail-body"><h3>Talk assessment · 10 баллов</h3><div class="rubric"><span>Содержание</span><strong>2</strong><span>Удержание внимания</span><strong>3</strong><span>Структура</span><strong>2</strong><span>Темп, паузы, интонация, жесты</span><strong>1</strong><span>Язык</span><strong>2</strong></div><h3>Talk + Infographic · 10 баллов</h3><div class="rubric"><span>Удержание внимания</span><strong>2</strong><span>Структура</span><strong>2</strong><span>Дизайн инфографики</span><strong>5</strong><span>Accuracy</span><strong>1</strong></div><p>В дизайне оценивают понятную организацию, небольшое количество текста, осмысленные изображения, читаемость и контраст цветов. Это две разные таблицы оценки: нельзя складывать их баллы.</p><p class="muted">Источники: Talk (presentation) assessment_2025.xlsx и Talk+Infographic.xlsx, предоставленные преподавателем.</p></div></details>
+<div class="study-block"><h3>Готовность к выступлению</h3><div class="checklist"><label><input type="checkbox" data-study-field="talk-opening">Могу начать с вопроса и обозначить план без чтения.</label><label><input type="checkbox" data-study-field="talk-cues">Могу объяснить каждый слайд по опорным словам.</label><label><input type="checkbox" data-study-field="talk-finish">В финале есть итог, возврат к началу и приглашение вопросов.</label><label><input type="checkbox" data-study-field="talk-rehearsal">Провёл полную репетицию с таймером.</label></div></div>
+<div class="study-block"><h3>Каркас выступления</h3><ol class="talk-steps"><li><strong>Introduce.</strong> Назови тему, источник и период данных.<p class="english">This infographic presents… It compares… The data comes from…</p></li><li><strong>Give an overview.</strong> Сначала самое заметное наблюдение.<p class="english">The main pattern is that… The most striking difference is…</p></li><li><strong>Support it.</strong> Выбери 2–3 числа или сравнения, которые доказывают мысль.<p class="english">For example,… Compared with…, this figure is…</p></li><li><strong>Interpret.</strong> Объясни возможное значение, отделив интерпретацию от данных.<p class="english">This may suggest… However, the infographic does not explain why…</p></li><li><strong>Conclude.</strong> Одна итоговая мысль, затем вопросы.<p class="english">Overall, the infographic highlights… Thank you. I’d be happy to answer your questions.</p></li></ol></div>
+<details class="study-block"><summary>Числа и сравнения по-английски</summary><div class="detail-body"><p class="english">about one third · just over half · roughly twice as high · the largest share · a gradual increase · a sharp decline</p><p>20% → 30% — рост на <strong>10 percentage points</strong> или на <strong>50 percent</strong> относительно исходных 20%. Выбирай выражение точно.</p><p>Не называй разницу между группами «ростом», если график не показывает время. Проверь единицы измерения, годы и размер выборки, если он указан.</p></div></details>
+<details class="study-block"><summary>Репетиция без заучивания всего текста</summary><div class="detail-body"><p>На каждый слайд выпиши одну мысль и 2–3 опорных слова. Проговори переходы между слайдами. Затем расскажи заново с таймером, глядя только на слайды.</p><p>После репетиции ответь на три вопроса: что главное, какое число это показывает и чего по этим данным утверждать нельзя.</p><p class="english">Let me clarify that point…<br>According to the infographic,…<br>I can’t draw that conclusion from these data alone.</p></div></details>
+</section>
+
 </div>
 <script id="tv-data" type="application/json">[
   {
@@ -1798,153 +1836,6 @@
     "translation": "зрительный, визуальный"
   }
 ]</script>
-<dialog aria-labelledby="tv-login-title" id="tv-login"><form id="tv-login-form"><h2 id="tv-login-title">Продолжить обучение</h2><label>Никнейм<input autocomplete="username" id="tv-username" maxlength="100" name="username" required="" type="text"/></label><label>Пароль<input autocomplete="current-password" id="tv-password" maxlength="100" name="password" required="" type="password"/></label><p id="tv-login-error" role="alert"></p><button class="action" id="tv-login-close" type="button">Отмена</button><button class="action filled" id="tv-login-submit" type="submit">Войти</button></form></dialog><script>
-  (() => {
-    const root = document.getElementById('target-vocab-tim');
-    const el = id => root.querySelector('#tv-' + id);
-    const cards = JSON.parse(el('data').textContent).map((c, id) => ({...c, id}));
-    const hard = new Set();
-    let deck = [...cards], index = 0, flipped = false;
-    function render(persist = true) {
-      if (persist) save();
-      root.querySelectorAll('[data-unit]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.unit === el('unit').value)));
-      root.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === el('mode').value)));
-      const c = deck[index];
-      el('count').textContent = (c ? `${index + 1} / ${deck.length}` : '0 карточек') + ` · Просмотрено: ${seen.size} · Трудных: ${hard.size}`;
-      ['card', 'prev', 'next', 'hard'].forEach(id => el(id).disabled = !c);
-      el('translation').hidden = !flipped || !c;
-      if (!c) {
-        el('section').textContent = '';
-        el('main').textContent = 'В этом наборе пока нет трудных карточек.';
-        el('hint').textContent = 'Сними отметку «Только трудные», чтобы продолжить.';
-        return;
-      }
-      const reverse = el('mode').value === 'definition';
-      el('card').classList.toggle('definition', flipped ? !reverse : reverse);
-      el('section').textContent = `Unit ${c.section}`;
-      el('main').textContent = flipped ? (reverse ? c.word : c.explanation) : (reverse ? c.explanation : c.word);
-      el('translation').textContent = c.translation;
-      el('hint').textContent = flipped ? 'Нажми, чтобы скрыть ответ' : 'Нажми, чтобы проверить себя';
-      el('hard').textContent = hard.has(c.id) ? '✓ Трудная · убрать' : 'Отметить трудной';
-      el('hard').setAttribute('aria-pressed', String(hard.has(c.id)));
-      el('card').setAttribute('aria-label', (flipped ? 'Скрыть ответ: ' : 'Показать ответ: ') + el('main').textContent);
-    }
-    function filter() {
-      const unit = el('unit').value;
-      deck = cards.filter(c => (unit === 'all' || c.section.startsWith(unit)) && (!el('only').checked || hard.has(c.id)));
-      index = 0; flipped = false; render();
-    }
-    el('unit').onchange = filter;
-    el('only').onchange = filter;
-    el('mode').onchange = () => {flipped = false; render();};
-    el('card').onclick = () => {flipped = !flipped; if (flipped && deck[index]) seen.add(deck[index].id); render();};
-    el('next').onclick = () => {index = (index + 1) % deck.length; flipped = false; render();};
-    el('prev').onclick = () => {index = (index + deck.length - 1) % deck.length; flipped = false; render();};
-    el('shuffle').onclick = () => {
-      for (let i = deck.length - 1; i > 0; i--) {const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]];}
-      index = 0; flipped = false; render();
-    };
-    el('hard').onclick = () => {
-      const id = deck[index].id;
-      hard.has(id) ? hard.delete(id) : hard.add(id);
-      if (el('only').checked) {deck = deck.filter(c => hard.has(c.id)); index = Math.min(index, Math.max(0, deck.length - 1)); flipped = false;}
-      render();
-    };
-    root.querySelectorAll('[data-unit]').forEach(b => b.onclick = () => {el('unit').value = b.dataset.unit; filter();});
-    root.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => {el('mode').value = b.dataset.mode; flipped = false; render();});
-    el('card').setAttribute('aria-keyshortcuts', 'Space');
-    el('next').setAttribute('aria-keyshortcuts', 'ArrowRight');
-    el('prev').setAttribute('aria-keyshortcuts', 'ArrowLeft');
-    el('hard').setAttribute('aria-keyshortcuts', 'D');
-    document.addEventListener('keydown', e => {
-      if (el('login').open) return;
-      if (e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
-      if (e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
-      const action = {Space: 'card', ArrowRight: 'next', ArrowLeft: 'prev', KeyD: 'hard', KeyS: 'shuffle'}[e.code];
-      if (action) {e.preventDefault(); el(action).click();}
-      else if (e.code === 'KeyR') {e.preventDefault(); el('mode').value = el('mode').value === 'word' ? 'definition' : 'word'; flipped = false; render();}
-    });
-// Account and progress use the same origin as the application.
-// Included inline in index.html so the static edition remains a single file.
-const seen = new Set();
-let signedIn = false, saving = false, pendingState = null, unsaved = false;
-const apiBase = new URL('./api/', location.href);
-async function api(path, method = 'GET', data) {
-  const response = await fetch(new URL(path, apiBase), {
-    method, credentials: 'same-origin', headers: {'Content-Type': 'application/json', 'X-Flashcards': '1'},
-    ...(data === undefined ? {} : {body: JSON.stringify(data)})
-  });
-  if (!response.ok) throw new Error(String(response.status));
-  return response.json();
-}
-function snapshot() {
-  return {hard: [...hard], seen: [...seen], deck: deck.map(c => c.id), index,
-    unit: el('unit').value, mode: el('mode').value, only: el('only').checked};
-}
-function accountLabel(message) {
-  el('sync').textContent = message;
-  el('account').textContent = signedIn ? 'tim · Выйти' : 'Войти и сохранить прогресс';
-}
-async function save() {
-  if (!signedIn) return;
-  pendingState = snapshot(); unsaved = true;
-  if (saving) return;
-  saving = true;
-  try {
-    while (pendingState) {
-      const state = pendingState; pendingState = null;
-      accountLabel('Сохраняем…');
-      await api('progress', 'PUT', state);
-    }
-    unsaved = false; accountLabel('Сохранено');
-  } catch (error) {
-    if (error.message === '401') {
-      signedIn = false; accountLabel('Сессия истекла. Войди снова.');
-    } else accountLabel('Не сохранено · нажми для повтора');
-  } finally {saving = false;}
-}
-function restore(state) {
-  if (!state) return;
-  hard.clear(); state.hard.forEach(id => hard.add(id));
-  seen.clear(); state.seen.forEach(id => seen.add(id));
-  deck = state.deck.map(id => cards[id]); index = state.index;
-  el('unit').value = state.unit; el('mode').value = state.mode; el('only').checked = state.only;
-  flipped = false;
-}
-async function loadAccount() {
-  const result = await api('progress');
-  restore(result.progress); signedIn = true;
-  render(false); accountLabel('Сохранено');
-  if (!result.progress) save();
-}
-el('sync').onclick = () => {if (unsaved) save();};
-el('account').onclick = async () => {
-  if (location.hostname.endsWith('github.io') || location.protocol === 'file:') {
-    location.href = 'https://tryko.site/english/'; return;
-  }
-  if (signedIn) {
-    if (saving || unsaved) {accountLabel('Сначала дождись сохранения или повтори его.'); return;}
-    try {await api('logout', 'POST'); signedIn = false; accountLabel('Прогресс сохранён в аккаунте');}
-    catch {accountLabel('Не удалось выйти. Попробуй ещё раз.');}
-  } else {el('login-error').textContent = ''; el('login').showModal();}
-};
-el('login-close').onclick = () => el('login').close();
-el('login-form').onsubmit = async e => {
-  e.preventDefault(); el('login-submit').disabled = true;
-  try {
-    await api('login', 'POST', {username: el('username').value, password: el('password').value});
-    await loadAccount(); el('password').value = ''; el('login').close();
-  } catch (error) {
-    el('login-error').textContent = error.message === '401' ? 'Неверный никнейм или пароль.' : 'Сервер недоступен. Попробуй ещё раз.';
-  } finally {el('login-submit').disabled = false;}
-};
-window.addEventListener('beforeunload', e => {if (signedIn && unsaved) {e.preventDefault(); e.returnValue = '';}});
-if (!location.hostname.endsWith('github.io') && location.protocol !== 'file:') {
-  loadAccount().catch(error => accountLabel(error.message === '401' ? 'Войди, чтобы сохранять прогресс' : 'Сервер недоступен'));
-} else accountLabel('Сохранение доступно на tryko.site');
-
-    render(false);
-  })();
-  </script>
+<dialog aria-labelledby="tv-login-title" id="tv-login"><form id="tv-login-form"><h2 id="tv-login-title">Продолжить обучение</h2><label>Никнейм<input autocomplete="username" id="tv-username" maxlength="100" name="username" required="" type="text"/></label><label>Пароль<input autocomplete="current-password" id="tv-password" maxlength="100" name="password" required="" type="password"/></label><p id="tv-login-error" role="alert"></p><button class="action" id="tv-login-close" type="button">Отмена</button><button class="action filled" id="tv-login-submit" type="submit">Войти</button></form></dialog><script src="app.js" defer></script>
 <style>#target-vocab-tim .account-row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:16px}#target-vocab-tim #tv-sync{font-size:12px}#target-vocab-tim dialog{color:var(--ink);background:var(--surface);border:0;border-radius:28px;padding:28px;width:min(380px,90vw)}#target-vocab-tim dialog::backdrop{background:#0007}#target-vocab-tim dialog input{width:100%;height:48px;border:1px solid var(--line);background:var(--container);color:var(--ink);border-radius:12px;padding:12px;font:inherit}#target-vocab-tim dialog label{display:grid;gap:6px;margin:16px 0}#target-vocab-tim dialog h2{font-size:24px;font-weight:500;margin:0}</style></div>
 </body></html>
